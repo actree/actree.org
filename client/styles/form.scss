@@ -1,0 +1,55 @@
+input[type="text"], input[type="password"], textarea {
+    border: 2px solid black;
+}
+
+.CodeMirror {
+  background: white;
+  color: black;
+  border: 2px solid black;
+}
+
+%button {
+    font-family: $ff-sans;
+    display: inline-block;
+    
+    font-weight: 700;
+    cursor: pointer;
+    background: transparent;
+
+    
+    color: black;
+
+    &:hover {
+        background-color: black;
+        color: white;
+    }
+
+    &.inverted {
+        color: white;
+        border-color: white;
+        &:hover {
+            background-color: white;
+            color: black;
+        }
+    }
+    &.brand {
+        color: $color-brand;
+        border-color: $color-brand;
+        &:hover {
+            background-color: $color-brand;
+            color: white;
+        }
+    }
+}
+
+.button {
+    @extend %button;
+    padding: .3em .5em;
+    border: 2px solid black;
+}
+
+.button-small {
+    @extend %button;
+    padding: .1em .3em;
+    border: 1px solid black;
+}

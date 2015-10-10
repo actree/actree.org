@@ -1,0 +1,73 @@
+.is-title {
+    //width: 36em;
+    margin: 0 auto;
+    text-align: center;
+
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+
+    font-family: $ff-sans;
+    font-weight: 700;
+}
+
+.separator {
+    width: 10em;
+    margin: 0 auto;
+    height: .4rem;
+    border: 0;
+    background: $color-brand;
+    margin-bottom: 4rem;
+}
+
+.is-copy {
+    width: 36em;
+    margin: 0 auto;
+
+    h1, h2, h3, h4 {
+        font-family: $ff-sans;
+    }
+
+    p, ul, ol {
+        font-family: $ff-serif;
+        font-weight: 400;
+        color: #444;
+    }
+
+    // Tracking
+    h1, h2, h3, h4 {
+        line-height: 1.1em;
+    }
+    p, li {
+        line-height: 1.6em;
+    }
+    
+
+    // Spacing
+    h1, h2, h3, h4 {
+        margin-top: 2rem;
+    }
+    p {
+        margin-top: .5em;
+    }
+    p + p,
+    p + ul,
+    p + ol {
+        margin-top: 1em;
+    }
+
+    // Lists
+    li {
+        display: list-item;
+    }
+    ul, ol {
+        padding-left: 1.5em;
+    }
+    ul {
+        list-style-type: disc;
+    }
+
+    abbr {
+        font-variant: small-caps;
+        font-weight: 500;
+    }
+}

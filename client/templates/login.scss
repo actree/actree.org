@@ -1,0 +1,19 @@
+.dialog {
+	background: linear-gradient(lighten($color-brand, 10%), lighten($color-brand, 5%));
+	&.float-right {
+		padding: 1rem;
+		min-width: 10rem;
+	}
+
+	a {
+		color: white;
+		text-decoration: none;
+		font-weight: 600;
+	}
+}
+
+form {
+	width: $container-width;
+	margin: 0 auto;
+	padding: 2rem 1rem;
+}

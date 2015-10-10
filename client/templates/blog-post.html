@@ -1,0 +1,16 @@
+<template name="blogPost">
+    <article>
+
+    <h1 class="is-title">{{ title }}</h1>
+    <aside class="meta">
+        {{ author.name }}
+    </aside>
+    <hr class="separator">
+    <section class="is-copy">
+{{#markdown}}
+{{text}}
+{{/markdown}}
+    </section>
+
+    </article>
+</template>

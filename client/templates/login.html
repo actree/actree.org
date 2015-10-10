@@ -1,0 +1,41 @@
+<template name="login">
+    {{#if showLogin}}
+        <div class="dialog">
+        {{#if loggingIn}}
+        (spinner)
+        {{else}}
+        <form action="" class="login-form">
+            <label for="login-email">Email</label>
+            <input type="text" id="login-email" name="email">
+
+            <label for="login-password">Password</label>
+            <input type="password" id="login-password" name="password">
+
+            <button class="button login-submit">Login</button>
+        </form>
+        {{/if}}
+        </div>
+    {{/if}}
+</template>
+
+<template name="register">
+    
+</template>
+
+<template name="userMenu">
+    {{#if showUserMenu}}
+        <div class="container">
+        <div class="dialog float-right">
+            <ul>
+                {{#if true}}
+                    <li><a href="/admin"><i class="ion-coffee"></i> Admin</a></li>
+                {{/if}}
+                <li><a href="">Dashboard</a></li>
+                <li><a href=""><i class="ion-gear-b"></i> Settings</a></li>
+                <li><a href=""></a></li>
+                <li><a href="" class="user-logout"><i class="ion-log-out"></i> Logout</a></li>
+            </ul>
+        </div>
+        </div>
+    {{/if}}
+</template>
