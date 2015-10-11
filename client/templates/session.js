@@ -10,6 +10,18 @@ Template.login.events({
         });
 
         console.log(event.target.email.value);
+    },
+    'submit .register-form': (event) => {
+        event.preventDefault();
+        Accounts.createUser({
+            username: event.target.username.value,
+            email: event.target.email.value,
+            password: event.target.password.value
+        }, function() {
+            Session.set('showLogin', false);
+        });
+
+        console.log(event.target.email.value);
     }
 });
 

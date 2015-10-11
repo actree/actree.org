@@ -1,10 +1,13 @@
 <template name="login">
     {{#if showLogin}}
         <div class="dialog">
+        <div class="dialog-content">
         {{#if loggingIn}}
-        (spinner)
+            (spinner)
         {{else}}
-        <form action="" class="login-form">
+        <form action="" class="login-form half-left">
+            <h3>Log into actree</h3>
+
             <label for="login-email">Email</label>
             <input type="text" id="login-email" name="email">
 
@@ -13,8 +16,24 @@
 
             <button class="button login-submit">Login</button>
         </form>
+
+        <form action="" class="register-form half-right">
+            <h3>Register for actree</h3>
+            <p>Merk' dir deine Favoriten, schreib Reviews und Kommentare</p>
+
+            <label for="register-username">Username</label>
+            <input type="text" id="register-username" name="username">
+
+            <label for="register-email">Email</label>
+            <input type="text" id="register-email" name="email">
+
+            <label for="register-password">Password</label>
+            <input type="password" id="register-password" name="password">
+
+            <button class="button register-submit">Login</button>
+        </form>
         {{/if}}
-        </div>
+        </div></div>
     {{/if}}
 </template>
 

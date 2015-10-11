@@ -1,5 +1,7 @@
 .dialog {
 	background: linear-gradient(lighten($color-brand, 10%), lighten($color-brand, 5%));
+	
+	
 	&.float-right {
 		padding: 1rem;
 		min-width: 10rem;
@@ -12,8 +14,15 @@
 	}
 }
 
-form {
+.half-left, .half-right {
+	width: 50%;
+	float: left;
+}
+
+.dialog-content {
 	width: $container-width;
 	margin: 0 auto;
 	padding: 2rem 1rem;
+	@extend %clearfix;
+	overflow: auto;
 }
