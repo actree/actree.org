@@ -7,7 +7,7 @@ if(Meteor.isClient) {
 
 // Bootstrap some posts
 if (Meteor.isServer && Posts.find().count() < 100) {
-console.log(Meteor.users.findOne({username:"tim"}));
+//console.log(Meteor.users.findOne({username:"tim"}));
     Meteor.startup(function() {
         if(!Meteor.users.findOne({username: "tim"})) {
             var userId = Accounts.createUser({
@@ -65,7 +65,7 @@ console.log(Meteor.users.findOne({username:"tim"}));
 
     var user = Meteor.users.findOne({username: "tim"});
     if(!user) return;
-    Posts.insert({
+    var postId = Posts.insert({
       title: 'Theoretical framework',
       slug: 'theo-framework',
       text: `This chapter introduces theoretical concepts that build the foundation of this thesis. As I focus on researching the social practice of bicycling, it seems mandatory to explore the theory of social relations, with special focus on mobility. Furthermore, I look into the social creation of meaning, which leads to place-making. Lastly, this chapter introduces *random vélomobile formations-in-action*, which are one situation where cycle-based interaction can take place. They are used as an example throughout this thesis report.
@@ -97,5 +97,14 @@ Random vélomobile formations-in-action are a relevant example for cycle-based i
       createdBy: user._id,
       createdAt: new Date()
     });
+
+    Comments.insert({
+        postId: postId,
+        createdBy: user._id,
+        createdAt: new Date(),
+        title: "Guter Beitrag",
+        text: "Danke, hab viel gelernt",
+        published: false
+    })
   });
 }

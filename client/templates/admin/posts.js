@@ -70,8 +70,7 @@ Template.adminPost.helpers({
             return author.username;
         }
         return "n/a";
-    },
-    formatDate: (timestamp) => moment(timestamp).format("DD.MM.YYYY HH:mm")
+    }
 });
 
 Template.adminPost.events({

@@ -13,4 +13,11 @@
     </section>
 
     </article>
+    <h3>Comments</h3>
+    {{> createComment}}
+    <ul>
+    	{{#each (comments _id)}}
+    		<li>{{> comment}}</li>
+    	{{/each}}
+    </ul>
 </template>

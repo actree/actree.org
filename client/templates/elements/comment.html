@@ -1,0 +1,26 @@
+<template name="comment">
+    <h4>{{title}}</h4>
+    {{#if mine}}
+        <aside>
+            <a href="#" class="delete-comment"><i class="ion-trash-a"></i> Delete comment</a>
+        </aside>
+    {{/if}}
+    <div class="author">{{author}} - {{formatDate createdAt}}</div>
+    <div>{{#markdown}}{{text}}{{/markdown}}</div>
+    
+</template>
+
+<template name="createComment">
+    You're commenting as {{username}}
+    <form action="" class="comment-form">
+        <input type="hidden" name="postId" value="{{_id}}">
+
+        <label for="comment-title">Title</label>
+        <input name="title" type="text" id="comment-title">
+
+        <label for="comment-text">Text</label>
+        <textarea name="text" id="comment-text" cols="30" rows="10"></textarea>
+
+        <button class="button">Submit comment</button>
+    </form>
+</template>
