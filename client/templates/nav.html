@@ -1,14 +1,14 @@
 <template name="nav">
     <nav class="navigation">
-        <ul>
+        <ul class="main-menu">
             <li class="logotype"><a href="/">actree</a></li>
             
-            <li><a href="/">Kategorien</a></li>
+            <li><a href="/browse">Kategorien</a></li>
             <li><a href="/blog">Blog</a></li>
-            <li class="nav-search"><div><i class="ion-search"></i><input type="text" placeholder="Suche"></div></li>
-            <li class="account {{#if showLoginOrUserMenu}}is-highlight{{/if}}">
+            <li class="nav-search"><div class="input"><i class="ion-search"></i><input type="text" placeholder="Suche"></div></li>
+            <li class="account {{#if showLoginOrUserMenu}}is-highlight{{/if}} {{#if currentUser}}no-padding{{/if}}">
                 {{#if currentUser}}
-                    <a href="" class="toggle-user-menu"><i class="ion-person"></i> {{currentUser.username}}</a>
+                    <a href="" class="toggle-user-menu">{{> avatar user=currentUser shape="circle"}}</a>
                 {{else}}
                     <a href="" class="toggle-show-login">
                         {{#if showLoginOrUserMenu}}
@@ -18,10 +18,11 @@
                         {{/if}}
                     </a>
                 {{/if}}
+                {{> userMenu}}
             </li>
         </ul>
 
     </nav>
     {{> login}}
-    {{> userMenu}}
+    
 </template>

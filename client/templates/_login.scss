@@ -1,0 +1,46 @@
+.dialog {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  z-index: 10;
+  background: linear-gradient(lighten($color-brand, 10%), lighten($color-brand, 5%));
+
+  // box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+  background: white;
+  border: .2em solid lighten($color-brand, 10%);
+  // border-width: 0 .2em .2em .2em;
+  &.float-right {
+    padding: 1rem;
+    min-width: 10rem;
+  }
+
+  a {
+    color: white;
+    color: $color-text;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .user-menu {
+
+    li {
+      float: none;
+      padding: .2em;
+    }
+  }
+}
+
+.half-left, .half-right {
+  width: 50%;
+  float: left;
+}
+
+.dialog-content {
+  @extend %clearfix;
+  margin: 0 auto;
+  width: $container-width;
+
+  padding: 2rem 1rem;
+
+  overflow: auto;
+}

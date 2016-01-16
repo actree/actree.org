@@ -2,7 +2,7 @@
     <h4>{{title}}</h4>
     {{#if mine}}
         <aside>
-            <a href="#" class="delete-comment"><i class="ion-trash-a"></i> Delete comment</a>
+            <a href="#" class="delete-comment"><i class="ion-trash-a"></i> Kommentar löschen</a>
         </aside>
     {{/if}}
     <div class="author">{{author}} - {{formatDate createdAt}}</div>
@@ -11,7 +11,7 @@
 </template>
 
 <template name="createComment">
-    You're commenting as {{username}}
+    Du kommentierst als <strong>{{username}}</strong>
     <form action="" class="comment-form">
         <input type="hidden" name="postId" value="{{_id}}">
 

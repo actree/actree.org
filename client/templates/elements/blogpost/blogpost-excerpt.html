@@ -1,0 +1,14 @@
+<template name="blogpostExcerpt">
+  <section class="excerpt" data-mh="excerpts">
+    <div class="image" style="background-image: url({{ headerImage}})"></div>
+    <header>
+      <div class="category">{{category}}</div>
+      <h2 class="title"><a href="/blog/{{slug}}">{{ title }}</a></h2>
+      <summary class="meta">
+        <p>{{#if summary}} {{summary}} {{else}} {{#summarize}} {{text}} {{/summarize}} {{/if}}
+        </p>
+        <em>von</em> {{ nameFor createdBy }} <em>am</em> {{formatDay publishedAt}}
+      </summary>
+    </header>
+  </section>
+</template>

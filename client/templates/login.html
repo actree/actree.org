@@ -43,18 +43,16 @@
 
 <template name="userMenu">
     {{#if showUserMenu}}
-        <div class="container">
         <div class="dialog float-right">
-            <ul>
-                {{#if true}}
+            <ul class="user-menu">
+                {{#if isInRole 'admin'}}
                     <li><a href="/admin"><i class="ion-coffee"></i> Admin</a></li>
                 {{/if}}
-                <li><a href="">Dashboard</a></li>
+                <li><a href=""><i class="ion-pie-graph"></i>Dashboard</a></li>
                 <li><a href=""><i class="ion-gear-b"></i> Settings</a></li>
                 <li><a href=""></a></li>
                 <li><a href="" class="user-logout"><i class="ion-log-out"></i> Logout</a></li>
             </ul>
-        </div>
         </div>
     {{/if}}
 </template>

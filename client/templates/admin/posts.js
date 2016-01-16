@@ -11,10 +11,6 @@ function getRole(userId) {
         return false;
     }
 
-    // if(user.admin) {
-    //     return "admin";
-    // }
-
     if(user.profile && user.profile.role) {
         return user.profile.role;
     }
@@ -26,44 +22,49 @@ Template.adminPosts.helpers({
     posts: () => Posts.find({}, {sort: {createdAt: -1}})
 });
 
+function hasEditRights(doc) {
+    var userId = Meteor.userId(),
+        authorId = doc.createdBy;
+
+    if(Roles.userIsInRole(userId, ['admin'])) {
+        return true;
+    }
+    if(Roles.userIsInRole(userId, ['author']) && userId === authorId) {
+        return true;
+    }
+    if(Roles.userIsInRole(userId, ['guest']) && userId === authorId && doc.published === false) {
+        return true;
+    }
+
+    return false;
+}
+
+function hasPublishRights(doc) {
+    var userId = Meteor.userId(),
+        authorId = doc.createdBy;
+
+    if(Roles.userIsInRole(userId, ['admin'])) {
+        return true;
+    }
+    if(Roles.userIsInRole(userId, ['author']) && userId === authorId) {
+        return true;
+    }
+    return false;
+}
+
 Template.adminPost.helpers({
     canEdit: (doc) => {
-        var role = getRole(Meteor.userId()),
-            authorId = doc.createdBy;
-
-        if(!role) {
-            return false;
-        }
-
-        return role === "admin" // admin, can edit anything
-            || (role === "author" && Meteor.userId() === authorId) // author, can edit own post
-            || (role === "guest" && Meteor.userId() === authorId && doc.published === false) // guest author, can edit own post, but only when it's not published
-        ;
+        return hasEditRights(doc)
     },
+
     canPublish: (doc) => {
-        var role = getRole(Meteor.userId()),
-            authorId = doc.createdBy;
-
-        if(!role || doc.published) {
-            return false;
-        }
-
-        return role === "admin" // admin, can publish anything
-            || (role === "author" && Meteor.userId() === authorId) // author, publish own post
-        ;
+        return !doc.published && hasPublishRights(doc);
     },
+
     canUnpublish: (doc) => {
-        var role = getRole(Meteor.userId()),
-            authorId = doc.createdBy;
-
-        if(!role || !doc.published) {
-            return false;
-        }
-
-        return role === "admin" // admin, can publish anything
-            || (role === "author" && Meteor.userId() === authorId) // author, publish own post
-        ;
+        return doc.published && hasPublishRights(doc);
     },
+
     getAuthor: (authorId) => {
         var author = Meteor.users.findOne(authorId);
         if(author) {
@@ -73,15 +74,24 @@ Template.adminPost.helpers({
     }
 });
 
+Template.adminPosts.events({
+    'click .create-post': function(event) {
+        event.preventDefault();
+        var itemId = Meteor.call('createPost');
+        console.log(itemId);
+        Router.go('/admin/posts/' + itemId + '/edit');
+    }
+})
+
 Template.adminPost.events({
-    //'click .save-post': function() { console.log("Saved post"); },
     'click .publish-post': function(event) {
         event.preventDefault();
-        Posts.update({_id: this._id}, {$set: {published: true}});
+        Meteor.call('publishPost', this._id);
     },
+
     'click .unpublish-post': function(event) {
         event.preventDefault();
-        Posts.update({_id: this._id}, {$set: {published: false}});
+        Meteor.call('unpublishPost', this._id);
     }
 })
 
@@ -93,9 +103,10 @@ Template.createPost.events({
         var postId = template.data._id;
         var post = {
             title: this.$('#post-title').get(0).value,
+            summary: this.$('#post-summary').get(0).value,
             slug: this.$('#post-slug').get(0).value,
             text: this.$('#post-text').get(0).value
         };
-        Posts.update({_id: postId}, {$set: post});
+        Meteor.call('updatePost', postId, post);
     }
 })

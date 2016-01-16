@@ -1,0 +1,79 @@
+$ff-serif: "adelle", Georgia, "Times New Roman", serif;
+$ff-sans: "source-sans-pro", Helvetica, Arial, Verdana, sans-serif;
+
+%hyphenation {
+  -ms-word-break: break-all;
+  word-break: break-all;
+
+  // Non standard for webkit
+  word-break: break-word;
+
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
+
+  -webkit-hyphenate-before: 2;
+  -webkit-hyphenate-after: 3;
+  hyphenate-lines: 3;
+}
+
+html {
+  font-size: 22px;
+}
+
+/*
+When setting the primary font stack, apply it to the Pure grid units along
+with `html`, `button`, `input`, `select`, and `textarea`. Pure Grids use
+specific font stacks to ensure the greatest OS/browser compatibility.
+*/
+html,
+button,
+input,
+select,
+textarea,
+.pure-g [class *= "pure-u"] {
+  /* Set your content font stack here: */
+  font-family: $ff-sans;
+}
+
+body {
+  font-family: $ff-sans;
+  font-size: 100%;
+  line-height: 1.3em;
+  color: $color-text;
+}
+
+h1, h2, h3, h4 {
+  text-rendering:optimizeLegibility;
+  font-family: $ff-serif;
+}
+
+h1 {
+  font-size: 2.4em;
+  line-height: 1.2em;
+  font-weight: 400;
+}
+
+h2 {
+  font-size: 2em;
+  line-height: 1.2em;
+}
+
+h3 {
+  font-size: 1.5em;
+  line-height: 1.5em;
+}
+
+h4 {
+  font-size: 1em;
+}
+
+a {
+  display: inline-block;
+  color: $color-text;
+  border-bottom: 2px solid $color-brand;
+  text-decoration: none;
+  &:hover {
+    border-color: $color-text;
+  }
+}

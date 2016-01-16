@@ -1,0 +1,17 @@
+.banner {
+  background: $color-lightergrey;
+  padding: .4em 0;
+  text-align: center;
+
+  .container {
+    position: relative;
+  }
+  .close {
+    display: inline-block;
+    // position: absolute;
+    // right: 1rem;
+    border: 0;
+
+    margin-left: 1rem;
+  }
+}

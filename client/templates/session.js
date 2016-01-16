@@ -37,7 +37,8 @@ Template.userMenu.helpers({
 })
 
 Template.nav.helpers({
-    showLoginOrUserMenu: () => Session.get('showLogin') || Session.get('showUserMenu')
+    showLoginOrUserMenu: () => Session.get('showLogin') || Session.get('showUserMenu'),
+    userAvatar: () => Gravatar.imageUrl("tim@voldenburg.com", {})
 })
 
 Template.nav.helpers({

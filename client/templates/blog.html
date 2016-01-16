@@ -1,13 +1,9 @@
 <template name="blog">
+  <div class="pure-g">
     {{#each latestPosts}}
-          <h2><a href="/blog/{{slug}}">{{ title }}</a></h2>
-    <aside class="meta">
-        {{ author.name }}
-    </aside>
-        {{else}}
-          <div class="wrapper-message">
-            <div class="title-message">No one is cooking yet!</div>
-            <div class="subtitle-message">Share that you made a recipe and it will show up here.</div>
-          </div>
-        {{/each}}
+    <div class="pure-u-1-3 excerpt-container">
+      {{> blogpostExcerpt}}
+    </div>
+    {{/each}}
+  </div>
 </template>

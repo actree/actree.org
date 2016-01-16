@@ -1,23 +1,37 @@
 <template name="blogPost">
-    <article>
-
-    <h1 class="is-title">{{ title }}</h1>
-    <aside class="meta">
-        {{ author.name }}
-    </aside>
-    <hr class="separator">
-    <section class="is-copy">
+    <article class="pure-g blog-post">
+        <header class="pure-u-1">
+            <div class="category">{{category}}</div>
+            <h1 class="title">{{ title }}</h1>
+            <summary class="meta">
+                <p>{{summary}}</p>
+                <em>von</em> {{ nameFor createdBy }}
+            </summary>
+            <img class="title-image" src="{{headerImage}}" alt="">
+        </header>
+        
+        <aside class="pure-u-9-24">
+            Published on <strong>{{formatDay publishedAt}}</strong><br>
+            Category <strong>{{category}}</strong><br>
+        </aside>
+        <section class="is-copy pure-u-15-24">
 {{#markdown}}
 {{text}}
 {{/markdown}}
-    </section>
+        </section>
 
     </article>
-    <h3>Comments</h3>
-    {{> createComment}}
-    <ul>
-    	{{#each (comments _id)}}
-    		<li>{{> comment}}</li>
-    	{{/each}}
+    
+    <section class="comments pure-g">
+        <header class="pure-u-1"><h3>Kommentare</h3></header>
+        <div class="pure-u-1">{{> createComment}}</div>
+        <ul class="pure-u-1">
+        {{#each (comments _id)}}
+            <li>{{> comment}}</li>
+        {{/each}}
     </ul>
+    </section>
+    
+    
+    
 </template>

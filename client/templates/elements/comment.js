@@ -1,6 +1,7 @@
 Template.comment.helpers({
     author: function() {
-        return Meteor.users.findOne({_id: this.createdBy}).username;
+        var user = Meteor.users.findOne({_id: this.createdBy});
+        return user ? user.profile.name : 'Anonymous';
     },
     mine: function() {
         return this.createdBy === Meteor.userId();
@@ -17,14 +18,13 @@ Template.comment.events({
 
 Template.createComment.events({
     'submit .comment-form': (event) => {
+        console.log('jo')
         event.preventDefault();
-        // Meteor.loginWithPassword(event.target.email.value, "password", function() {
-        //     Session.set('showLogin', false);
-        // });
-        Comments.create({
+        Meteor.call('createComment', {
             title: event.target.title.value,
             text: event.target.text.value,
-            postId: event.target.postId.value
+            postId: event.target.postId.value,
+            published: true
         });
     }
 })
