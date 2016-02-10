@@ -45,35 +45,49 @@ body {
 
 h1, h2, h3, h4 {
   text-rendering:optimizeLegibility;
-  font-family: $ff-serif;
+  // font-family: $ff-serif;
 }
 
-h1 {
-  font-size: 2.4em;
-  line-height: 1.2em;
-  font-weight: 400;
-}
-
-h2 {
-  font-size: 2em;
-  line-height: 1.2em;
-}
-
-h3 {
-  font-size: 1.5em;
-  line-height: 1.5em;
-}
-
-h4 {
-  font-size: 1em;
-}
+$fs-title-page: 2.4em;
+$fs-title-sub: 2.0em;
+$fs-title-major: 1.5em;
+$fs-title-minor: 1.0em;
+$fs-small: 0.8em;
 
 a {
   display: inline-block;
   color: $color-text;
   border-bottom: 2px solid $color-brand;
   text-decoration: none;
-  &:hover {
-    border-color: $color-text;
-  }
+  // &:hover {
+  //   border-color: $color-text;
+  // }
+}
+
+%title-page {
+  font-size: 2.4em;
+  line-height: 1.2em;
+  font-weight: 700;
+  font-family: $ff-sans;
+}
+
+%title-sub {
+  font-size: 2em;
+  line-height: 1.2em;
+  font-weight: 700;
+  font-family: $ff-sans;
+}
+
+%title-major {
+  font-size: 1.5em;
+  line-height: 1.5em;
+  font-weight: 700;
+  font-family: $ff-sans;
+}
+
+%title-minor {
+  font-size: 1em;
+  line-height: 1.5em;
+  font-weight: 700;
+  font-family: $ff-sans;
 }

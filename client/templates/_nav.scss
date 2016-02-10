@@ -19,7 +19,7 @@
 
   .main-menu {
     @include clearfix;
-    
+
     margin: 0 auto;
     list-style: none;
     //float: left;
@@ -52,7 +52,9 @@
 
   .main-menu .account {
     float: right;
-    width: 100px;
+    a {
+      display: inline-block;
+    }
   }
 
   .main-menu .no-padding {

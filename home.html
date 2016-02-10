@@ -1,7 +1,19 @@
 <template name="home">
+  <section class="page-container container">
   <div class="wireframe" style="height: 16em;">HIGHLIGHTED ENTRIES</div>
   <div class="pure-g">
-    <div class="wireframe pure-u-1-2" style="height: 16em;">LATEST FROM BLOG</div>
-    <div class="wireframe pure-u-1-2" style="height: 16em;">LATEST ENTRIES</div>
+    <div class="pure-u-1-2" style="">
+      <h4>Vom Blog</h4>
+      {{#with latestPost}}
+      <div class="excerpt-coxntainer">
+        {{> blogpostExcerpt}}
+      </div>
+      {{/with}}
+    </div>
+    <div class="pure-u-1-2" style="height: 16em;">
+      <h4>Neuester Eintrag</h4>
+      {{ > entrySmall }}
+    </div>
   </div>
+  </section>
 </template>

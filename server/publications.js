@@ -13,3 +13,11 @@ Meteor.publish('comments', function() {
   		return Comments.find({published: true});
     }
 });
+
+Meteor.publish('entry', function() {
+    // if (Roles.userIsInRole(this.userId, ['author', 'admin'])) {
+    	return Entry.find({});
+  	// } else {
+  		// return Comments.find({published: true});
+    // }
+});

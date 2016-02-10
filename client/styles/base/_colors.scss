@@ -1,4 +1,5 @@
-$color-brand: #8dbf41;
+$color-green: #8dbf41;
+$color-brown: #59261a;
 
 $color-darkestgrey: #222;
 $color-darkergrey: #444;
@@ -9,9 +10,13 @@ $color-lightergrey: #ddd;
 $color-lightestgrey: #eee;
 $color-black: #222;
 
-$color-accent: $color-brand;
 
-$color-link: #59261a;
+// Use these:
+
+$color-accent: $color-green;
+$color-brand: $color-green;
+
+$color-link: $color-brown;
 $color-link-hover: darken($color-link, 10%);
 $color-button: $color-link;
 
@@ -22,3 +27,4 @@ $color-button: $color-accent;
 $color-primary-bg: #fff;
 $color-on-primary: $color-darkergrey;
 $color-text: $color-darkestgrey;
+$color-text-inverted: white;

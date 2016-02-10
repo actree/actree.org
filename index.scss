@@ -3,25 +3,27 @@
 // Existing content in the file will not be touched
 // When deleting a .scss or .sass file you must manually delete it from here
 
-@import "client/styles/reset";
-@import "client/styles/colors";
-@import "client/styles/mixins";
-@import "client/styles/layout";
-@import "client/styles/typography";
+@import "client/styles/base/reset";
+@import "client/styles/base/colors";
+@import "client/styles/base/mixins";
+@import "client/styles/layout/layout";
+@import "client/styles/base/typography";
 
 @import "client/templates/nav";
 
+@import "client/styles/elements/label";
 
-
-@import "client/styles/form";
+@import "client/styles/elements/form";
 @import "client/styles/ghostdown";
 @import "client/styles/blog";
 @import "client/styles/footer";
 @import "client/templates/login";
 @import "client/templates/admin/admin";
+@import "client/templates/pages/entry/entry";
+@import "client/templates/elements/comment/comment";
 @import "styleguide";
-@import "client/styles/wireframe";
+@import "client/styles/layout/wireframe";
 
-@import "client/styles/button";
+@import "client/styles/elements/button";
 @import "client/styles/excerpt";
 @import "client/styles/banner";

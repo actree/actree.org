@@ -1,0 +1,32 @@
+/* Form to create comment */
+.comment-form {
+  margin-top: 2rem;
+  #comment-form {
+
+  }
+
+  margin-bottom: 3rem;
+}
+
+/* Single comment */
+.comment {
+  margin-bottom: 3rem;
+
+  .comment-header {
+    .date { float: right; }
+  }
+}
+
+/* Comments section */
+.comments {
+  .comments-header {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    background-color: $color-lightergrey;
+
+    button { float: right; }
+  }
+  .comments-title {
+    display: inline-block;
+  }
+}

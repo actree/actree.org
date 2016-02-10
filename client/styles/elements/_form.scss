@@ -1,0 +1,34 @@
+$input-padding: .3em .5em;
+$input-border-radius: 3px;
+$full: 100%;
+
+%input {
+  background: $color-lightestgrey;
+  border-radius: $input-border-radius;
+  border: 1px solid $color-lightgrey;
+  padding: $input-padding;
+  color: $color-text;
+  width: $full;
+}
+
+input[type="text"],
+input[type="password"],
+textarea {
+  @extend %input;
+}
+
+label {
+  font-weight: 700;
+}
+
+.input input[type="text"] {
+  background: transparent;
+  display: inline-block;
+  border: 0;
+  padding: 0 0 0 .2em;
+  padding-left: .2em;
+}
+.input input::-moz-placeholder {
+  color: white;
+  opacity: none;
+}

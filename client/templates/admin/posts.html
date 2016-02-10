@@ -2,7 +2,7 @@
     <aside class="admin-actions">
         <a class="button create-post"><i class="ion-plus-round"></i> Create Post</a>
     </aside>
-    
+
     <table>
         <tr>
             <th>Title</th>
@@ -24,14 +24,14 @@
         <td>{{formatDate createdAt}}</td>
         <td>
             {{#if canEdit .}}
-                <a class="button-small" href="/admin/posts/{{_id}}/edit">Edit</a>
-                <a class="button-small not-implemented" href="">Delete</a>
+                <a class="button small" href="/admin/posts/{{_id}}/edit">Edit</a>
+                <a class="button small not-implemented" href="">Delete</a>
             {{/if}}
             {{#if canPublish .}}
-                <a class="button-small publish-post" href="">Publish</a>
+                <a class="button small publish-post" href="">Publish</a>
             {{/if}}
             {{#if canUnpublish .}}
-                <a class="button-small unpublish-post" href="">Unpublish</a>
+                <a class="button small unpublish-post" href="">Unpublish</a>
             {{/if}}
         </td>
         <td>
