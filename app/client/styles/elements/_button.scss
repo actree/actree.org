@@ -1,21 +1,28 @@
-%button {
+%button-layout {
   display: inline-block;
 
   padding: $input-padding;
   border-radius: $input-border-radius;
-  border: darken($color-button, 10%) solid;
-  border-width: 0 0 .1em 0;
-  background-color: $color-button;
 
   text-align: center;
   text-decoration: none;
   cursor: pointer;
 
   outline: 0;
-
-  color: $color-text-inverted;
   font-family: $ff-sans;
   font-weight: 400;
+}
+
+%button {
+  @extend %button-layout;
+  border: darken($color-button, 10%) solid;
+  border-width: 0 0 .1em 0;
+  background-color: $color-button;
+
+
+
+  color: $color-text-inverted;
+
 
   // @include transition(box-shadow .2s linear, background-color .2s linear);
   &:hover {
@@ -43,4 +50,11 @@
 
 .button, button {
   @extend %button;
+}
+
+.button-outline {
+  @extend %button-layout;
+  border: 1px solid white;
+  color: white;
+  background: transparent;
 }

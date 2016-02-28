@@ -48,7 +48,7 @@ Router.onBeforeAction(function() {
     if (!Meteor.userId()) {
         // if the user is not logged in, render the Login template
         // TODO: should be admin or author or guest
-        this.render('home');
+        this.render('login');
     } else {
         // otherwise don't hold up the rest of hooks or our route/action function
         // from running
