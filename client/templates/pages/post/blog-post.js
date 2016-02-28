@@ -4,5 +4,14 @@ Template.blogPost.helpers({
   },
   commentCount: function(postId) {
     return Comments.for(this._id).count();
+  },
+  showCreateComment: function() {
+    return Session.get('showCreateComment')
   }
 });
+
+Template.blogPost.events({
+  'click .js-toggle-comment': function() {
+    Session.set('showCreateComment', true);
+  }
+})

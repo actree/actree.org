@@ -22,11 +22,15 @@
   .comments-header {
     margin-top: 4rem;
     margin-bottom: 4rem;
+    padding-top: $padding-vertical;
+    padding-bottom: $padding-vertical;
     background-color: $color-lightergrey;
 
     button { float: right; }
   }
   .comments-title {
+    @extend %title-major;
+    line-height: 2rem;
     display: inline-block;
   }
 }

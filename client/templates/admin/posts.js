@@ -92,6 +92,11 @@ Template.adminPost.events({
     'click .unpublish-post': function(event) {
         event.preventDefault();
         Meteor.call('unpublishPost', this._id);
+    },
+
+    'click .delete-post': function(event) {
+      event.preventDefault();
+      Meteor.call('deletePost', this._id);
     }
 })
 

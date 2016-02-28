@@ -37,6 +37,7 @@ Template.createComment.events({
             Bert.alert( error.reason, "warning" );
           } else {
             Bert.alert( 'Danke für deinen Kommentar!', 'info', 'growl-top-right' );
+            Session.set('showCreateComment', false);
           }
         });
     }

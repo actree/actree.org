@@ -7,6 +7,7 @@ Meteor.publish('posts', function() {
 });
 
 Meteor.publish('comments', function() {
+  return Comments.find({});
     if (Roles.userIsInRole(this.userId, ['author', 'admin'])) {
     	return Comments.find({});
   	} else {

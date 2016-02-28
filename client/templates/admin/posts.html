@@ -25,7 +25,7 @@
         <td>
             {{#if canEdit .}}
                 <a class="button small" href="/admin/posts/{{_id}}/edit">Edit</a>
-                <a class="button small not-implemented" href="">Delete</a>
+                <a class="button small delete-post" href="">Delete</a>
             {{/if}}
             {{#if canPublish .}}
                 <a class="button small publish-post" href="">Publish</a>

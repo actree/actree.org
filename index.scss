@@ -6,8 +6,9 @@
 @import "client/styles/base/reset";
 @import "client/styles/base/colors";
 @import "client/styles/base/mixins";
-@import "client/styles/layout/layout";
 @import "client/styles/base/typography";
+@import "client/styles/layout/layout";
+@import "client/styles/modules/editor";
 
 @import "client/templates/nav";
 

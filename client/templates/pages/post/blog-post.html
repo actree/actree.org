@@ -27,9 +27,10 @@
     <header class="comments-header">
       <div class="container pure-g">
         <div class="pure-u-9-24"></div>
-        <div class="pure-u-15-24">
-          <h3 class="comments-title">{{commentCount}} Kommentare</h3>
-          <button>Kommentieren</button></div>
+          <div class="pure-u-15-24">
+            <h3 class="comments-title">{{commentCount}} Kommentare</h3>
+            {{#unless showCreateComment}}<button class="js-toggle-comment">Kommentieren</button>{{/unless}}
+          </div>
         </div>
 
     </header>
@@ -37,7 +38,9 @@
     <div class="container pure-g">
       <div class="pure-u-9-24"></div>
       <div class="pure-u-15-24">
-        <!-- <div class="">{{> createComment}}</div> -->
+        {{#if showCreateComment}}
+        <div class="">{{> createComment}}</div>
+        {{/if}}
         <ul class="">
           {{#each comments}}
             <li>{{> comment}}</li>

@@ -1,14 +1,36 @@
 <template name="createPost">
-    <label for="post-title">Title</label>
-    <input type="text" id="post-title" value="{{title}}">
+  <div class="editor">
+    <div class="editor-row">
+      <div class="editor-label" for="post-title">Title</div>
+      <div class="editor-input"><input type="text" id="post-title" value="{{title}}"></div>
+    </div>
 
-    <label for="post-slug">Slug</label>
-    <input type="text" id="post-slug" value="{{slug}}"> <input type="checkbox" id="post-slug-autogenerate"><label for="post-slug-autogenerate">Autogenerate slug</label>
+    <div class="editor-row">
+      <div class="editor-label" for="post-slug">Slug</div>
+      <div class="editor-input">www.actree.org/blog/{{slug}}</div>
+    </div>
 
-    <label for="post-summary">Summary</label>
-    <input type="text" id="post-summary" value="{{summary}}">
+    <div  class="editor-row">
+      <div class="editor-label" for="post-summary">Summary</div>
+      <div class="editor-input"><input type="text" id="post-summary" value="{{summary}}"></div>
+    </div>
+  </div>
+  <div class="editor">
 
-    <textarea name="" id="post-text" cols="100" rows="50">{{text}}</textarea>
+    <div class="editor-row">
+      <div class="editor-input"><textarea noresize class="editor-content" name="" id="post-text" >{{text}}</textarea></div>
+      <div class="editor-input">{{#markdown}}{{text}}{{/markdown}}</div>
+    </div>
 
-    <button class="save-post">Save post</button>
+    <div class="editor-row">
+      <div class="editor-label">
+        <button class="save-post">Save post</button>
+      </div>
+    </div>
+<!--
+  <textarea  class="editor-content" name="" id="post-text" cols="100" rows="50">{{text}}</textarea>
+
+  <button class="save-post">Save post</button> -->
+
+    </div>
 </template>
