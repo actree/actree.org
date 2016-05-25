@@ -15,6 +15,10 @@ Router.route('/browse', function() {
     this.render('categories');
 });
 
+Router.route('/browse/:slug', function() {
+    this.render('entries');
+});
+
 Router.route('/blog');
 Router.route('/entry', function () {
     var item = Entry.findOne({});
@@ -34,6 +38,9 @@ Router.route('/admin/posts/:_id/edit', function () {
     this.render('createPost', {data: item});
 });
 
+Router.route('/login', function() { this.render('login') }, {
+    name: "login"
+} );
 Router.route('/admin', function() { this.render('admin') }, {
     name: "admin"
 } );
