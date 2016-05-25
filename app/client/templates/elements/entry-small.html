@@ -1,11 +1,18 @@
 <template name="entrySmall">
-    <div class="entry">
-        <a href="/entry"><h4 class="entry-title">
+    <div class="entry entry-small pure-g">
+      <img class="pure-u-1-6" src="{{ imageUrl }}">
+      <div class="pure-u-5-6">
+        <a href="/entry/{{ slug }}" class=""><h4 class="title-major">
             {{ name }}
         </h4>
         </a>
-        <div class="entry-meta">
-            {{ topics }}
+        <div class="entry-meta ">
+          <ul>{{ #each tags }}
+            <li>{{ > tag }}</li>
+          {{ /each }}
+          </ul>
         </div>
+      </div>
+
     </div>
 </template>

@@ -109,20 +109,20 @@ if (Meteor.isServer && Posts.find().count() < 100) {
         published: false
     });
 
-    Seed( 'Entry', {
-        min: 5,
-        model( index ) {
-          return {
-            name: faker.commerce.product(),
-            price: faker.commerce.price(),
-            imageUrl: "https://actree.org/content/01-resources/04-technik/fairphone/chiligum-article-fairphone.jpg",
-            description: faker.lorem.paragraph(),
-            url: faker.internet.url(),
-            topics: ["Technologie", "Smartphone"],
-            sustainability: ["sustainable", "fairtrade", "coflict-free"],
-            likeCount: 123
-          };
-        }
-      });
+    // Seed( 'Entry', {
+    //     min: 5,
+    //     model( index ) {
+    //       return {
+    //         name: faker.commerce.product(),
+    //         price: faker.commerce.price(),
+    //         imageUrl: "https://actree.org/content/01-resources/04-technik/fairphone/chiligum-article-fairphone.jpg",
+    //         description: faker.lorem.paragraph(),
+    //         url: faker.internet.url(),
+    //         topics: ["Technologie", "Smartphone"],
+    //         sustainability: ["sustainable", "fairtrade", "coflict-free"],
+    //         likeCount: 123
+    //       };
+    //     }
+    //   });
   });
 }

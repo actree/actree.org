@@ -23,27 +23,21 @@
           {{ /markdown }}
         </div>
         <div class="entry-meta">
-          <h4>Themen</h4>
+          <h4>Tags</h4>
           <ul>
-            {{ #each topics }}
-              <li>{{ > tag }}</li>
-            {{ /each }}
-          </ul>
-          <h4>Nachhaltigkeit</h4>
-          <ul>
-            {{ #each sustainability }}
+            {{ #each tags }}
               <li>{{ > tag }}</li>
             {{ /each }}
           </ul>
         </div>
-        <div class="entry-related">
+        <!-- <div class="entry-related">
           <h4 class="decorated">Siehe auch</h4>
           <ul>
             {{ #each relatedEntries }}
               <li>{{ > entrySmall }}</li>
             {{ /each }}
           </ul>
-        </div>
+        </div> -->
       </div>
     </div>
   </section>

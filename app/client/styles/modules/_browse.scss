@@ -1,0 +1,14 @@
+.browse {
+  label {
+    font-weight: 400;
+    cursor: pointer;
+  }
+
+  input[type="radio"] {
+    display: none;
+  }
+
+  input[type="radio"]:checked + label {
+    font-weight: 700;
+  }
+}

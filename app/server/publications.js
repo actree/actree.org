@@ -22,3 +22,7 @@ Meteor.publish('entry', function() {
   		// return Comments.find({published: true});
     // }
 });
+
+Meteor.publish('tags', function() {
+  return Entry.rawCollection().distinct("tags", {});
+});

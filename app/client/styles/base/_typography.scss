@@ -45,19 +45,20 @@ body {
 
 h1, h2, h3, h4 {
   text-rendering:optimizeLegibility;
+  font-family: $ff-sans;
   // font-family: $ff-serif;
 }
 
-$fs-title-page: 2.4em;
-$fs-title-sub: 2.0em;
-$fs-title-major: 1.5em;
-$fs-title-minor: 1.0em;
-$fs-small: 0.8em;
+$fs-title-page: 2.4rem;
+$fs-title-sub: 2.0rem;
+$fs-title-major: 1.5rem;
+$fs-title-minor: 1.0rem;
+$fs-small: 0.8rem;
 
 a {
   display: inline-block;
   color: $color-text;
-  border-bottom: 2px solid $color-brand;
+  // border-bottom: 2px solid $color-brand;
   text-decoration: none;
   // &:hover {
   //   border-color: $color-text;
@@ -90,4 +91,12 @@ a {
   line-height: 1.5em;
   font-weight: 700;
   font-family: $ff-sans;
+}
+
+.title-major {
+  @extend %title-major;
+}
+
+.title-minor {
+  @extend %title-minor;
 }

@@ -70,7 +70,8 @@ var scanFolder = function(folder) {
         tags: parseArr(e["Tags"]),
         published: (e["Published"].trim() === "1"),
         url: e["Externalurl"].trim(),
-        imageUrl: image
+        imageUrl: image,
+        slug: slug(e["Title"].trim(), {lower: true})
       });
 
       next();

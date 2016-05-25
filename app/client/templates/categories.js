@@ -1,89 +1,19 @@
 Template.categories.helpers({
-	categories: [
-		'Kleidung',
-		'Adventure',
-		'Finanzen',
-		'Bücher',
-		'Kosmetik',
-		'Bildung',
-		'Möbel',
-		'Büro',
-		'Hardware/Tech',
-		'Zuhause & Wohnen',
-		'Ideen',
-		'Wissen',
-		'Lernen',
-		'Musik',
-		'Online-Kurse',
-		'Schuhe',
-		'Sonnenbrillen',
-		'Brillen',
-		'Tee',
-		'Kaffee',
-		'Web',
-		'Accessoires',
-		'Baby',
-		'Fahrrad',
-		'Coupons',
-		'Drink, Trinken, Getränke',
-		'Essen, Nahrungsmittel',
-		'Garten',
-		'Gitarren',
-		'Gesundheit',
-		'Hygiene',
-		'Schmuck',
-		'Freizeit',
-		'Mobile',
-		'Natur',
-		'Suchmaschine',
-		'Einkaufen, Shopping, High Street',
-		'Sport',
-		'Technologie',
-		'Arbeit',
-		'Aktion/Action,Aktivitäten',
-		'Taschen',
-		'Schokolade',
-		'Computer',
-		'Geschenke',
-		'Hemp',
-		'Kinder',
-		'Lifestyle',
-		'KArte(n)',
-		'Film',
-		'Uni'
-	],
-	properties: [
-		'Recycled',
-		'CO2 Neutral',
-		'Klimafreundlich',
-		'Fairwear Foundation',
-		'Made in Germany',
-		'Direct Trade',
-		'Made in Europe',
-		'Privacy',
-		'Recycling',
-		'Social Entrepreneurship',
-		'Upcycling',
-		'Müll(vermeidung,verringerung)',
-		'GOTS',
-		'Charitable',
-		'Energiesparend',
-		'Fair',
-		'Open Source',
-		'Recyclebar',
-		'Sustainability',
-		'Vegan',
-		'ILO',
-		'Biodegradeable',
-		'cradle 2 cradle',
-		'ecological',
-		'organic',
-		'ethical',
-		'fairtrade',
-		'hand-made',
-		'not-for-profit',
-		'sharing',
-		'social',
-		'volunteering'
-	]
+  tags: function() {
+    return _.uniq(
+      _.flatten(
+        Entry.find({}, {sort: {tags: 1}, fields: {tags: true}})
+        .fetch()
+        .map(function(x) {
+          return x.tags;
+        })
+      )).sort();
+    },
+    currentTag: () => Session.get("currentTag")
+})
+
+Template.categories.events({
+  'change input[name="tag"]': function (event, instance) {
+    Session.set('currentTag', event.target.value);
+  },
 })

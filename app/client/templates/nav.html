@@ -5,18 +5,11 @@
 
             <li><a href="/browse">Kategorien</a></li>
             <li><a href="/blog">Blog</a></li>
-            <li class="nav-search"><div class="input"><i class="ion-search"></i><input type="text" placeholder="Suche"></div></li>
+            <li><a href="/verein">Verein</a></li>
+            <!-- <li class="nav-search"><div class="input"><i class="ion-search"></i><input type="text" placeholder="Suche"></div></li> -->
             <li class="account {{#if showLoginOrUserMenu}}is-highlight{{/if}} {{#if currentUser}}no-padding{{/if}}">
                 {{#if currentUser}}
                     <a href="" class="toggle-user-menu">{{> avatar user=currentUser shape="circle"}}</a>
-                {{else}}
-                    <a href="" class="toggle-show-login">
-                        {{#if showLoginOrUserMenu}}
-                            <i class="ion-close-round"></i> Close
-                        {{else}}
-                            <i class="ion-person"></i>&nbsp;Login
-                        {{/if}}
-                    </a>
                 {{/if}}
                 {{> userMenu}}
                 <!-- <a href="" class="button-outline">+ Neuer Eintrag</a> -->

@@ -20,8 +20,8 @@ Router.route('/browse/:slug', function() {
 });
 
 Router.route('/blog');
-Router.route('/entry', function () {
-    var item = Entry.findOne({});
+Router.route('/entry/:slug', function () {
+    var item = Entry.findOne({slug: this.params.slug});
     this.render('entry', {data: item});
 });
 Router.route('/blog/:slug', function () {
