@@ -1,0 +1,32 @@
+{
+  "name": "actree.org",
+  "version": "1.0.0",
+  "description": "The actree blog, later the whole website",
+  "main": "migrate.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "cd app/ && meteor",
+    "migrate": "node migrate.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/actree/actree.org.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/actree/actree.org/issues"
+  },
+  "homepage": "https://github.com/actree/actree.org",
+  "dependencies": {
+    "lodash": "^4.5.1",
+    "mongodb": "^2.1.7",
+    "walk": "^2.3.9"
+  },
+  "devDependencies": {
+    "mkdir-p": "0.0.7",
+    "q": "^1.4.1",
+    "slug": "^0.9.1",
+    "slugify": "^0.1.1"
+  }
+}
