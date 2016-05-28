@@ -1,18 +1,17 @@
 <template name="categories">
-  <section class="browse container page-container">
-    <div class="pure-g">
-
-    <ul class="pure-u-1-4">
-      <li>{{currentTag}}</li>
-      {{ #each tags }} <li>
-        <input type="radio" name="tag" value="{{this}}" id="tag-{{this}}"><label for="tag-{{this}}">{{this}}</label>
-      </li>{{/each}}
-    </ul>
-    <div class="pure-u-3-4">
-      {{> entries }}
-    </div>
-    </div>
-
+    <section class="browse container page-container">
+        <div class="pure-g">
+            <ul class="sidemenu pure-u-1-4">
+                <li>
+                    <input type="radio" name="tag" value="" id="tag-ALL"><label for="tag-ALL">ALLE</label>
+                </li>
+                {{ #each tags }}<li>
+                    <input type="radio" name="tag" value="{{this}}" id="tag-{{this}}"><label for="tag-{{this}}">{{this}}</label>
+                </li>{{/each}}
+            </ul>
+            <div class="pure-u-3-4">
+                {{> entries }}
+            </div>
+        </div>
   </section>
-
 </template>

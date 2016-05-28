@@ -19,7 +19,7 @@ if (Meteor.isServer && Posts.find().count() < 100) {
                     name: "Tim von O"
                 }
             });
-            Roles.addUsersToRoles(userId, ['admin']);
+            // Roles.addUsersToRoles(userId, ['admin']);
 
             //Accounts.setPassword(userId, "password");
         }
@@ -34,7 +34,7 @@ if (Meteor.isServer && Posts.find().count() < 100) {
                 }
 
             });
-            Roles.addUsersToRoles(userId, ['user']);
+            // Roles.addUsersToRoles(userId, ['user']);
             //Accounts.setPassword(userId, "password");
         }
         if(!Meteor.users.findOne({username: "kaethe"})) {
@@ -46,7 +46,7 @@ if (Meteor.isServer && Posts.find().count() < 100) {
                     name: "Käthe"
                 }
             });
-            Roles.addUsersToRoles(userId, ['guest']);
+            // Roles.addUsersToRoles(userId, ['guest']);
             //Accounts.setPassword(userId, "password");
         }
         if(!Meteor.users.findOne({username: "sergej"})) {
@@ -60,7 +60,7 @@ if (Meteor.isServer && Posts.find().count() < 100) {
 
 
             });
-            Roles.addUsersToRoles(userId, ['author']);
+            // Roles.addUsersToRoles(userId, ['author']);
             //Accounts.setPassword(userId, "password");
         }
 
@@ -73,9 +73,10 @@ if (Meteor.isServer && Posts.find().count() < 100) {
       category: 'Essay',
       summary: 'Why we are focussing on the German-speaking market for now',
       headerImage: 'https://source.unsplash.com/category/nature/800x450',
-      text: faker.lorem.paragraphs(),
+      content: faker.lorem.paragraphs(),
       createdBy: user._id,
-      createdAt: new Date()
+      createdAt: new Date(),
+      published: false
     });
 
     var postId = Posts.insert({
@@ -84,9 +85,10 @@ if (Meteor.isServer && Posts.find().count() < 100) {
       category: 'Essay',
       summary: 'Wir haben einen Preis gewonnen',
       headerImage: 'https://source.unsplash.com/category/nature/800x450',
-      text: faker.lorem.paragraphs(),
+      content: faker.lorem.paragraphs(),
       createdBy: user._id,
-      createdAt: new Date()
+      createdAt: new Date(),
+      published: false
     });
 
     var postId = Posts.insert({
@@ -95,9 +97,10 @@ if (Meteor.isServer && Posts.find().count() < 100) {
       category: 'In eigener Sache',
       headerImage: 'https://source.unsplash.com/category/nature/800x450',
       summary: 'In einem Co-Design Workshop haben wir zusammen erarbeitet, was actree in Zukunft vertreten soll: Transparenz und Nachhaltigkeit.',
-      text: faker.lorem.paragraphs(),
+      content: faker.lorem.paragraphs(),
       createdBy: user._id,
-      createdAt: new Date()
+      createdAt: new Date(),
+      published: false
     });
 
     Comments.insert({

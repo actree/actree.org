@@ -1,6 +1,5 @@
-.entry {
-  margin-top: $margin-from-menu;
-  margin-bottom: $margin-from-menu;
+%entry {
+
 
   .entry-title {
     @extend %title-page;
@@ -72,6 +71,24 @@
   }
 }
 
+.entry {
+  @extend %entry;
+
+  margin-top: $margin-from-menu;
+  margin-bottom: $margin-from-menu;
+}
+
 .entry-small {
+  @extend %entry;
+
   background: $color-lightestgrey;
+  padding: 1rem;
+
+  & + & {
+    margin-top: 1rem;
+  }
+
+  .entry-content {
+    padding-left: 1rem;
+  }
 }

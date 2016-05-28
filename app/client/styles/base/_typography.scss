@@ -93,6 +93,10 @@ a {
   font-family: $ff-sans;
 }
 
+.title-page {
+    @extend %title-page;
+}
+
 .title-major {
   @extend %title-major;
 }

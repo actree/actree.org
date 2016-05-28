@@ -41,8 +41,36 @@ var findAndCopyImage = function(rootPath, name) {
   return path.join("/", targetFilename);
 }
 
+var unifyTags = function(tag) {
+    var tags = {
+        "made in Germany": "Made in Germany",
+        "made in Europe": "Made in Europe",
+        "CO2-neutral": "CO2 neutral",
+        "waste-reduction": "waste reduction",
+        "idea": "ideas",
+        "Fairwear": "Fairwear",
+        "fairwear foundation": "Fairwear",
+        "hand-made": "handmade",
+        "sustainability": "sustainable",
+        "waste": "waste reduction"
+    };
+
+    if(tags.hasOwnProperty(tag)) {
+        return tags[tag];
+    }
+
+    return tag;
+}
+
 var parseArr = function(a) {
-  return a.split(",").map(function(s) {return s.trim() });
+  return a
+    .split(",")
+    .map(function(s) {
+        return s.trim();
+    })
+    .filter(function(s) {
+        return s !== "";
+    });
 }
 
 var scanFolder = function(folder) {
@@ -67,7 +95,7 @@ var scanFolder = function(folder) {
         name: e["Title"].trim(),
         description: e["Description"].trim().replace(/\r\n/g, "\n"),
         geographies: parseArr(e["Geographies"]),
-        tags: parseArr(e["Tags"]),
+        tags: parseArr(e["Tags"]).map(unifyTags),
         published: (e["Published"].trim() === "1"),
         url: e["Externalurl"].trim(),
         imageUrl: image,

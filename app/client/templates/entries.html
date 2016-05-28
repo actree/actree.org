@@ -1,8 +1,6 @@
 <template name="entries">
-  <p>{{activeTag}}</p>
-	<ul>
-		{{#each entries (activeTag "GOTS")}}
-      <li>{{> entrySmall this}}</li>
+    <h1 class="title-page">{{activeTag}}</h1>
+	{{#each entries (activeTag "GOTS")}}
+        {{> entrySmall this}}
     {{/each}}
-	</ul>
 </template>
