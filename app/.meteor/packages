@@ -40,3 +40,4 @@ dburles:collection-helpers
 orionjs:core
 orionjs:bootstrap
 nicolaslopezj:orion-admin-only-bootstrap
+yasaricli:slugify

@@ -69,7 +69,6 @@ if (Meteor.isServer && Posts.find().count() < 100) {
 
     var postId = Posts.insert({
       title: 'To our International Friends',
-      slug: 'theo-framework',
       category: 'Essay',
       summary: 'Why we are focussing on the German-speaking market for now',
       headerImage: 'https://source.unsplash.com/category/nature/800x450',
@@ -81,7 +80,6 @@ if (Meteor.isServer && Posts.find().count() < 100) {
 
     var postId = Posts.insert({
       title: 'actree ist ausgezeichnet!',
-      slug: 'ausgezeichnet',
       category: 'Essay',
       summary: 'Wir haben einen Preis gewonnen',
       headerImage: 'https://source.unsplash.com/category/nature/800x450',
@@ -93,7 +91,6 @@ if (Meteor.isServer && Posts.find().count() < 100) {
 
     var postId = Posts.insert({
       title: 'Ein Workshop zur Zukunft von actree',
-      slug: 'co-design-workshop',
       category: 'In eigener Sache',
       headerImage: 'https://source.unsplash.com/category/nature/800x450',
       summary: 'In einem Co-Design Workshop haben wir zusammen erarbeitet, was actree in Zukunft vertreten soll: Transparenz und Nachhaltigkeit.',

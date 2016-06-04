@@ -1,5 +1,5 @@
 Meteor.publish('posts', function() {
-	if (Roles.userIsInRole(this.userId, ['author', 'guest', 'admin'])) {
+	if (/*Roles.userIsInRole(this.userId, ['author', 'guest', 'admin'])*/ false) {
     	return Posts.find({});
   	} else {
   		return Posts.find({published: true});
@@ -8,7 +8,7 @@ Meteor.publish('posts', function() {
 
 Meteor.publish('comments', function() {
   return Comments.find({});
-    if (Roles.userIsInRole(this.userId, ['author', 'admin'])) {
+    if (/*Roles.userIsInRole(this.userId, ['author', 'admin'])*/ false) {
     	return Comments.find({});
   	} else {
   		return Comments.find({published: true});
