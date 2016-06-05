@@ -14,15 +14,33 @@
 </template>
 
 <template name="createComment">
+    {{#if Meteor.userId }}
     Du kommentierst als <strong>{{username}}</strong>
-    <form action="" class="comment-form">
+    {{else}}
+    Du bist nicht eingeloggt und kommentierst anonym.
+    {{/if}}
+    <form action="" class="comment-form" id="comment-form">
         <input type="hidden" name="postId" value="{{_id}}">
 
-        <!-- <label for="comment-text">Text</label> -->
-        <textarea name="text" id="comment-text" rows="10">
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-        </textarea>
+        {{#unless Meteor.userId }}
+        <fieldset>
+            <label for="comment-name">Dein Name</label>
+            <input type="text" id="comment-name" required>
+        </fieldset>
 
-        <button class="button">Submit comment</button>
+        <fieldset>
+            <label for="comment-email">Deine Email-Adresse</label>
+            <input type="email" id="comment-email" name="email" required>
+        </fieldset>
+        {{/unless}}
+
+        <fieldset>
+            <label for="comment-text">Dein Kommentar</label>
+            <textarea name="text" id="comment-text" rows="4" required>
+Lorem ipsum dolor sit amet...
+            </textarea>
+        </fieldset>
+
+        <button class="button" type="submit">Kommentieren</button>&nbsp;&nbsp;&nbsp;<a href="" class="cancel">Abbrechen</a>
     </form>
 </template>

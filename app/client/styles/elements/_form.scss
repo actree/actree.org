@@ -3,22 +3,24 @@ $input-border-radius: 3px;
 $full: 100%;
 
 %input {
-  background: $color-lightestgrey;
-  border-radius: $input-border-radius;
-  border: 1px solid $color-lightgrey;
-  padding: $input-padding;
-  color: $color-text;
-  width: $full;
+    background: $color-lightestgrey;
+    border-radius: $input-border-radius;
+    border: none;
+    border-bottom: 1px solid $color-lightgrey;
+    padding: $input-padding;
+    color: $color-text;
+    width: $full;
 }
 
 input[type="text"],
 input[type="password"],
+input[type="email"],
 textarea {
-  @extend %input;
+    @extend %input;
 }
 
 label {
-  font-weight: 700;
+    font-weight: 700;
 }
 
 .input input[type="text"] {
@@ -31,4 +33,8 @@ label {
 .input input::-moz-placeholder {
   color: white;
   opacity: none;
+}
+
+fieldset + fieldset, fieldset + .button {
+    margin-top: 1rem;
 }
