@@ -23,6 +23,15 @@ Meteor.publish('entry', function() {
     // }
 });
 
+Meteor.publish('Meteor.users', function() {
+	return Meteor.users.find({}, {
+        fields: {
+            profile: 1,
+            username: 1
+        }
+    });
+});
+
 Meteor.publish('tags', function() {
   return Entry.rawCollection().distinct("tags", {});
 });

@@ -9,12 +9,12 @@
             <a href="#" class="delete-comment"><i class="ion-trash-a"></i> Kommentar löschen</a>
         </aside>
     {{/if}}
-    <div>{{#markdown}}{{text}}{{/markdown}}</div>
+    <div class="comment-content">{{#markdown}}{{content}}{{/markdown}}</div>
   </div>
 </template>
 
 <template name="createComment">
-    {{#if Meteor.userId }}
+    {{#if currentUser }}
     Du kommentierst als <strong>{{username}}</strong>
     {{else}}
     Du bist nicht eingeloggt und kommentierst anonym.
@@ -22,7 +22,7 @@
     <form action="" class="comment-form" id="comment-form">
         <input type="hidden" name="postId" value="{{_id}}">
 
-        {{#unless Meteor.userId }}
+        {{#unless currentUser }}
         <fieldset>
             <label for="comment-name">Dein Name</label>
             <input type="text" id="comment-name" required>
@@ -43,4 +43,12 @@ Lorem ipsum dolor sit amet...
 
         <button class="button" type="submit">Kommentieren</button>&nbsp;&nbsp;&nbsp;<a href="" class="cancel">Abbrechen</a>
     </form>
+</template>
+
+<template name="unpublishedComment">
+    <div class="banner banner-inline">
+        <div class="container">
+            <strong>Danke für deinen Kommentar!</strong> Wir werden ihn so schnell wie möglich prüfen und freischalten &mdash; erst dann wird er hier angezeigt werden. Danke für deine Geduld!
+        </div>
+    </div>
 </template>

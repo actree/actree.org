@@ -21,22 +21,27 @@ Template.createComment.rendered = function() {
         submitHandler: function(form, event) {
             let comment = {
               title: event.target.title.value,
-              text: event.target.text.value,
+              content: event.target.text.value,
               postId: event.target.postId.value,
               createdAt: new Date(),
-              published: true
+              published: !!(Meteor.userId())
             };
 
             if(Meteor.userId()) {
               comment.createdBy = Meteor.userId();
-            }
+          } else {
+              comment.createdBy = {
 
-            Meteor.call('createComment', comment, (error, response) => {
+              }
+          }
+
+            Meteor.call('createComment', comment, (error, commentId) => {
               if(error) {
-                Bert.alert( error.reason, "warning" );
+                Bert.alert( error.reason, "Leider konnten wir deinen Kommentar nicht aufnehmen! Versuche es doch später noch einmal." );
               } else {
-                Bert.alert( 'Danke für deinen Kommentar!', 'info', 'growl-top-right' );
-                Session.set('showCreateComment', false);
+                // Bert.alert( 'Danke für deinen Kommentar!', 'info', 'growl-top-right' );
+                Session.set("showCreateComment", false);
+                Session.set("showUnpublishedComment", true);
               }
             });
         }

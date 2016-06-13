@@ -61,6 +61,7 @@ iron:middleware-stack@1.0.11
 iron:router@1.0.12
 iron:url@1.0.11
 jeremy:ghostdown@0.4.3
+jeremy:selectize@0.12.1_5
 jparker:crypto-core@0.1.0
 jparker:crypto-md5@0.1.1
 jparker:gravatar@0.4.1
@@ -108,6 +109,7 @@ orionjs:config@1.8.0
 orionjs:core@1.8.0
 orionjs:dictionary@1.8.0
 orionjs:lang-en@1.8.0
+orionjs:relationships@1.8.0
 pagebakers:ionicons@2.0.1_1
 promise@0.6.7
 raix:eventemitter@0.1.3

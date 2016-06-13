@@ -102,4 +102,11 @@
     font-variant: small-caps;
     font-weight: 500;
   }
+
+  a {
+      border-bottom: 2px solid $color-brand;
+      &:hover {
+          border-color: $color-text;
+      }
+  }
 }

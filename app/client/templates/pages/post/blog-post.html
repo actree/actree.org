@@ -38,8 +38,11 @@
     <div class="container pure-g">
       <div class="pure-u-9-24"></div>
       <div class="pure-u-15-24">
-        {{#if showCreateComment}}
-        <div class="">{{> createComment}}</div>
+        {{#if showCreateComment }}
+            <div class="">{{> createComment }}</div>
+        {{/if}}
+        {{#if showUnpublishedComment }}
+            <div class="">{{> unpublishedComment }}</div>
         {{/if}}
         <ul class="">
           {{#each comments}}

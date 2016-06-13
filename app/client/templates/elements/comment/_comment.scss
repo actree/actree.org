@@ -10,10 +10,20 @@
 
 /* Single comment */
 .comment {
-  margin-bottom: 3rem;
+    padding-bottom: 2rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px dotted $color-lightestgrey;
 
   .comment-header {
+      @include clearfix;
+      .author {
+          float: left;
+      }
     .date { float: right; }
+  }
+
+  .comment-content {
+      font-family: $ff-serif;
   }
 }
 
@@ -21,12 +31,16 @@
 .comments {
   .comments-header {
     margin-top: 4rem;
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
     padding-top: $padding-vertical;
     padding-bottom: $padding-vertical;
     background-color: $color-lightergrey;
 
     button { float: right; }
+
+  }
+  .banner-inline {
+      margin-bottom: 2rem;
   }
   .comments-title {
     @extend %title-major;

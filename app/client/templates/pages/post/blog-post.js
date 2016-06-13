@@ -7,7 +7,10 @@ Template.blogPost.helpers({
   },
   showCreateComment: function() {
     return Session.get('showCreateComment')
-  }
+},
+    showUnpublishedComment: function() {
+        return Session.get("showUnpublishedComment")
+    }
 });
 
 Template.blogPost.events({

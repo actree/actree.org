@@ -71,7 +71,7 @@ if (Meteor.isServer && Posts.find().count() < 100) {
       title: 'To our International Friends',
       category: 'Essay',
       summary: 'Why we are focussing on the German-speaking market for now',
-      headerImage: 'https://source.unsplash.com/category/nature/800x450',
+      headerImage: '/blog/header-images/hamburg.jpg',
       content: faker.lorem.paragraphs(),
       createdBy: user._id,
       createdAt: new Date(),
@@ -82,7 +82,7 @@ if (Meteor.isServer && Posts.find().count() < 100) {
       title: 'actree ist ausgezeichnet!',
       category: 'Essay',
       summary: 'Wir haben einen Preis gewonnen',
-      headerImage: 'https://source.unsplash.com/category/nature/800x450',
+      headerImage: '/blog/header-images/aurora.jpg',
       content: faker.lorem.paragraphs(),
       createdBy: user._id,
       createdAt: new Date(),
@@ -92,7 +92,7 @@ if (Meteor.isServer && Posts.find().count() < 100) {
     var postId = Posts.insert({
       title: 'Ein Workshop zur Zukunft von actree',
       category: 'In eigener Sache',
-      headerImage: 'https://source.unsplash.com/category/nature/800x450',
+      headerImage: '/blog/header-images/zukunft.jpg',
       summary: 'In einem Co-Design Workshop haben wir zusammen erarbeitet, was actree in Zukunft vertreten soll: Transparenz und Nachhaltigkeit.',
       content: faker.lorem.paragraphs(),
       createdBy: user._id,
@@ -104,8 +104,7 @@ if (Meteor.isServer && Posts.find().count() < 100) {
         postId: postId,
         createdBy: user._id,
         createdAt: new Date(),
-        title: "Guter Beitrag",
-        text: "Danke, hab viel gelernt",
+        content: "Danke, hab viel gelernt",
         published: false
     });
 

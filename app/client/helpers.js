@@ -33,3 +33,7 @@ Template.registerHelper('nameFor', function(id) {
         }
         return "n/a";
 });
+
+Template.registerHelper('equals', function (a, b) {
+    return a === b;
+});

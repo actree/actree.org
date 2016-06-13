@@ -1,14 +1,24 @@
 <template name="blogpostExcerpt">
-  <section class="excerpt" data-mh="excerpts">
-    <div class="image" style="background-image: url({{ headerImage}})"></div>
+  <section class="excerpt">
+    <a href="/blog/{{slug}}" class="image-link"><img class="image" src="{{ headerImage }}" alt="{{ title }}"></a>
     <header>
       <div class="category">{{category}}</div>
       <h2 class="title"><a href="/blog/{{slug}}">{{ title }}</a></h2>
-      <summary class="meta">
+      <summary class="meta is-copy">
         <p>{{#if summary}} {{summary}} {{else}} {{#summarize}} {{text}} {{/summarize}} {{/if}}
         </p>
-        <em>von</em> {{ nameFor createdBy }} <em>am</em> {{formatDay publishedAt}}
+        <p><em>von</em> {{ nameFor createdBy }} <em>am</em> {{formatDay publishedAt}}</p>
       </summary>
+    </header>
+  </section>
+</template>
+
+<template name="blogpostMini">
+  <section class="mini">
+      <a href="/blog/{{slug}}" class="image-link"><img class="image" src="{{ headerImage }}" alt="{{ title }}"></a>
+    <header>
+      <div class="category">{{category}}</div>
+      <h2 class="title"><a href="/blog/{{slug}}">{{ title }}</a></h2>
     </header>
   </section>
 </template>

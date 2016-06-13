@@ -1,11 +1,7 @@
 <template name="blog">
-  <section class="container page-container">
-    <div class="pure-g">
-      {{#each latestPosts}}
-      <div class="pure-u-1-3 excerpt-container">
-        {{> blogpostExcerpt}}
-      </div>
-      {{/each}}
-    </div>
-  </section>
+    <section class="container page-container">
+            {{#each latestPosts}}
+                {{> blogpostExcerpt}}
+            {{/each}}
+    </section>
 </template>
