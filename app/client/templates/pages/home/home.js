@@ -1,3 +1,4 @@
 Template.home.helpers({
-  latestPosts: () => Posts.latest()
+  latestPosts: () => Posts.latest(),
+  latestEntries: () => Entry.find({}, {limit: 5})
 })

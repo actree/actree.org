@@ -6,5 +6,5 @@ Template.entries.helpers({
       return Entry.find({}, {sort: {createdAt: -1}})
     }
   },
-  activeTag: () => Session.get("currentTag")
+  // activeTag: () => Session.get("currentTag")
 })

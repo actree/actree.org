@@ -15,7 +15,7 @@ Comments = new orion.collection('comments', {
         columns: [
             { data: "content", title: "Inhalt" },
             orion.attributeColumn('hasOne', 'postId', 'Post'),
-            orion.attributeColumn('createdBy', 'createdBy', 'Autor'),
+            // orion.attributeColumn('createdBy', 'createdBy', 'Autor'),
             { data: "published", title: "Freigegeben", tmpl: Meteor.isClient && Template.checkbox, tmplContext: function (rowData) {
                 return {
                     published: rowData.published
@@ -29,6 +29,11 @@ Comments = new orion.collection('comments', {
 /*
  * Schema
  */
+
+AuthorSchema = new SimpleSchema({
+
+});
+
 CommentsSchema = new SimpleSchema({
     content: {
         type: String,
@@ -53,18 +58,21 @@ CommentsSchema = new SimpleSchema({
         titleField: 'title',
         publicationName: 'youCanPutAnyStringYouWantHere',
     }),
-    createdBy: orion.attribute('createdBy')
-    // createdBy: {
-    //     type: String,
-    //     label: 'Author',
-    //     denyUpdate: true,
-    //     defaultValue: function(doc) {
-    //         console.log(doc);
-    //         if(this.isInsert) {
-    //             return "test"//this.userId;
-    //         }
-    //     }
-    // }
+    createdBy: orion.attribute('createdBy', {optional: true}),
+
+    author: {
+        type: Object,
+        optional: true
+    },
+    "author.name": {
+        type: String,
+        optional: true
+    },
+    "author.email": {
+        type: String,
+        optional: true
+    }
+
 });
 
 Comments.attachSchema(CommentsSchema);

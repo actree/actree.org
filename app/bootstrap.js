@@ -67,61 +67,45 @@ if (Meteor.isServer && Posts.find().count() < 100) {
     var user = Meteor.users.findOne({username: "tim"});
     if(!user) return;
 
-    var postId = Posts.insert({
-      title: 'To our International Friends',
-      category: 'Essay',
-      summary: 'Why we are focussing on the German-speaking market for now',
-      headerImage: '/blog/header-images/hamburg.jpg',
-      content: faker.lorem.paragraphs(),
-      createdBy: user._id,
-      createdAt: new Date(),
-      published: false
-    });
+    // var postId = Posts.insert({
+    //   title: 'To our International Friends',
+    //   category: 'Essay',
+    //   summary: 'Why we are focussing on the German-speaking market for now',
+    //   headerImage: '/blog/header-images/hamburg.jpg',
+    //   content: faker.lorem.paragraphs(),
+    //   createdBy: user._id,
+    //   createdAt: new Date(),
+    //   published: false
+    // });
+    //
+    // var postId = Posts.insert({
+    //   title: 'actree ist ausgezeichnet!',
+    //   category: 'Essay',
+    //   summary: 'Wir haben einen Preis gewonnen',
+    //   headerImage: '/blog/header-images/aurora.jpg',
+    //   content: faker.lorem.paragraphs(),
+    //   createdBy: user._id,
+    //   createdAt: new Date(),
+    //   published: false
+    // });
+    //
+    // var postId = Posts.insert({
+    //   title: 'Ein Workshop zur Zukunft von actree',
+    //   category: 'In eigener Sache',
+    //   headerImage: '/blog/header-images/zukunft.jpg',
+    //   summary: 'In einem Co-Design Workshop haben wir zusammen erarbeitet, was actree in Zukunft vertreten soll: Transparenz und Nachhaltigkeit.',
+    //   content: faker.lorem.paragraphs(),
+    //   createdBy: user._id,
+    //   createdAt: new Date(),
+    //   published: false
+    // });
 
-    var postId = Posts.insert({
-      title: 'actree ist ausgezeichnet!',
-      category: 'Essay',
-      summary: 'Wir haben einen Preis gewonnen',
-      headerImage: '/blog/header-images/aurora.jpg',
-      content: faker.lorem.paragraphs(),
-      createdBy: user._id,
-      createdAt: new Date(),
-      published: false
-    });
-
-    var postId = Posts.insert({
-      title: 'Ein Workshop zur Zukunft von actree',
-      category: 'In eigener Sache',
-      headerImage: '/blog/header-images/zukunft.jpg',
-      summary: 'In einem Co-Design Workshop haben wir zusammen erarbeitet, was actree in Zukunft vertreten soll: Transparenz und Nachhaltigkeit.',
-      content: faker.lorem.paragraphs(),
-      createdBy: user._id,
-      createdAt: new Date(),
-      published: false
-    });
-
-    Comments.insert({
-        postId: postId,
-        createdBy: user._id,
-        createdAt: new Date(),
-        content: "Danke, hab viel gelernt",
-        published: false
-    });
-
-    // Seed( 'Entry', {
-    //     min: 5,
-    //     model( index ) {
-    //       return {
-    //         name: faker.commerce.product(),
-    //         price: faker.commerce.price(),
-    //         imageUrl: "https://actree.org/content/01-resources/04-technik/fairphone/chiligum-article-fairphone.jpg",
-    //         description: faker.lorem.paragraph(),
-    //         url: faker.internet.url(),
-    //         topics: ["Technologie", "Smartphone"],
-    //         sustainability: ["sustainable", "fairtrade", "coflict-free"],
-    //         likeCount: 123
-    //       };
-    //     }
-    //   });
+    // Comments.insert({
+    //     postId: postId,
+    //     createdBy: user._id,
+    //     createdAt: new Date(),
+    //     content: "Danke, hab viel gelernt",
+    //     published: false
+    // });
   });
 }

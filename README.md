@@ -18,4 +18,4 @@ https://wiki.uberspace.de/system:daemontools
 ### Stop
 
 1. Stop Meteor: `svc -d ~/service/meteor`
-2. Stop MongoDB: svc -d ~/service/meteor
+2. Stop MongoDB: `svc -d ~/service/meteor`

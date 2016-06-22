@@ -37,3 +37,7 @@ Template.registerHelper('nameFor', function(id) {
 Template.registerHelper('equals', function (a, b) {
     return a === b;
 });
+
+Template.registerHelper('slugify', function(str) {
+    return slugify(str);
+});

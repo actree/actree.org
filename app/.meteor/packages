@@ -43,3 +43,5 @@ nicolaslopezj:orion-admin-only-bootstrap
 yasaricli:slugify
 themeteorchef:jquery-validation
 orionjs:relationships
+orionjs:pages
+orionjs:image-attribute

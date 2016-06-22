@@ -1,9 +1,16 @@
 Template.comment.helpers({
     author: function() {
-        var user = Meteor.users.findOne({_id: this.createdBy});
-        return user ? user.profile.name : 'Anonymous';
+        if(this.createdBy) {
+            // Registered user
+            var user = Meteor.users.findOne({_id: this.createdBy});
+            return user.profile.name;
+        } else {
+            // Anonymous user
+            return this.author.name;
+        }
     },
     mine: function() {
+        return false;
         return this.createdBy === Meteor.userId();
     }
 });
@@ -23,15 +30,18 @@ Template.createComment.rendered = function() {
               title: event.target.title.value,
               content: event.target.text.value,
               postId: event.target.postId.value,
-              createdAt: new Date(),
-              published: !!(Meteor.userId())
+              published: false
             };
 
             if(Meteor.userId()) {
-              comment.createdBy = Meteor.userId();
+              comment.author = {
+                  name: Meteor.userId(),
+                  email: Meteor.userId()
+              }
           } else {
-              comment.createdBy = {
-
+              comment.author = {
+                  name: event.target.name.value,
+                  email: event.target.email.value
               }
           }
 

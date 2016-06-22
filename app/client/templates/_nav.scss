@@ -1,97 +1,97 @@
 .navigation {
-  @extend %outer-gutter;
-  @include clearfix;
-
-  background: $color-brand;
-
-  position: relative;
-
-  .main-menu .logotype {
-    display: block;
-    //float: left;
-    padding: 1rem;
-    font-size: 1.5em;
-    font-family: $ff-serif;
-    font-weight: 700;
-    text-decoration: none;
-  }
-
-
-  .main-menu {
+    @extend %outer-gutter;
     @include clearfix;
 
-    margin: 0 auto;
-    list-style: none;
-    //float: left;
-    max-width: $container-width;
+    background: $color-brand;
 
+    position: relative;
 
-    li {
-      display: block;
-      float: left;
-      padding: 1em;
-      position: relative;
+    .main-menu .logotype {
+        display: block;
+        //float: left;
+        padding: 1rem;
+        font-size: 1.5em;
+        font-family: $ff-serif;
+        font-weight: 700;
+        text-decoration: none;
     }
-  }
-  a {
-    color: white;
-    text-decoration: none;
-    font-weight: 600;
-    border: 0;
-    &:hover {
-      border: 0;
+
+
+    .main-menu {
+        @include clearfix;
+
+        margin: 0 auto;
+        list-style: none;
+        //float: left;
+        max-width: $container-width;
+
+
+        li {
+            display: block;
+            float: left;
+            padding: 1em;
+            position: relative;
+        }
     }
-  }
-
-
-
-  #login-buttons {
-    float: right;
-    padding: 1em;
-  }
-
-  .main-menu .account {
-    float: right;
     a {
-      display: inline-block;
-    }
-  }
-
-  .main-menu .no-padding {
-    padding-top: .5em;
-    padding-bottom: .5em;
-  }
-
-  .is-highlight {
-    background: lighten($color-brand, 10%);
-  }
-
-  .main-menu .nav-search {
-    padding: .7em .5em;
-
-    div {
-      background: lighten($color-brand, 10%);
-      border-radius: 3px;
-      padding: .3em .5em;
-      color: white;
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+        border: 0;
+        &:hover {
+            border: 0;
+        }
     }
 
 
-    input {
-      display: inline-block;
-      //opacity: 0;
-      background: transparent;
 
-      border: 0;
-      padding-left: .2em;
-      width: auto;
-      //&:focus { opacity: 1}
-    }
-    input::-moz-placeholder {
-      color: white;
-      opacity: none;
-      //font-weight: 700;
+    #login-buttons {
+        float: right;
+        padding: 1em;
     }
 
-  }
+    .main-menu .account {
+        float: right;
+        a {
+            display: inline-block;
+        }
+    }
+
+    .main-menu .no-padding {
+        padding-top: .5em;
+        padding-bottom: .5em;
+    }
+
+    .is-highlight {
+        background: lighten($color-brand, 10%);
+    }
+
+    .main-menu .nav-search {
+        padding: .7em .5em;
+
+        div {
+            background: lighten($color-brand, 10%);
+            border-radius: 3px;
+            padding: .3em .5em;
+            color: white;
+        }
+
+
+        input {
+            display: inline-block;
+            //opacity: 0;
+            background: transparent;
+
+            border: 0;
+            padding-left: .2em;
+            width: auto;
+            //&:focus { opacity: 1}
+        }
+        input::-moz-placeholder {
+            color: white;
+            opacity: none;
+            //font-weight: 700;
+        }
+
+    }
 }

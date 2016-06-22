@@ -1,9 +1,9 @@
 .footer {
-  padding-top: $padding-vertical;
-  padding-bottom: $padding-vertical;
+    padding-top: $padding-footer;
+    padding-bottom: $padding-footer;
 
-  background: $color-lightergrey;
-  color: $color-darkergrey;
+    background: $color-lightergrey;
+    color: $color-darkergrey;
 
-  border-top: 10px $color-accent solid;
+    border-top: 10px $color-accent solid;
 }

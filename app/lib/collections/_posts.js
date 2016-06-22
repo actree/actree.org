@@ -12,6 +12,7 @@ Posts = new orion.collection('posts', {
     tabular: {
         columns: [
             { data: "title", title: "Titel" },
+            orion.attributeColumn('image', 'image', 'Titelbild'),
             { data: "createdAt", title: "Datum" },
             // orion.attributeColumn(attributeType, key, label, options)
             // orion.attributeColumn('file', 'image', 'Image'),
@@ -57,8 +58,13 @@ PostsSchema = new SimpleSchema({
             rows: 2
         }
     },
-    headerImage: {
+    headerImage: orion.attribute('image', {
+        label: 'Titelbild',
+        optional: true
+    }),
+    headerImageSource: {
         type: String,
+        label: "Titelbild - Quellenangabe",
         optional: true
     },
     createdAt: orion.attribute('createdAt'),
@@ -71,18 +77,18 @@ PostsSchema = new SimpleSchema({
         type: Date,
         optional: true
     },
-    // createdBy: orion.attribute('createdBy')
-    createdBy: {
-        type: String,
-        label: 'Author',
-        denyUpdate: true,
-        defaultValue: function(doc) {
-            console.log(doc);
-            if(this.isInsert) {
-                return "test"//this.userId;
-            }
-        }
-    }
+    createdBy: orion.attribute('createdBy')
+    // createdBy: {
+    //     type: String,
+    //     label: 'Author',
+    //     denyUpdate: true,
+    //     defaultValue: function(doc) {
+    //         console.log(doc);
+    //         if(this.isInsert) {
+    //             return "test"//this.userId;
+    //         }
+    //     }
+    // }
 });
 
 Posts.attachSchema( PostsSchema );

@@ -12,8 +12,8 @@ Template.categories.helpers({
     currentTag: () => Session.get("currentTag")
 })
 
-Template.categories.events({
-  'change input[name="tag"]': function (event, instance) {
-    Session.set('currentTag', event.target.value);
-  },
-})
+// Template.categories.events({
+//   'change input[name="tag"]': function (event, instance) {
+//     Session.set('currentTag', event.target.value);
+//   },
+// })

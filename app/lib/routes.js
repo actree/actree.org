@@ -1,31 +1,3 @@
-AdminConfig = {
-adminEmails: ["tim@tvooo.de"],
-skin: 'green-light',
-collections:
-{
-Posts: {
-  icon: 'file-text-o',
-  color: 'green',
-  omitFields: ['createdAt', 'publishedAt'],
-  tableColumns: [
-   { label: 'Titel', name: 'title' },
-   { label: 'User', name: 'createdBy'},
-   { label: 'Published', name: 'published' },
-   { label: 'Comments', name: 'commentCount()'}
-  ]
-},
-Comments: {
-  icon: 'comments',
-  color: 'teal',
-  omitFields: ['createdAt', 'createdBy', 'publishedAt'],
-  tableColumns: [
-   { label: 'Titel', name: 'title' },
-   { label: 'User', name: 'createdBy'}
-  ]
-}
-}
-}
-
 Router.configure({
     layoutTemplate: 'index',
     notFoundTemplate: 'notFound'
@@ -34,64 +6,84 @@ Router.configure({
 
 if(Meteor.isClient){
 
-Router.route('/', function() {
-  var item = Entry.findOne({});
-  this.render('home', {data: item});
-});
+    Router.route( 'home', {
+      path: '/',
+      template: 'home',
+      subscriptions: function() {
+        return Meteor.subscribe('entry');
+      }
+    });
 
-Router.route('/styleguide');
-Router.route('/browse', function() {
-    this.render('categories');
-});
+    Router.route('/styleguide');
 
-Router.route('/browse/:slug', function() {
-    this.render('entries');
-});
+    Router.route( 'entries', {
+      path: '/browse/:tag',
+      template: 'categories',
+      data: function() {
+          return {activeTag: this.params.tag}
+      },
+      subscriptions: function() {
+        // We can return a single subscription, or an array of subscriptions here.
+        const activeTag = this.params.tag;
+        return Meteor.subscribe( 'entry', activeTag );
+      }
+    });
 
-Router.route('/blog');
-Router.route('/entry/:slug', function () {
-    var item = Entry.findOne({slug: this.params.slug});
-    this.render('entry', {data: item});
-});
-Router.route('/blog/:slug', function () {
-    var item = Posts.findOne({slug: this.params.slug});
-    this.render('blogPost', {data: item});
-});
-// Router.route('/admin/posts/:_id/edit', function () {
-//     var item = Posts.findOne({_id: this.params._id});
-//     // if(!item) {
-//     //     itemId = Meteor.call('createPost');
-//     //     console.log(itemId);
-//     //     return this.redirect('/admin/posts/new/edit');
-//     // }
-//     this.render('createPost', {data: item});
-// });
+    Router.route( 'entries-latest', {
+      path: '/browse',
+      template: 'categories',
+      data: function() {
+          return {activeTag: null}
+      },
+      subscriptions: function() {
+        // We can return a single subscription, or an array of subscriptions here.
+        return Meteor.subscribe( 'entry', null );
+      }
+    });
 
-Router.route('/login', function() { this.render('login') }, {
-    name: "login"
-} );
-// Router.route('/admin', function() { this.render('admin') }, {
-//     name: "admin"
-// } );
-// Router.route('/admin/users', function() { this.render('adminUsers') }, {
-//     name: "admin.users"
-// } );
-// Router.route('/admin/posts', function() { this.render('adminPosts') }, {
-//     name: "admin.posts"
-// } );
+    Router.route('/blog');
+    Router.route('/entry/:slug', {
+        path: "/entry/:slug",
+        template: "entry",
+        data: function() {
+            const item = Entry.findOne({slug: this.params.slug});
+            return item;
+        },
+        subscriptions: function() {
+            return Meteor.subscribe("entry-single", this.params.slug)
+        }
+    });
+    Router.route('blog-post', {
+        path: '/blog/:slug',
+        template: 'blogPost',
+        data: function() {
+            const post = Posts.findOne({slug: this.params.slug});
+            return post;
+        },
+        subscriptions: function() {
+            const post = Posts.findOne({slug: this.params.slug});
+            return [
+                Meteor.subscribe("comments", post._id)
+            ];
+        }
+    });
 
-Router.onBeforeAction(function() {
-    if (!Meteor.userId()) {
-        // if the user is not logged in, render the Login template
-        // TODO: should be admin or author or guest
-        this.render('login');
-    } else {
-        // otherwise don't hold up the rest of hooks or our route/action function
-        // from running
-        this.next();
-    }
-}, {
-  only: ['admin', 'admin.users', 'admin.posts']
-  // or except: ['routeOne', 'routeTwo']
-});
+    // Router.route('/login', function() { this.render('login') }, {
+    //     name: "login"
+    // } );
+
+    // Router.onBeforeAction(function() {
+    //     if (!Meteor.userId()) {
+    //         // if the user is not logged in, render the Login template
+    //         // TODO: should be admin or author or guest
+    //         this.render('login');
+    //     } else {
+    //         // otherwise don't hold up the rest of hooks or our route/action function
+    //         // from running
+    //         this.next();
+    //     }
+    // }, {
+    //   only: ['admin', 'admin.users', 'admin.posts']
+    //   // or except: ['routeOne', 'routeTwo']
+    // });
 }

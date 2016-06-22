@@ -6,21 +6,44 @@ Meteor.publish('posts', function() {
     }
 });
 
-Meteor.publish('comments', function() {
-  return Comments.find({});
-    if (/*Roles.userIsInRole(this.userId, ['author', 'admin'])*/ false) {
-    	return Comments.find({});
-  	} else {
-  		return Comments.find({published: true});
+Meteor.publish('comments', function(postId) {
+    const publishFields = {
+        content: true,
+        createdBy: true,
+        "author.name": true,
+        createdAt: true,
+        published: true,
+        postId: true
+    };
+
+    if(postId) {
+        return Comments.find({
+            published: true,
+            postId: postId
+        }, {
+            fields: publishFields
+        });
+    } else {
+        return Comments.find({
+            published: true
+        }, {
+            fields: publishFields
+        });
     }
 });
 
-Meteor.publish('entry', function() {
-    // if (Roles.userIsInRole(this.userId, ['author', 'admin'])) {
-    	return Entry.find({});
-  	// } else {
-  		// return Comments.find({published: true});
-    // }
+Meteor.publish('entry', function(tag) {
+    if(tag) {
+        return Entry.find({published: true, tags: tag})
+    } else {
+        return Entry.find({published: true}, {sort: {createdAt: -1}, limit: 10});
+    }
+});
+
+Meteor.publish('entry-single', function(slug) {
+    if(slug) {
+        return Entry.find({published: true, slug: slug})
+    }
 });
 
 Meteor.publish('Meteor.users', function() {

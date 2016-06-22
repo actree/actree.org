@@ -104,3 +104,13 @@ a {
 .title-minor {
   @extend %title-minor;
 }
+
+.title-list {
+    font-size: 1.2rem;
+    line-height: 1.5em;
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid $color-lightergrey;
+    text-align: center;
+    font-family: $ff-serif;
+}
