@@ -9,7 +9,7 @@ var mkdir = require('mkdir-p');
 
 var Q = require("q");
 
-var url = "mongodb://127.0.0.1:3001/meteor";
+var url = process.env["MONGO_URL"];
 var contentFolder = process.argv[2];
 var appFolder = process.argv[3];
 
