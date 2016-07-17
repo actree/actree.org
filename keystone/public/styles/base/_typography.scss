@@ -1,0 +1,125 @@
+$ff-serif: "adelle", Georgia, "Times New Roman", serif;
+$ff-sans: "source-sans-pro", Helvetica, Arial, Verdana, sans-serif;
+
+%hyphenation {
+  -ms-word-break: break-all;
+  word-break: break-all;
+
+  // Non standard for webkit
+  word-break: break-word;
+
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
+
+  -webkit-hyphenate-before: 2;
+  -webkit-hyphenate-after: 3;
+  hyphenate-lines: 3;
+}
+
+html {
+  font-size: 22px;
+}
+
+/*
+When setting the primary font stack, apply it to the Pure grid units along
+with `html`, `button`, `input`, `select`, and `textarea`. Pure Grids use
+specific font stacks to ensure the greatest OS/browser compatibility.
+*/
+html,
+button,
+input,
+select,
+textarea,
+.pure-g [class *= "pure-u"] {
+  /* Set your content font stack here: */
+  font-family: $ff-sans;
+}
+
+body {
+  font-family: $ff-sans;
+  font-size: 100%;
+  line-height: 1.3em;
+  color: $color-text;
+}
+
+h1, h2, h3, h4 {
+  text-rendering:optimizeLegibility;
+  font-family: $ff-sans;
+  // font-family: $ff-serif;
+}
+
+$fs-title-page: 2.4rem;
+$fs-title-sub: 2.0rem;
+$fs-title-major: 1.5rem;
+$fs-title-minor: 1.0rem;
+$fs-small: 0.8rem;
+
+a {
+  display: inline-block;
+  color: $color-text;
+  // border-bottom: 2px solid $color-brand;
+  text-decoration: none;
+  // &:hover {
+  //   border-color: $color-text;
+  // }
+}
+
+%title-page {
+  font-size: 2.4em;
+  line-height: 1.2em;
+  font-weight: 700;
+  font-family: $ff-sans;
+}
+
+%title-sub {
+  font-size: 2em;
+  line-height: 1.2em;
+  font-weight: 700;
+  font-family: $ff-sans;
+}
+
+%title-major {
+  font-size: 1.5em;
+  line-height: 1.5em;
+  font-weight: 700;
+  font-family: $ff-sans;
+}
+
+%title-minor {
+  font-size: 1em;
+  line-height: 1.5em;
+  font-weight: 700;
+  font-family: $ff-sans;
+}
+
+.title-page {
+    @extend %title-page;
+}
+
+.title-major {
+  @extend %title-major;
+}
+
+.title-minor {
+  @extend %title-minor;
+}
+
+.title-list {
+    font-size: 1.2rem;
+    line-height: 1.5em;
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid $color-lightergrey;
+    text-align: center;
+    font-family: $ff-serif;
+}
+
+hr {
+    border: none;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    margin: 4rem;
+    border-bottom: 1px solid $color-lightergrey;
+    height: 1px;
+}

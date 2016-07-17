@@ -1,0 +1,17 @@
+$label-border-radius: .2em;
+
+.label, .tag {
+  display: inline-block;
+
+  font-size: $fs-small;
+  font-weight: 700;
+
+
+  background: $color-lightergrey;
+  color: $color-link;
+  border-radius: $label-border-radius;
+
+  text-decoration: none;
+  padding: .1em .3em;
+  border: 0;
+}

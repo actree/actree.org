@@ -1,0 +1,16 @@
+<nav class="navigation">
+    <ul class="main-menu">
+        <li class="logotype"><a href="/">actree</a></li>
+        {{# each navLinks}}
+        <li {{#ifeq ../section key}}class="active"{{else}}{{/ifeq}}>
+            <a href="{{ href }}">{{ label }}</a>
+        </li>
+    {{/each}}
+        <li class="account {{#if showLoginOrUserMenu}}is-highlight{{/if}} {{#if currentUser}}no-padding{{/if}}">
+            {{#if currentUser}}
+                <a href="/admin" class="">{{> avatar user=currentUser shape="circle"}}</a>
+            {{/if}}
+        </li>
+    </ul>
+
+</nav>

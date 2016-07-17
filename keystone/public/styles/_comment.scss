@@ -1,0 +1,51 @@
+/* Form to create comment */
+.comment-form {
+  margin-bottom: 2rem;
+  #comment-form {
+
+  }
+
+  margin-bottom: 3rem;
+}
+
+/* Single comment */
+.comment {
+    padding-bottom: 2rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px dotted $color-lightestgrey;
+
+  .comment-header {
+      @include clearfix;
+      .author {
+          float: left;
+      }
+    .date { float: right; }
+  }
+
+  .comment-content {
+      font-family: $ff-serif;
+  }
+}
+
+/* Comments section */
+.comments {
+    min-height: 30vh;
+  .comments-header {
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+    padding-top: $padding-vertical;
+    padding-bottom: $padding-vertical;
+    background-color: $color-lightergrey;
+
+    button { float: right; }
+
+  }
+  .banner-inline {
+      margin-bottom: 2rem;
+  }
+  .comments-title {
+    @extend %title-major;
+    line-height: 2rem;
+    display: inline-block;
+  }
+}

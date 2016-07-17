@@ -1,0 +1,9 @@
+.footer {
+    padding-top: $padding-footer;
+    padding-bottom: $padding-footer;
+
+    background: $color-lightergrey;
+    color: $color-darkergrey;
+
+    border-top: 10px $color-accent solid;
+}

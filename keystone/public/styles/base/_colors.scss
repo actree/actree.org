@@ -1,0 +1,30 @@
+$color-green: #8dbf41;
+$color-brown: #59261a;
+
+$color-darkestgrey: #222;
+$color-darkergrey: #444;
+$color-darkgrey: #666;
+$color-grey: #999;
+$color-lightgrey: #aaa;
+$color-lightergrey: #ddd;
+$color-lightestgrey: #eee;
+$color-black: #222;
+
+
+// Use these:
+
+$color-accent: $color-green;
+$color-brand: $color-green;
+
+$color-link: $color-brown;
+$color-link-hover: darken($color-link, 10%);
+$color-button: $color-link;
+
+$color-accent-light: #b6d96a;
+
+$color-button: $color-accent;
+
+$color-primary-bg: #fff;
+$color-on-primary: $color-darkergrey;
+$color-text: $color-darkestgrey;
+$color-text-inverted: white;

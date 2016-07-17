@@ -1,0 +1,21 @@
+<section class="container page-container">
+    <h1>Blog</h1>
+    <!-- <h4 class="text-weight-normal">Showing {{ data.posts.results.length}} post.</h4> -->
+    <div class="blog">
+        {{# each data.posts.results}}
+            <!-- <div data-ks-editable="{{#if ../user}}{{adminEditableUrl ../../user _id}}{{/if}}" class="post"> -->
+            <section class="excerpt">
+                {{#if image.url}}<a href="{{postUrl slug}}" class="image-link"><img src="{{{cloudinaryUrl image width=1600 height=400 crop='fit' }}}" class="image"></a>{{/if}}
+              <header>
+                <div class="category">{{category.name}}</div>
+                <h2 class="title"><a href="{{postUrl slug}}">{{ title }}</a></h2>
+                <summary class="meta is-copy">
+                  <p>{{#if content.brief}} {{content.brief}} {{/if}}</p>
+                  <p>{{#if author.name.first}}<em>von</em> {{author.name.first}}{{/if}} <em>am</em> {{date data.post.publishedDate format="DD.MM.YYYY"}}</p>
+                </summary>
+              </header>
+            </section>
+        {{/each}}
+    </div>
+    <!-- {{>pagination}} -->
+</section>

@@ -1,0 +1,26 @@
+.colour {
+	padding: 2em;
+	border-radius: .5em;
+	margin-bottom: 1em;
+	&.brand {
+		background: $color-brand;
+		color: black;
+	}
+	&.brand-light {
+		background: #a4cc67;
+		color: black;
+	}
+
+	&.grey-1 {
+		background: #222;
+		color: white;
+	}
+	&.grey-2 {
+		background: #444;
+		color: white;
+	}
+	&.grey-4  {
+		background: #eee;
+		color: black;
+	}
+}
