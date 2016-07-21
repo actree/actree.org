@@ -20,6 +20,7 @@ Entry.add({
     image: { type: Types.CloudinaryImage },
     oldImage: { type: Types.Url },
     description: { type: Types.Markdown, height: 600 },
+    descriptionEnglish: { type: Types.Markdown, height: 200, hidden: true },
     tags: { type: Types.Relationship, ref: 'Tag', many: true }
 });
 

@@ -6,7 +6,8 @@ var keystone = require('keystone');
  */
 
 var Tag = new keystone.List('Tag', {
-	autokey: { from: 'name', path: 'key', unique: true },
+    map: { name: 'name' },
+    autokey: { path: 'slug', from: 'name', unique: true },
 });
 
 Tag.add({

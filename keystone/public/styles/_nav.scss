@@ -1,7 +1,8 @@
-.navigation {
+%navigation {
     @extend %outer-gutter;
     @include clearfix;
-
+    transform-origin: center center;
+    transform: rotateZ(2deg);
     background: $color-brand;
 
     position: relative;
@@ -10,10 +11,16 @@
         display: block;
         //float: left;
         padding: 1rem;
-        font-size: 1.5em;
+        font-size: 2rem;
         font-family: $ff-serif;
         font-weight: 700;
         text-decoration: none;
+        line-height: 2rem;
+
+        .a {
+            display: inline-block;
+            border-bottom: 4px solid $color-brand;
+        }
     }
 
 
@@ -31,6 +38,7 @@
             float: left;
             padding: 1em;
             position: relative;
+            line-height: 2rem;
 
             &.active {
                 background-color: darken($color-brand, 5%);
@@ -97,5 +105,30 @@
             //font-weight: 700;
         }
 
+    }
+}
+
+.navigation {
+    @extend %navigation;
+
+    background: white;
+    transform:none;
+    a {
+        color: black;
+    }
+
+    .main-menu .logotype {
+        padding: 2rem 1rem;
+    }
+
+    .main-menu li {
+        padding: 2rem 1rem;
+
+        &.active {
+            background: transparent;
+            a {
+                border-bottom: 3px solid $color-brand;
+            }
+        }
     }
 }

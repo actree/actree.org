@@ -1,7 +1,7 @@
 .sidemenu {
     padding-right: 1rem;
 
-    label {
+    li {
         padding: .25rem;
         font-weight: 400;
         cursor: pointer;
@@ -11,18 +11,15 @@
         &:hover {
             background: $color-lightestgrey;
         }
+
+        &.active {
+            font-weight: 700;
+            background-color: $color-lightestgrey;
+        }
     }
 
-    li:first-of-type label {
+    li:first-of-type {
         margin-bottom: 2rem;
     }
 
-    input[type="radio"] {
-        display: none;
-    }
-
-    input[type="radio"]:checked + label {
-        font-weight: 700;
-        background-color: $color-lightestgrey;
-    }
 }

@@ -15,6 +15,7 @@ exports = module.exports = function (req, res) {
 	locals.data = {
 		entries: [],
 		tags: [],
+        activeTag: req.params.tag
 	};
 
 	// Load all categories
@@ -43,17 +44,17 @@ exports = module.exports = function (req, res) {
 	});
 
 	// Load the current category filter
-	// view.on('init', function (next) {
-    //
-	// 	if (req.params.category) {
-	// 		keystone.list('PostCategory').model.findOne({ key: locals.filters.category }).exec(function (err, result) {
-	// 			locals.data.category = result;
-	// 			next(err);
-	// 		});
-	// 	} else {
-	// 		next();
-	// 	}
-	// });
+	view.on('init', function (next) {
+
+		if (req.params.tag) {
+			keystone.list('Tag').model.findOne({ slug: locals.filters.tag }).exec(function (err, result) {
+				locals.data.tag = result;
+				next(err);
+			});
+		} else {
+			next();
+		}
+	});
 
 	// Load the posts
 	view.on('init', function (next) {

@@ -9,7 +9,7 @@
           </summary>
           {{#if data.post.image.url}}
             <div class="title-image">
-                <img src="{{{cloudinaryUrl data.post.image width=900 height=300 crop='fit' }}}">
+                <img src="{{{cloudinaryUrl data.post.image width=1400 height=300 crop='fill' }}}">
                 {{#if data.post.imageCredit}}<div class="credit">{{{data.post.imageCredit.html}}}</div>{{/if}}
             {{/if}}
       </header>

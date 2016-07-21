@@ -193,7 +193,7 @@ module.exports = function () {
 
 	// Direct url link to a specific post
 	_helpers.postUrl = function (postSlug, options) {
-		return ('/blog/post/' + postSlug);
+		return ('/blog/' + postSlug);
 	};
 
 	// might be a ghost helper
@@ -211,8 +211,12 @@ module.exports = function () {
 		return ('/blog/' + categorySlug);
 	};
 
+    _helpers.tagUrl = function (tagSlug, options) {
+		return ('/entries/tag/' + tagSlug);
+	};
+
     _helpers.fullPostUrl = function (postSlug, options) {
-		return (keystone.app.locals.baseUrl + '/blog/post/' + postSlug);
+		return (keystone.app.locals.baseUrl + '/blog/' + postSlug);
 	};
 
 	// ### Pagination Helpers

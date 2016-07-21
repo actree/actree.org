@@ -51,40 +51,40 @@ select,
 textarea,
 .pure-g [class*="pure-u"] {
   /* Set your content font stack here: */
-  font-family: "source-sans-pro", Helvetica, Arial, Verdana, sans-serif; }
+  font-family: "Source Sans Pro", Helvetica, Arial, Verdana, sans-serif; }
 
 body {
-  font-family: "source-sans-pro", Helvetica, Arial, Verdana, sans-serif;
+  font-family: "Source Sans Pro", Helvetica, Arial, Verdana, sans-serif;
   font-size: 100%;
   line-height: 1.3em;
   color: #222; }
 
 h1, h2, h3, h4 {
   text-rendering: optimizeLegibility;
-  font-family: "source-sans-pro", Helvetica, Arial, Verdana, sans-serif; }
+  font-family: "Source Sans Pro", Helvetica, Arial, Verdana, sans-serif; }
 
 a {
   display: inline-block;
   color: #222;
   text-decoration: none; }
 
-.title-page {
+.title-page, .entry .entry-title, .entry-small .entry-title, .entry-mini .entry-title {
   font-size: 2.4em;
   line-height: 1.2em;
   font-weight: 700;
-  font-family: "source-sans-pro", Helvetica, Arial, Verdana, sans-serif; }
+  font-family: "Source Sans Pro", Helvetica, Arial, Verdana, sans-serif; }
 
 .title-major, .comments .comments-title {
   font-size: 1.5em;
   line-height: 1.5em;
   font-weight: 700;
-  font-family: "source-sans-pro", Helvetica, Arial, Verdana, sans-serif; }
+  font-family: "Source Sans Pro", Helvetica, Arial, Verdana, sans-serif; }
 
-.title-minor {
+.title-minor, .entry .entry-meta h4, .entry-small .entry-meta h4, .entry-mini .entry-meta h4, .entry .entry-related h4, .entry-small .entry-related h4, .entry-mini .entry-related h4 {
   font-size: 1em;
   line-height: 1.5em;
   font-weight: 700;
-  font-family: "source-sans-pro", Helvetica, Arial, Verdana, sans-serif; }
+  font-family: "Source Sans Pro", Helvetica, Arial, Verdana, sans-serif; }
 
 .title-list {
   font-size: 1.2rem;
@@ -93,7 +93,7 @@ a {
   margin-bottom: 2rem;
   border-bottom: 1px solid #ddd;
   text-align: center;
-  font-family: "adelle", Georgia, "Times New Roman", serif; }
+  font-family: "Bitter", "adelle", Georgia, "Times New Roman", serif; }
 
 hr {
   border: none;
@@ -132,7 +132,7 @@ hr {
   .editor .editor-label, .editor .editor-input {
     display: table-cell; }
   .editor .editor-label {
-    font-family: "adelle", Georgia, "Times New Roman", serif;
+    font-family: "Bitter", "adelle", Georgia, "Times New Roman", serif;
     padding-right: 1rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -147,21 +147,19 @@ hr {
 
 .sidemenu {
   padding-right: 1rem; }
-  .sidemenu label {
+  .sidemenu li {
     padding: .25rem;
     font-weight: 400;
     cursor: pointer;
     font-variant: small-caps;
     letter-spacing: .05em; }
-    .sidemenu label:hover {
+    .sidemenu li:hover {
       background: #eee; }
-  .sidemenu li:first-of-type label {
+    .sidemenu li.active {
+      font-weight: 700;
+      background-color: #eee; }
+  .sidemenu li:first-of-type {
     margin-bottom: 2rem; }
-  .sidemenu input[type="radio"] {
-    display: none; }
-  .sidemenu input[type="radio"]:checked + label {
-    font-weight: 700;
-    background-color: #eee; }
 
 .home-latest-blogs {
   padding-right: 1rem; }
@@ -180,6 +178,8 @@ hr {
   width: 100%; }
 
 .navigation {
+  transform-origin: center center;
+  transform: rotateZ(2deg);
   background: #8dbf41;
   position: relative; }
   .navigation:after {
@@ -189,10 +189,14 @@ hr {
   .navigation .main-menu .logotype {
     display: block;
     padding: 1rem;
-    font-size: 1.5em;
-    font-family: "adelle", Georgia, "Times New Roman", serif;
+    font-size: 2rem;
+    font-family: "Bitter", "adelle", Georgia, "Times New Roman", serif;
     font-weight: 700;
-    text-decoration: none; }
+    text-decoration: none;
+    line-height: 2rem; }
+    .navigation .main-menu .logotype .a {
+      display: inline-block;
+      border-bottom: 4px solid #8dbf41; }
   .navigation .main-menu {
     margin: 0 auto;
     list-style: none;
@@ -205,7 +209,8 @@ hr {
       display: block;
       float: left;
       padding: 1em;
-      position: relative; }
+      position: relative;
+      line-height: 2rem; }
       .navigation .main-menu li.active {
         background-color: #7fac3a; }
   .navigation a {
@@ -243,6 +248,20 @@ hr {
     .navigation .main-menu .nav-search input::-moz-placeholder {
       color: white;
       opacity: none; }
+
+.navigation {
+  background: white;
+  transform: none; }
+  .navigation a {
+    color: black; }
+  .navigation .main-menu .logotype {
+    padding: 2rem 1rem; }
+  .navigation .main-menu li {
+    padding: 2rem 1rem; }
+    .navigation .main-menu li.active {
+      background: transparent; }
+      .navigation .main-menu li.active a {
+        border-bottom: 3px solid #8dbf41; }
 
 .label, .tag {
   display: inline-block;
@@ -291,7 +310,7 @@ fieldset + fieldset, fieldset + .button {
     text-align: center;
     margin-top: .1rem;
     margin-bottom: 2rem;
-    font-family: "source-sans-pro", Helvetica, Arial, Verdana, sans-serif;
+    font-family: "Source Sans Pro", Helvetica, Arial, Verdana, sans-serif;
     font-weight: 700; }
   .blog-post .separator {
     margin: 0 auto;
@@ -312,7 +331,7 @@ fieldset + fieldset, fieldset + .button {
     text-align: center;
     margin-bottom: 3rem; }
     .blog-post summary p {
-      font-family: "adelle", Georgia, "Times New Roman", serif;
+      font-family: "Bitter", "adelle", Georgia, "Times New Roman", serif;
       font-size: 1.1rem; }
   .blog-post .title-image {
     position: relative; }
@@ -336,10 +355,10 @@ fieldset + fieldset, fieldset + .button {
     margin-top: 0.5em; }
 
 .is-copy h1, .is-copy h2, .is-copy h3, .is-copy h4 {
-  font-family: "source-sans-pro", Helvetica, Arial, Verdana, sans-serif; }
+  font-family: "Source Sans Pro", Helvetica, Arial, Verdana, sans-serif; }
 
 .is-copy p, .is-copy ul, .is-copy ol {
-  font-family: "adelle", Georgia, "Times New Roman", serif;
+  font-family: "Source Sans Pro", Helvetica, Arial, Verdana, sans-serif;
   font-weight: 400;
   color: #444; }
 
@@ -385,6 +404,66 @@ fieldset + fieldset, fieldset + .button {
   color: #444;
   border-top: 10px #8dbf41 solid; }
 
+.entry .entry-title, .entry-small .entry-title, .entry-mini .entry-title {
+  text-align: center;
+  margin-bottom: .4em; }
+  @media screen and (min-width: 481px) {
+    .entry .entry-title, .entry-small .entry-title, .entry-mini .entry-title {
+      text-align: left; } }
+
+.entry .entry-main, .entry-small .entry-main, .entry-mini .entry-main {
+  padding-left: 1rem; }
+
+.entry .entry-image img, .entry-small .entry-image img, .entry-mini .entry-image img {
+  border: 1px #ddd solid;
+  width: 100%;
+  margin-bottom: 1em; }
+
+.entry .entry-image .button, .entry-small .entry-image .button, .entry-mini .entry-image .button {
+  margin-bottom: 1rem; }
+
+.entry .entry-meta h4, .entry-small .entry-meta h4, .entry-mini .entry-meta h4 {
+  margin-top: 1rem; }
+
+.entry .entry-meta ul, .entry-small .entry-meta ul, .entry-mini .entry-meta ul {
+  list-style: none; }
+  .entry .entry-meta ul:after, .entry-small .entry-meta ul:after, .entry-mini .entry-meta ul:after {
+    display: table;
+    content: "";
+    clear: both; }
+  .entry .entry-meta ul li, .entry-small .entry-meta ul li, .entry-mini .entry-meta ul li {
+    margin-right: .5rem;
+    float: left; }
+
+.entry .entry-spread, .entry-small .entry-spread, .entry-mini .entry-spread {
+  text-align: center; }
+  @media screen and (min-width: 481px) {
+    .entry .entry-spread, .entry-small .entry-spread, .entry-mini .entry-spread {
+      text-align: left; } }
+
+.entry .entry-related h4, .entry-small .entry-related h4, .entry-mini .entry-related h4 {
+  margin-top: 1rem; }
+
+.entry {
+  margin-top: 3rem;
+  margin-bottom: 3rem; }
+
+.entry-small {
+  background: #eee;
+  padding: 1rem; }
+  .entry-small + .entry-small {
+    margin-top: 1rem; }
+  .entry-small .entry-content {
+    padding-left: 1rem; }
+
+.entry-mini + .entry-mini {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px dotted #ddd; }
+
+.entry-mini .entry-content {
+  padding-left: 1rem; }
+
 /* Form to create comment */
 .comment-form {
   margin-bottom: 2rem;
@@ -404,7 +483,7 @@ fieldset + fieldset, fieldset + .button {
   .comment .comment-header .date {
     float: right; }
   .comment .comment-content {
-    font-family: "adelle", Georgia, "Times New Roman", serif; }
+    font-family: "Bitter", "adelle", Georgia, "Times New Roman", serif; }
 
 /* Comments section */
 .comments {
@@ -458,7 +537,7 @@ fieldset + fieldset, fieldset + .button {
   text-decoration: none;
   cursor: pointer;
   outline: 0;
-  font-family: "source-sans-pro", Helvetica, Arial, Verdana, sans-serif;
+  font-family: "Source Sans Pro", Helvetica, Arial, Verdana, sans-serif;
   font-weight: 400; }
 
 .button, button {

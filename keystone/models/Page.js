@@ -14,12 +14,7 @@ var Page = new keystone.List('Page', {
 Page.add({
     title: { type: String, required: true },
     // slug: { type: String, required: true, unique: true },
-
-    publishedDate: { type: Types.Date, index: true, dependsOn: { state: 'published' } },
-
-    content: {
-        extended: { type: Types.Markdown, height: 600 }
-    },
+    content: { type: Types.Markdown, height: 600 }
 
 });
 
