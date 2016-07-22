@@ -1,0 +1,10 @@
+@mixin respond-to($query) {
+    @media #{$query} {
+        @content;
+    }
+}
+
+$sm: "screen and (min-width: 35.5em)";
+$md: "screen and (min-width: 48em)";
+$lg: "screen and (min-width: 64em)";
+$xl: "screen and (min-width: 80em)";
