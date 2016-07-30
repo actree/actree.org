@@ -1,10 +1,18 @@
-.home-latest-blogs {
-    padding-right: $gutter;
+.home-latest-entries {
+    margin-top: 4rem;
 }
 
-.home-latest-entries {
-    padding-left: $gutter;
+@include respond-to($lg) {
+    .home-latest-blogs {
+        padding-right: $gutter;
+    }
+
+    .home-latest-entries {
+        padding-left: $gutter;
+        margin-top: 0;
+    }
 }
+
 
 .home-a-spot {
     padding-top: 5rem;

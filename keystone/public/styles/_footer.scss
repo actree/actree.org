@@ -6,4 +6,14 @@
     color: $color-darkergrey;
 
     border-top: 10px $color-accent solid;
+
+    text-align: center;
+
+    p {
+        margin-bottom: 1rem;
+    }
+
+    @include respond-to($md) {
+        text-align: left;
+    }
 }

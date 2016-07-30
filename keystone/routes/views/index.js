@@ -18,46 +18,36 @@ exports = module.exports = function (req, res) {
 	// Load all categories
 	view.on('init', function (next) {
 
-        var q = keystone.list('Post').paginate({
-            page: req.query.page || 1,
-            perPage: 10,
-            maxPages: 10,
-            filters: {
-                state: 'published',
-            },
-        })
+        var q = keystone.list('Post').model.find()
+            .where('state', 'published')
+            .populate('category')
             .sort('-publishedDate')
-            .populate('author category');
+            .limit(5)
+            ;
 
-        // if (locals.data.category) {
-        //     q.where('categories').in([locals.data.category]);
-        // }
-
-        q.exec(function (err, results) {
-            locals.data.posts = results;
+        q.exec(function (err, posts) {
+            locals.data.posts = posts;
             next(err);
         });
     });
 
     view.on('init', function (next) {
 
-        var q = keystone.list('Entry').paginate({
-            page: req.query.page || 1,
-            perPage: 10,
-            maxPages: 10,
-            filters: {
-                state: 'published',
-            },
-        })
+        var q = keystone.list('Entry').model.find()
+            .where('state', 'published')
+            // .populate('tags')
+            .populate({
+                path: 'tags',
+                // TODO: only show the 3 most popular ones?
+                // match: { age: { $gte: 21 }},
+                options: { limit: 3 }
+            })
             .sort('-publishedDate')
-            .populate('author tags');
+            .limit(10)
+            ;
 
-        // if (locals.data.category) {
-        //     q.where('categories').in([locals.data.category]);
-        // }
-
-        q.exec(function (err, results) {
-            locals.data.entries = results;
+        q.exec(function (err, entries) {
+            locals.data.entries = entries;
             next(err);
         });
     });

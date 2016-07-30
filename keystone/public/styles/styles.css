@@ -37,7 +37,7 @@ img {
   max-width: 100%; }
 
 html {
-  font-size: 22px; }
+  font-size: 18px; }
 
 /*
 When setting the primary font stack, apply it to the Pure grid units along
@@ -76,7 +76,7 @@ a {
 
 .title-major, .comments .comments-title {
   font-size: 1.5em;
-  line-height: 1.5em;
+  line-height: 1.15em;
   font-weight: 700;
   font-family: "Source Sans Pro", Helvetica, Arial, Verdana, sans-serif; }
 
@@ -145,27 +145,42 @@ hr {
   .editor textarea {
     height: 100%; }
 
-.sidemenu {
+.sidemenu-list {
+  display: none;
   padding-right: 1rem; }
-  .sidemenu li {
+  @media screen and (min-width: 48em) {
+    .sidemenu-list {
+      display: block; } }
+  .sidemenu-list li a {
+    display: block;
     padding: .25rem;
     font-weight: 400;
-    cursor: pointer;
-    font-variant: small-caps;
-    letter-spacing: .05em; }
-    .sidemenu li:hover {
+    cursor: pointer; }
+    .sidemenu-list li a:hover {
       background: #eee; }
-    .sidemenu li.active {
-      font-weight: 700;
-      background-color: #eee; }
-  .sidemenu li:first-of-type {
+  .sidemenu-list li.active a {
+    font-weight: 700;
+    background-color: #eee; }
+  .sidemenu-list li:first-of-type {
     margin-bottom: 2rem; }
 
-.home-latest-blogs {
-  padding-right: 1rem; }
+.sidemenu-select {
+  display: block;
+  width: 100%;
+  margin-bottom: 2rem; }
+  @media screen and (min-width: 48em) {
+    .sidemenu-select {
+      display: none; } }
 
 .home-latest-entries {
-  padding-left: 1rem; }
+  margin-top: 4rem; }
+
+@media screen and (min-width: 64em) {
+  .home-latest-blogs {
+    padding-right: 1rem; }
+  .home-latest-entries {
+    padding-left: 1rem;
+    margin-top: 0; } }
 
 .home-a-spot {
   padding-top: 5rem;
@@ -234,7 +249,8 @@ hr {
       display: block;
       border-bottom: 1px solid #ddd; }
       .navigation .main-menu li a {
-        padding: 0.4rem 0.4rem; }
+        padding: 0.4rem 0.4rem;
+        display: block; }
       .navigation .main-menu li.active {
         background: #ddd; }
   .navigation .open:hover + .main-menu {
@@ -273,6 +289,7 @@ hr {
         float: left;
         border: 0; }
         .navigation .main-menu li a {
+          display: inline-block;
           line-height: 2rem;
           padding: 1.25rem 1rem; }
         .navigation .main-menu li.narrow a {
@@ -428,7 +445,13 @@ fieldset + fieldset, fieldset + .button {
   padding-bottom: 2rem;
   background: #ddd;
   color: #444;
-  border-top: 10px #8dbf41 solid; }
+  border-top: 10px #8dbf41 solid;
+  text-align: center; }
+  .footer p {
+    margin-bottom: 1rem; }
+  @media screen and (min-width: 48em) {
+    .footer {
+      text-align: left; } }
 
 .entry .entry-title, .entry-small .entry-title, .entry-mini .entry-title {
   text-align: center;
@@ -459,6 +482,7 @@ fieldset + fieldset, fieldset + .button {
     clear: both; }
   .entry .entry-meta ul li, .entry-small .entry-meta ul li, .entry-mini .entry-meta ul li {
     margin-right: .5rem;
+    margin-bottom: .5rem;
     float: left; }
 
 .entry .entry-spread, .entry-small .entry-spread, .entry-mini .entry-spread {

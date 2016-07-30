@@ -1,18 +1,24 @@
-.sidemenu {
+.sidemenu-list {
+    display: none;
+    @include respond-to($md) {
+        display: block;
+    }
     padding-right: 1rem;
 
     li {
-        padding: .25rem;
-        font-weight: 400;
-        cursor: pointer;
-        font-variant: small-caps;
-        letter-spacing: .05em;
 
-        &:hover {
-            background: $color-lightestgrey;
+        a {
+            display: block;
+            padding: .25rem;
+            font-weight: 400;
+            cursor: pointer;
+
+            &:hover {
+                background: $color-lightestgrey;
+            }
         }
 
-        &.active {
+        &.active a {
             font-weight: 700;
             background-color: $color-lightestgrey;
         }
@@ -22,4 +28,15 @@
         margin-bottom: 2rem;
     }
 
+}
+
+.sidemenu-select {
+    display: block;
+
+    width: 100%;
+    margin-bottom: 2rem;
+
+    @include respond-to($md) {
+        display: none;
+    }
 }
