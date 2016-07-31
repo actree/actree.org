@@ -18,7 +18,11 @@ $ff-sans: "Source Sans Pro", Helvetica, Arial, Verdana, sans-serif;
 }
 
 html {
-  font-size: 18px;
+  font-size: 16px;
+
+  @include respond-to($md) {
+      font-size: 18px;
+  }
 }
 
 /*

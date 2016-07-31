@@ -33,10 +33,14 @@
   }
 
   summary {
-    margin: 0 25%;
+
     text-align: center;
 
     margin-bottom: 3rem;
+
+    @include respond-to($md) {
+        margin: 0 25%;
+    }
 
     p {
       font-family: $ff-serif;
