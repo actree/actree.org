@@ -7,7 +7,7 @@
     text-align: center;
     margin-bottom: .4em;
 
-    @include respond-to( $query-medium ) {
+    @include respond-to( $md ) {
       text-align: left;
     }
   }
@@ -16,11 +16,9 @@
 
   }
 
-  .entry-main {
-    padding-left: $padding-horizontal;
-  }
 
-  .entry-image {
+
+  .entry-aside {
 
     img {
       border: 1px #ddd solid;
@@ -31,6 +29,10 @@
     .button {
       margin-bottom: $padding-vertical;
     }
+  }
+
+  .entry-actions {
+      padding: 0.5rem 0 0.5rem 1rem;
   }
 
   .entry-meta {
@@ -54,7 +56,7 @@
   .entry-spread {
     text-align: center;
 
-    @include respond-to($query-medium) {
+    @include respond-to($md) {
       text-align: left;
     }
 
@@ -69,6 +71,15 @@
       @extend %title-minor;
       margin-top: $padding-vertical;
     }
+  }
+
+  @include respond-to($md) {
+      .entry-main {
+        padding-left: $padding-horizontal;
+      }
+      .entry-actions {
+          padding: 0;
+      }
   }
 }
 
