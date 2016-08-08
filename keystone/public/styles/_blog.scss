@@ -10,6 +10,8 @@
     font-family: $ff-sans;
     font-weight: 700;
     line-height: 1.15;
+
+    @extend %title-major;
   }
 
   .separator {
@@ -39,7 +41,7 @@
     margin-bottom: 3rem;
 
     @include respond-to($md) {
-        margin: 0 25%;
+        margin: 0 25% 3rem 25%;
     }
 
     p {
@@ -72,6 +74,13 @@
     line-height: 1.6em;
     margin-top: 0.5em;
   }
+}
+
+@include respond-to($md) {
+    .blog-post .title {
+        @include title-page;
+    }
+
 }
 
 .is-copy {
@@ -125,6 +134,7 @@
   }
 
   a {
+      display: inline;
       border-bottom: 2px solid $color-brand;
       &:hover {
           border-color: $color-text;

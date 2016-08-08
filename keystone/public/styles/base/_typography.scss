@@ -69,11 +69,15 @@ a {
   // }
 }
 
+@mixin title-page {
+    font-size: 2.4em;
+    line-height: 1.2em;
+    font-weight: 700;
+    font-family: $ff-sans;
+}
+
 %title-page {
-  font-size: 2.4em;
-  line-height: 1.2em;
-  font-weight: 700;
-  font-family: $ff-sans;
+  @include title-page;
 }
 
 %title-sub {
