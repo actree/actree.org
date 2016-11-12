@@ -15,9 +15,9 @@
 
 %button {
   @extend %button-layout;
-  border: darken($color-button, 10%) solid;
+  border: darken($color-cta, 10%) solid;
   border-width: 0 0 .1em 0;
-  background-color: $color-button;
+  background-color: $color-cta;
 
 
 
@@ -28,8 +28,8 @@
   &:hover {
     text-decoration: none;
     color: white;
-    border-color: darken($color-button, 10%) solid;
-    background-color: lighten($color-button, 10%);
+    border-color: darken($color-cta, 10%) solid;
+    background-color: lighten($color-cta, 10%);
   }
 
   &.is-disabled {

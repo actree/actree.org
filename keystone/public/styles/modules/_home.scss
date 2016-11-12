@@ -15,16 +15,29 @@
 
 
 .home-a-spot {
-    padding-top: 5rem;
-    padding-bottom: 6rem;
+    padding: 3rem;
+    margin: 4rem auto;
     color: white;
     background: $color-brand;
     text-align: center;
-    box-shadow: inset 0 -10px 10px rgba(127, 127, 127, 0.2);
-    // margin-left: -20px;
-    // margin-right: -20px;
-    overflow: hidden;
     width: 100%;
+    max-width: $container-width;
+
+    a {
+        display: inline-block;
+        // border: 3px solid white;
+        box-shadow: 0 0 0 3px  white inset;
+        margin-top: 1rem;
+        color: white;
+        padding: 0.5em 1em;
+        border-radius: 0.25em;
+
+        &:hover {
+            // box-shadow: 0 0 0 4px  white inset;
+            background-color: white;
+            color: $color-cta;
+        }
+    }
 }
 
 .stuff {

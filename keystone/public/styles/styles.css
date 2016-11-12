@@ -230,14 +230,23 @@ hr {
     margin-top: 0; } }
 
 .home-a-spot {
-  padding-top: 5rem;
-  padding-bottom: 6rem;
+  padding: 3rem;
+  margin: 4rem auto;
   color: white;
   background: #8dbf41;
   text-align: center;
-  box-shadow: inset 0 -10px 10px rgba(127, 127, 127, 0.2);
-  overflow: hidden;
-  width: 100%; }
+  width: 100%;
+  max-width: 1080px; }
+  .home-a-spot a {
+    display: inline-block;
+    box-shadow: 0 0 0 3px  white inset;
+    margin-top: 1rem;
+    color: white;
+    padding: 0.5em 1em;
+    border-radius: 0.25em; }
+    .home-a-spot a:hover {
+      background-color: white;
+      color: #8dbf41; }
 
 .stuff {
   height: 8rem;

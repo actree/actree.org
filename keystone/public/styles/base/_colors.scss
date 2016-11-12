@@ -1,5 +1,6 @@
-$color-green: #8dbf41;
-$color-brown: #59261a;
+$green: #8dbf41;
+// $color-green: #1d781d;
+$brown: #59261a;
 
 $color-darkestgrey: #222;
 $color-darkergrey: #444;
@@ -10,22 +11,11 @@ $color-lightergrey: #ddd;
 $color-lightestgrey: #eee;
 $color-black: #222;
 
-
-// Use these:
-
-$color-accent: $color-green;
-$color-brand: $color-green;
-
-$color-link: $color-brown;
-$color-link-hover: darken($color-link, 10%);
-$color-button: $color-link;
-
 $color-accent-light: #b6d96a;
 
-$color-button: $color-accent;
+// $color-button: $color-accent;
 
 $color-on-primary: $color-darkergrey;
-
 
 
 // BACKGROUND
@@ -36,8 +26,14 @@ $color-background-alt: #efefef;
 $color-text: $color-darkestgrey;
 $color-text-light: $color-lightgrey;
 
+$color-link: $brown;
+$color-link-hover: darken($color-link, 10%);
+
 $color-text-inverted: white;
 
 // MEANING
+$color-brand: $green;
+$color-accent: $green;
 
 // CTA
+$color-cta: $green;
