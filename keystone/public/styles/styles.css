@@ -164,6 +164,13 @@ hr {
   padding-left: 1rem;
   padding-right: 1rem; }
 
+body {
+  background: #efefef; }
+
+#body {
+  background: white;
+  overflow: auto; }
+
 .float-right {
   float: right; }
 

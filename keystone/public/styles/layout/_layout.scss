@@ -24,6 +24,15 @@ $margin-from-menu: 3rem;
     padding-right: $gutter;
 }
 
+body {
+    background: $color-background-alt;
+}
+
+#body {
+    background: $color-background;
+    overflow: auto;
+}
+
 .float-right {
     float: right;
 }
