@@ -5,7 +5,7 @@
         {{# each data.posts.results}}
             <!-- <div data-ks-editable="{{#if ../user}}{{adminEditableUrl ../../user _id}}{{/if}}" class="post"> -->
             <section class="excerpt">
-                {{#if image.url}}<a href="{{postUrl slug}}" class="image-link"><img src="{{{cloudinaryUrl image width=1600 height=400 crop='fit' }}}" class="image"></a>{{/if}}
+                {{#if image.url}}<a href="{{postUrl slug}}" class="image-link"><img src="{{{cloudinaryUrl image width=1080 height=300 crop='fill' }}}"></a>{{/if}}
               <header>
                 <div class="category">{{category.name}}</div>
                 <h2 class="title"><a href="{{postUrl slug}}">{{ title }}</a></h2>

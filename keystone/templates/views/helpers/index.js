@@ -220,7 +220,7 @@ module.exports = function () {
 	};
 
     _helpers.gravatarUrl = function (author, options) {
-		return author._.email.gravatarUrl(64, 'identicon');
+		return author._.email.gravatarUrl(128, 'identicon');
 	};
 
 	// ### Pagination Helpers

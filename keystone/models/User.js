@@ -12,6 +12,7 @@ User.add({
 	email: { type: Types.Email, initial: true, required: true, index: true, displatGravatar: true },
 	password: { type: Types.Password, initial: true, required: true },
     bio: { type: String },
+    avatar: { type: Types.CloudinaryImage },
 }, 'Permissions', {
 	isAdmin: { type: Boolean, label: 'Can access Keystone', index: true },
 });
