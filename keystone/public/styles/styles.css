@@ -71,7 +71,7 @@ a {
   color: #222;
   text-decoration: none; }
 
-.title-page, .post .post-title, .entry .entry-title, .entry-small .entry-title, .entry-mini .entry-title {
+.title-page, .post .post-title, .page .page-title, .entry .entry-title, .entry-small .entry-title, .entry-mini .entry-title {
   font-size: 2.4em;
   line-height: 1.2em;
   font-weight: 700;
@@ -452,6 +452,16 @@ fieldset + fieldset, fieldset + .button {
     line-height: 1.2em;
     font-weight: 700;
     font-family: "Source Sans Pro", Helvetica, Arial, Verdana, sans-serif; } }
+
+.page {
+  margin-top: 4rem;
+  margin-bottom: 4rem; }
+  .page .page-content,
+  .page .page-title {
+    max-width: 740px; }
+  .page .page-title {
+    margin-bottom: 2rem;
+    line-height: 1.1em; }
 
 .footer {
   padding-top: 2rem;
