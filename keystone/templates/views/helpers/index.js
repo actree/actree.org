@@ -219,6 +219,10 @@ module.exports = function () {
 		return (keystone.app.locals.baseUrl + '/blog/' + postSlug);
 	};
 
+    _helpers.gravatarUrl = function (author, options) {
+		return author._.email.gravatarUrl(64, 'identicon');
+	};
+
 	// ### Pagination Helpers
 	// These are helpers used in rendering a pagination system for content
 	// Mostly generalized and with a small adjust to `_helper.pageUrl` could be universal for content types

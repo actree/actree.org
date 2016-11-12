@@ -11,33 +11,35 @@
 /* Single comment */
 .comment {
     padding-bottom: 2rem;
-  margin-bottom: 2rem;
-  border-bottom: 1px dotted $color-lightestgrey;
+    margin-bottom: 2rem;
+    border-bottom: 1px dotted $color-lightestgrey;
 
   .comment-header {
-      @include clearfix;
-      .author {
-          float: left;
-      }
-    .date { float: right; }
-  }
+        display: flex;
+        justify-content: space-between;
+    }
 
-  .comment-content {
-      font-family: $ff-serif;
-  }
+    .comment-content {
+        font-family: $ff-serif;
+    }
 }
 
 /* Comments section */
 .comments {
     min-height: 30vh;
   .comments-header {
+    background-color: $color-background-alt;
     margin-top: 4rem;
     margin-bottom: 2rem;
-    padding-top: $padding-vertical;
-    padding-bottom: $padding-vertical;
-    background-color: $color-lightergrey;
 
-    button { float: right; }
+    > div {
+        max-width: $content-width;
+        margin: 0 auto;
+        padding-top: $padding-vertical;
+        padding-bottom: $padding-vertical;
+        display: flex;
+        justify-content: space-between;
+    }
 
   }
   .banner-inline {

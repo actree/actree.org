@@ -1,6 +1,7 @@
 .header {
 
     @include clearfix;
+    background: $color-background-alt;
 }
 
 $logo-fs: 2rem;

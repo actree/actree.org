@@ -1,5 +1,5 @@
 $ff-serif: "Bitter", "adelle", Georgia, "Times New Roman", serif;
-$ff-sans: "Source Sans Pro", Helvetica, Arial, Verdana, sans-serif;
+$ff-sans: /*"Open Sans",*/ "Source Sans Pro", Helvetica, Arial, Verdana, sans-serif;
 
 %hyphenation {
   -ms-word-break: break-all;
@@ -48,7 +48,7 @@ body {
 }
 
 h1, h2, h3, h4 {
-  text-rendering:optimizeLegibility;
+  text-rendering: optimizeLegibility;
   font-family: $ff-sans;
   // font-family: $ff-serif;
 }
@@ -130,4 +130,63 @@ hr {
     margin: 4rem;
     border-bottom: 1px solid $color-lightergrey;
     height: 1px;
+}
+
+.is-copy {
+  h1, h2, h3, h4 {
+    font-family: $ff-sans;
+  }
+
+  p, ul, ol {
+    font-family: $ff-sans;
+    font-weight: 400;
+    color: #444;
+  }
+
+  // Tracking
+  h1, h2, h3, h4 {
+    line-height: 1.1em;
+  }
+  p, li {
+    line-height: 1.6em;
+  }
+
+
+  // Spacing
+  h1, h2, h3, h4 {
+    margin-top: 2rem;
+  }
+
+  p {
+    margin-top: .5em;
+  }
+  p + p,
+  p + ul,
+  p + ol {
+    margin-top: 1em;
+  }
+
+  // Lists
+  li {
+    display: list-item;
+  }
+  ul, ol {
+    padding-left: 1.5em;
+  }
+  ul {
+    list-style-type: disc;
+  }
+
+  abbr {
+    font-variant: small-caps;
+    font-weight: 500;
+  }
+
+  a {
+      display: inline;
+      border-bottom: 2px solid $color-brand;
+      &:hover {
+          border-color: $color-text;
+      }
+  }
 }
