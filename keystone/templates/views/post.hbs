@@ -18,7 +18,7 @@
       </section>
 
       <footer class="post-footer">
-          <img src="{{#if data.post.author.avatar }}{{{cloudinaryUrl data.post.author.avatar width=128 height=128 crop='fill' }}}{{else}}{{{ gravatarUrl data.post.author }}}{{/if}}" alt="" />
+          <img src="{{#if data.post.author.avatar.url }}{{{cloudinaryUrl data.post.author.avatar width=128 height=128 crop='fill' }}}{{else}}{{{ gravatarUrl data.post.author }}}{{/if}}" alt="" />
           <div class="">
               <h4>{{ data.post.author.name.first }}</h4>
               <p>{{data.post.author.bio}}</p>
