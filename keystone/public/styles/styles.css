@@ -1,6 +1,4 @@
 *, *:before, *:after {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
 html, body, h1, h2, h3, h4, h5, h6, p, li, ol, ul, section, header, footer,
@@ -432,7 +430,9 @@ fieldset + fieldset, fieldset + .button {
   .post .post-footer {
     background: #efefef;
     padding: 1rem;
+    display: -ms-flexbox;
     display: flex;
+    -ms-flex-pack: start;
     justify-content: flex-start;
     margin-top: 4rem; }
     .post .post-footer img {
@@ -549,7 +549,9 @@ fieldset + fieldset, fieldset + .button {
   margin-bottom: 2rem;
   border-bottom: 1px dotted #eee; }
   .comment .comment-header {
+    display: -ms-flexbox;
     display: flex;
+    -ms-flex-pack: justify;
     justify-content: space-between; }
   .comment .comment-content {
     font-family: "Bitter", "adelle", Georgia, "Times New Roman", serif; }
@@ -566,7 +568,9 @@ fieldset + fieldset, fieldset + .button {
       margin: 0 auto;
       padding-top: 1rem;
       padding-bottom: 1rem;
+      display: -ms-flexbox;
       display: flex;
+      -ms-flex-pack: justify;
       justify-content: space-between; }
   .comments .banner-inline {
     margin-bottom: 2rem; }
