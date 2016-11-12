@@ -13,6 +13,33 @@
     }
 }
 
+.home {
+    .home-latest {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        > * {
+            flex-grow: 1;
+            flex-shrink: 1;
+            flex-basis: 50%;
+        }
+
+        @include respond-to($lg) {
+            flex-direction: row;
+
+            .home-latest-blogs {
+                padding-right: $gutter;
+            }
+
+            .home-latest-entries {
+                padding-left: $gutter;
+                margin-top: 0;
+            }
+        }
+    }
+}
+
 .home-a-spot {
     padding: 3rem;
     margin: 0 auto 4rem auto;

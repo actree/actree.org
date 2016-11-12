@@ -34,8 +34,7 @@ html,
 button,
 input,
 select,
-textarea,
-.pure-g [class *= "pure-u"] {
+textarea {
   /* Set your content font stack here: */
   font-family: $ff-sans;
 }
@@ -157,13 +156,18 @@ hr {
     margin-top: 2rem;
   }
 
-  p {
-    margin-top: .5em;
-  }
   p + p,
   p + ul,
   p + ol {
-    margin-top: 1em;
+    margin-top: 1rem;
+  }
+
+  h1, h2, h3, h4 {
+      + p,
+      + ul,
+      + ol {
+          margin-top: 0.5rem;
+      }
   }
 
   // Lists

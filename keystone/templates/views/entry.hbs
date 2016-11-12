@@ -1,18 +1,19 @@
 <section class="entry container">
-    <div class="pure-g">
-        <div class="entry-aside pure-u-1 pure-u-md-1-4">
-            <div class="pure-g">
+    <header class="entry-header">
+        <h1 class="entry-title">{{ data.entry.title }}</h1>
+    </header>
 
-
-            <div class=" entry-image pure-u-1-4 pure-u-md-1">
+    <section class="entry-content">
+        <div class="entry-aside">
+            <div class="entry-image">
                 {{#if data.entry.image.url}}
-                    <img src="{{{cloudinaryUrl data.entry.image  width=440 height=440 crop='fill'}}}">
+                    <img src="{{{cloudinaryUrl data.entry.image width=440 height=440 crop='fill'}}}">
                 {{else}}
                     <img src="{{ data.entry.oldImage }}">
                 {{/if}}
             </div>
 
-            <div class="entry-actions pure-u-3-4 pure-u-md-1">
+            <div class="entry-actions">
                 <a href="{{ data.entry.url }}" class="button wide" target="_blank">Zur Website</a>
                 <div class="entry-spread">
                     <h4>Sag's weiter!</h4>
@@ -24,12 +25,10 @@
                     </a>
                 </div>
             </div>
-</div>
         </div>
-        <div class="pure-u-1 pure-u-md-3-4 entry-main">
-            <h1 class="entry-title">{{ data.entry.title }}</h1>
+
+        <div class="entry-main">
             <div class="entry-description is-copy">
-                <!-- LOVE -->
                 {{{data.entry.description.html}}}
             </div>
             <div class="entry-meta">
@@ -41,13 +40,13 @@
                 </ul>
             </div>
             <!-- <div class="entry-related">
-        <h4 class="decorated">Siehe auch</h4>
-        <ul>
-          {{#each relatedEntries}}
-            <li>{{> entrySmall}}</li>
-          {{/each}}
-        </ul>
-      </div> -->
+                <h4 class="decorated">Siehe auch</h4>
+                <ul>
+                    {{#each relatedEntries}}
+                        <li>{{> entrySmall}}</li>
+                    {{/each}}
+                </ul>
+            </div> -->
         </div>
-    </div>
+    </section>
 </section>
