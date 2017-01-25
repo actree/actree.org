@@ -1,28 +1,19 @@
 <header class="header">
-    <nav class="navigation" id="menu">
-        <input type="checkbox" name="menu" id="menu-open">
-        <div class="logotype">
-            <a href="/"><span class="a">a</span>ctree</a>
-            <label for="menu-open" class="open"><i class="ion-navicon"></i></label>
-            <label for="menu-open" class="close"><i class="ion-close-round"></i></label>
-        </div>
-        <ul class="main-menu" id="main-menu">
-            {{# each navLinks}}
-                <li class="{{#ifeq ../section key}}active{{/ifeq}}">
-                    <a class="" href="{{ href }}"><span>{{ label }}</span></a>
-                </li>
-            {{/each}}
-            <li class="narrow"><a href="https://www.facebook.com/growactree" target="_blank"><i class="ion-social-facebook"></i></a></li>
-            <li class="narrow"><a href="https://twitter.com/growactree" target="_blank"><i class="ion-social-twitter"></i></a></li>
-        </ul>
-
-    </nav>
+  <nav class="navigation" id="menu" role="navigation">
+    <input type="checkbox" name="menu" id="menu-open">
+    <div class="logotype">
+      <a href="/"><span class="a">a</span>ctree</a>
+      <label for="menu-open" class="open"><i class="ion-navicon"></i></label>
+      <label for="menu-open" class="close"><i class="ion-close-round"></i></label>
+    </div>
+    <ul class="main-menu" id="main-menu">
+      {{# each navLinks}}
+        <li class="{{#ifeq ../section key}}active{{/ifeq}}">
+          <a class="" href="{{ href }}"><span>{{ label }}</span></a>
+        </li>
+      {{/each}}
+      <li class="narrow"><a href="https://www.facebook.com/growactree" target="_blank"><i class="ion-social-facebook"></i></a></li>
+      <li class="narrow"><a href="https://twitter.com/growactree" target="_blank"><i class="ion-social-twitter"></i></a></li>
+    </ul>
+  </nav>
 </header>
-
-<!-- <div class="stuff">
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-</div> -->
