@@ -5,14 +5,13 @@
         {{# each data.posts.results}}
             <!-- <div data-ks-editable="{{#if ../user}}{{adminEditableUrl ../../user _id}}{{/if}}" class="post"> -->
             <section class="excerpt">
-                {{#if image.url}}<a href="{{postUrl slug}}" class="image-link"><img src="{{{cloudinaryUrl image width=1080 height=300 crop='fill' }}}"></a>{{/if}}
-              <header>
-                <div class="category">{{category.name}}</div>
-                <h2 class="title"><a href="{{postUrl slug}}">{{ title }}</a></h2>
-                <summary class="meta is-copy">
-                  <p>{{#if content.brief}} {{content.brief}} {{/if}}</p>
-                  <p>{{#if author.name.first}}<em>von</em> {{author.name.first}}{{/if}} <em>am</em> {{date data.post.publishedDate format="DD.MM.YYYY"}}</p>
-                </summary>
+              <div class="excerpt__image">
+                {{#if image.url}}<a href="{{postUrl slug}}" class="excerpt__image-link"><img src="{{{cloudinaryUrl image width=760 height=300 crop='fill' }}}"></a>{{/if}}
+              </div>
+              <header class="excerpt__header">
+                <h2 class="excerpt__header-title"><a href="{{postUrl slug}}">{{ title }}</a></h2>
+                  <p class="excerpt__header-brief">{{#if content.brief}} {{content.brief}} {{/if}}</p>
+                  <div class="excerpt__header-meta">{{category.name}} &bull; am {{date data.post.publishedDate format="DD.MM.YYYY"}} von {{author.name.first}}</div>
               </header>
             </section>
         {{/each}}

@@ -122,7 +122,9 @@ hr {
 
 .is-copy p + p,
 .is-copy p + ul,
-.is-copy p + ol {
+.is-copy p + ol,
+.is-copy ul + p,
+.is-copy ol + p {
   margin-top: 1rem; }
 
 .is-copy h1 + p,
@@ -441,9 +443,9 @@ fieldset + fieldset, fieldset + .button {
   .post .post-category,
   .post .post-title,
   .post .post-meta,
+  .post .post-image,
   .post .post-footer {
-    max-width: 740px;
-    margin: 0 auto; }
+    max-width: 740px; }
   .post .post-title {
     margin-bottom: 2rem;
     line-height: 1.1em; }
@@ -706,28 +708,37 @@ fieldset + fieldset, fieldset + .button {
   background: transparent; }
 
 .excerpt {
-  text-align: center; }
-  .excerpt .image {
-    width: 100%; }
-  .excerpt .image-link {
-    display: block; }
-  .excerpt header {
-    padding: 1em; }
-  .excerpt .category {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  margin: 4rem 0; }
+  .excerpt__image {
+    margin-right: 1rem;
+    max-width: 25%;
+    display: none; }
+    @media screen and (min-width: 48em) {
+      .excerpt__image {
+        display: block; } }
+    .excerpt__image-link {
+      display: block; }
+  .excerpt__header-title {
+    font-size: 1.4rem;
+    margin-bottom: 0.2rem; }
+    .excerpt__header-title a {
+      border: 0; }
+  .excerpt__header-brief {
+    margin-bottom: 1.5rem; }
+  .excerpt__header-meta {
     font-size: .8rem;
     text-transform: uppercase;
     color: #666;
     letter-spacing: .1em; }
-  .excerpt .title {
-    font-size: 1.4rem; }
-    .excerpt .title a {
-      border: 0; }
-
-.excerpt {
-  margin-top: 4rem; }
 
 * + .excerpt {
-  margin-top: 6rem; }
+  border-top: 1px solid black; }
 
 .mini:first-of-type .image-link {
   display: block; }

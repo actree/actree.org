@@ -1,21 +1,5 @@
 $ff-serif: "Bitter", "adelle", Georgia, "Times New Roman", serif;
-$ff-sans: /*"Open Sans",*/ "Source Sans Pro", Helvetica, Arial, Verdana, sans-serif;
-
-%hyphenation {
-  -ms-word-break: break-all;
-  word-break: break-all;
-
-  // Non standard for webkit
-  word-break: break-word;
-
-  -webkit-hyphens: auto;
-  -moz-hyphens: auto;
-  hyphens: auto;
-
-  -webkit-hyphenate-before: 2;
-  -webkit-hyphenate-after: 3;
-  hyphenate-lines: 3;
-}
+$ff-sans: "Source Sans Pro", Helvetica, Arial, Verdana, sans-serif;
 
 html {
   font-size: 16px;
@@ -158,7 +142,9 @@ hr {
 
   p + p,
   p + ul,
-  p + ol {
+  p + ol,
+  ul + p,
+  ol + p {
     margin-top: 1rem;
   }
 

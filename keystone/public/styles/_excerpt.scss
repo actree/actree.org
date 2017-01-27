@@ -1,41 +1,53 @@
 .excerpt {
-    // background: $color-lightestgrey;
-    text-align: center;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
 
-    .image {
-        // height: 10rem;
-        width: 100%;
+    margin: 4rem 0;
+
+    &__image {
+        margin-right: 1rem;
+        max-width: 25%;
+        display: none;
+
+        @include respond-to($md) {
+          display: block;
+        }
+
+        &-link {
+          display: block;
+        }
     }
 
-    .image-link {
-        display: block;
-    }
+    &__header {
+      &-title {
+        font-size: 1.4rem;
+        margin-bottom: 0.2rem;
 
-    header {
-        padding: 1em;
-    }
+        a {
+            border: 0;
+        }
+      }
 
-    .category {
+      &-brief {
+        margin-bottom: 1.5rem;
+      }
+
+      &-meta {
         font-size: .8rem;
         text-transform: uppercase;
         color: $color-darkgrey;
         letter-spacing: .1em;
-    }
-
-    .title {
-        font-size: 1.4rem;
-        a {
-            border: 0;
-        }
+      }
     }
 }
 
-.excerpt {
-    margin-top: 4rem;
-}
-
+// .excerpt {
+//     margin-top: 4rem;
+// }
+//
 * + .excerpt {
-    margin-top: 6rem;
+    border-top: 1px solid black;
 }
 
 

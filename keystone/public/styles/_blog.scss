@@ -6,9 +6,10 @@
     .post-category,
     .post-title,
     .post-meta,
+    .post-image,
     .post-footer {
         max-width: $content-width;
-        margin: 0 auto;
+        // margin: 0 auto;
     }
 
     .post-title {
