@@ -3,7 +3,11 @@
     justify-content: flex-start;
     align-items: flex-start;
 
-    margin: 4rem 0 8rem 0;
+    margin: 4rem 0 4rem 0;
+
+    &:first-child {
+      margin-top: 0;
+    }
 
     &__image {
         margin-right: 1rem;
@@ -44,6 +48,7 @@
 
 .excerpt + .excerpt {
     border-top: 1px solid $color-lightergrey;
+    padding-top: 4rem;
 }
 
 

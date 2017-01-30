@@ -717,7 +717,9 @@ fieldset + fieldset, fieldset + .button {
   justify-content: flex-start;
   -ms-flex-align: start;
   align-items: flex-start;
-  margin: 4rem 0 8rem 0; }
+  margin: 4rem 0 4rem 0; }
+  .excerpt:first-child {
+    margin-top: 0; }
   .excerpt__image {
     margin-right: 1rem;
     max-width: 25%;
@@ -741,7 +743,8 @@ fieldset + fieldset, fieldset + .button {
     letter-spacing: .1em; }
 
 .excerpt + .excerpt {
-  border-top: 1px solid #ddd; }
+  border-top: 1px solid #ddd;
+  padding-top: 4rem; }
 
 .mini:first-of-type .image-link {
   display: block; }
