@@ -439,6 +439,10 @@ label {
 fieldset + fieldset, fieldset + .button {
   margin-top: 1rem; }
 
+.blog-title {
+  margin-bottom: 2rem;
+  line-height: 1.1em; }
+
 .post {
   margin-top: 4rem;
   margin-bottom: 4rem; }

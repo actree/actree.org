@@ -1,5 +1,7 @@
 .blog-title {
   @extend %title-page;
+  margin-bottom: 2rem;
+  line-height: 1.1em;
 }
 
 .post {
