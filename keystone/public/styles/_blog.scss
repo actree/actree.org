@@ -1,3 +1,7 @@
+.blog-title {
+  @extend %title-page;
+}
+
 .post {
     margin-top: 4rem;
     margin-bottom: 4rem;

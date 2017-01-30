@@ -25,12 +25,12 @@ exports = module.exports = function (req, res) {
 
 		q.exec(function (err, result) {
 			locals.data.post = result;
-            locals.meta = {
-                title: result.title,
-                description: result.content.brief,
-                url: helpers.fullPostUrl(locals.filters.post),
-                image: ""
-            }
+      locals.meta = {
+        title: result.title,
+        description: result.content.brief,
+        url: helpers.fullPostUrl(locals.filters.post),
+        image: ""
+      };
 			next(err);
 		});
 

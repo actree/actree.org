@@ -8,7 +8,13 @@ exports = module.exports = function (req, res) {
 
 	// Init locals
 	locals.section = 'blog';
-    locals.title = "Blog";
+  locals.title = "Blog";
+  locals.meta = {
+    title: 'Blog',
+    description: 'Blog mit Tipps, Tricks und Rezensionen zum Thema Nachhaltigkeit',
+    url: keystone.app.locals.baseUrl + '/blog/',
+    image: '',
+  };
 	locals.filters = {
 		category: req.params.category,
 	};
