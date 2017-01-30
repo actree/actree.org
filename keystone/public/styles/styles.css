@@ -120,6 +120,9 @@ hr {
 .is-copy h1, .is-copy h2, .is-copy h3, .is-copy h4 {
   margin-top: 2rem; }
 
+.is-copy p:empty {
+  display: none; }
+
 .is-copy p + p,
 .is-copy p + ul,
 .is-copy p + ol,
@@ -714,7 +717,7 @@ fieldset + fieldset, fieldset + .button {
   justify-content: flex-start;
   -ms-flex-align: start;
   align-items: flex-start;
-  margin: 4rem 0; }
+  margin: 4rem 0 8rem 0; }
   .excerpt__image {
     margin-right: 1rem;
     max-width: 25%;
@@ -737,8 +740,8 @@ fieldset + fieldset, fieldset + .button {
     color: #666;
     letter-spacing: .1em; }
 
-* + .excerpt {
-  border-top: 1px solid black; }
+.excerpt + .excerpt {
+  border-top: 1px solid #ddd; }
 
 .mini:first-of-type .image-link {
   display: block; }

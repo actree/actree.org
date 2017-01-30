@@ -140,6 +140,10 @@ hr {
     margin-top: 2rem;
   }
 
+  p:empty {
+    display: none;
+  }
+
   p + p,
   p + ul,
   p + ol,
