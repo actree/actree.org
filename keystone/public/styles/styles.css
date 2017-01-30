@@ -68,7 +68,7 @@ a {
   color: #222;
   text-decoration: none; }
 
-.title-page, .post .post-title, .page .page-title, .entry .entry-title {
+.title-page, .blog-title, .post .post-title, .page .page-title, .entry .entry-title {
   font-size: 2.4em;
   line-height: 1.2em;
   font-weight: 700;
