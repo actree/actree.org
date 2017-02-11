@@ -11,7 +11,7 @@
               <header class="excerpt__header">
                 <h2 class="excerpt__header-title"><a href="{{postUrl slug}}">{{ title }}</a></h2>
                   <p class="excerpt__header-brief">{{#if content.brief}} {{content.brief}} {{/if}}</p>
-                  <div class="excerpt__header-meta">{{category.name}} &bull; am {{date data.post.publishedDate format="DD.MM.YYYY"}} von {{author.name.first}}</div>
+                  <div class="excerpt__header-meta">{{category.name}} &bull; am {{date publishedDate format="DD.MM.YYYY"}} von {{author.name.first}}</div>
               </header>
             </section>
         {{/each}}
