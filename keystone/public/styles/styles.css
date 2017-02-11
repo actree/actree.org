@@ -160,6 +160,15 @@ hr {
   .is-copy a:hover {
     border-color: #222; }
 
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+  margin-bottom: -0.1em; }
+
 .page-container, .navigation {
   padding: 0 1rem; }
 
