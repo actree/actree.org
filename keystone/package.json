@@ -8,10 +8,10 @@
     "dotenv": "^2.0.0",
     "express-handlebars": "^3.0.0",
     "handlebars": "^4.0.5",
-    "keystone": "^0.3.19",
+    "keystone": "^4.0.0-beta.1",
     "lodash": "^4.13.1",
     "marked": "^0.3.5",
-    "moment": "^2.10.6"
+    "moment": "^2.17.1"
   },
   "devDependencies": {
     "eslint": "^2.12.0",
