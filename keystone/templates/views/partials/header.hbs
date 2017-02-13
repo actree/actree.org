@@ -3,8 +3,8 @@
     <input type="checkbox" name="menu" id="menu-open">
     <div class="logotype">
       <a href="/"><span class="a">a</span>ctree</a>
-      <label for="menu-open" class="open"><i class="ion-navicon"></i></label>
-      <label for="menu-open" class="close"><i class="ion-close-round"></i></label>
+      <label for="menu-open" class="open"><svg class="icon icon-menu"><use xlink:href="#icon-menu"></use></svg></label>
+      <label for="menu-open" class="close"><svg class="icon icon-cross"><use xlink:href="#icon-cross"></use></svg></label>
     </div>
     <ul class="main-menu" id="main-menu">
       {{# each navLinks}}
@@ -12,8 +12,8 @@
           <a class="" href="{{ href }}"><span>{{ label }}</span></a>
         </li>
       {{/each}}
-      <li class="narrow"><a href="https://www.facebook.com/growactree" target="_blank"><svg class="icon icon-facebook2"><use xlink:href="#icon-facebook2"></use></svg></a></li>
-      <li class="narrow"><a href="https://twitter.com/growactree" target="_blank"><svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg></a></li>
+      <li class="narrow"><a href="https://www.facebook.com/growactree" target="_blank" aria-label="Facebook"><svg class="icon icon-facebook2"><use xlink:href="#icon-facebook2"></use></svg></a></li>
+      <li class="narrow"><a href="https://twitter.com/growactree" target="_blank" aria-label="Twitter"><svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg></a></li>
     </ul>
   </nav>
 </header>
