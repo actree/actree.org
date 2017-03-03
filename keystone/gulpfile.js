@@ -1,6 +1,6 @@
 var gulp = require('gulp');
 var watch = require('gulp-watch');
-var shell = require('gulp-shell')
+var shell = require('gulp-shell');
 var rename = require('gulp-rename');
 
 var sass = require('gulp-sass');
@@ -9,14 +9,11 @@ var autoprefixer = require('gulp-autoprefixer');
 var imageop = require('gulp-image-optimization');
 
 var paths = {
-	'src':['./models/**/*.js','./routes/**/*.js', 'keystone.js', 'package.json']
-
-,
-	'style': {
-		all: './public/styles/**/*.scss',
-		output: './public/styles/'
-	}
-
+  'src':['./models/**/*.js', './routes/**/*.js', 'keystone.js', 'package.json'],
+  'style': {
+    all: './public/styles/**/*.scss',
+    output: './public/styles/',
+  }
 };
 
 
