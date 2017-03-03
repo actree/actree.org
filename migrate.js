@@ -1,50 +1,47 @@
 var _ = require('lodash');
-var MongoClient = require('mongodb').MongoClient,
-    assert = require('assert');
+var MongoClient = require('mongodb').MongoClient;
+var assert = require('assert');
 var walk = require('walk');
-var fs = require('fs')
-var path = require('path')
+var fs = require('fs');
+var path = require('path');
 var slug = require('slug');
 var mkdir = require('mkdir-p');
 var async = require('async');
 var marked = require('marked');
 
-var Q = require("q");
-
-var url = process.env["MONGO_URI"];
+var url = process.env.MONGO_URI;
 var contentFolder = process.argv[2];
 var appFolder = process.argv[3];
 
 var entries = [];
 var alltags = [];
-var tagIds = {};
 
-console.log("Migrating entries from " + contentFolder);
+console.log('Migrating entries from ' + contentFolder);
 
-var findAndCopyImage = function(rootPath, name) {
-    var files = fs.readdirSync(rootPath);
+var findAndCopyImage = function (rootPath, name) {
+  var files = fs.readdirSync(rootPath);
 
-    var image = _.find(files, function(filename) {
-        return [".png", ".jpg", ".jpeg"].indexOf(path.extname(filename)) > -1;
-    });
+  var image = _.find(files, function(filename) {
+    return ['.png', '.jpg', '.jpeg'].indexOf(path.extname(filename)) > -1;
+  });
 
-    if (!image) {
-        return null;
-    }
+  if (!image) {
+    return null;
+  }
 
-    // check for png, then for jpg, then jpeg
-    var extension = path.extname(image);
-    var publicFolder = path.join(appFolder, "public");
-    var targetFilename = path.join("images/entries", slug(name, {
-        lower: true
-    }) + extension);
-    // copy file
-    mkdir.sync(path.join(publicFolder, "images/entries"));
-    fs.createReadStream(path.join(rootPath, image)).pipe(
-        fs.createWriteStream(path.join(publicFolder, targetFilename))
-    );
+  // check for png, then for jpg, then jpeg
+  var extension = path.extname(image);
+  var publicFolder = path.join(appFolder, "public");
+  var targetFilename = path.join("images/entries", slug(name, {
+      lower: true
+  }) + extension);
+  // copy file
+  mkdir.sync(path.join(publicFolder, "images/entries"));
+  fs.createReadStream(path.join(rootPath, image)).pipe(
+      fs.createWriteStream(path.join(publicFolder, targetFilename))
+  );
 
-    return path.join("/", targetFilename);
+  return path.join("/", targetFilename);
 }
 
 var unifyTags = function(tag) {
