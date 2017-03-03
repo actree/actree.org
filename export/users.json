@@ -1,0 +1,4 @@
+{"_id":{"$oid":"55cb835d91285bc635d6121a"},"isAdmin":true,"password":"$2a$10$7JAtGsNdxduGiFBs6UHAy.U3Mo2xAfsTSg4yVDz.E4Xll2au9/EC6","email":"tim@tvooo.de","name":{"last":"User","first":"Admin"},"__v":0,"role":"team"}
+{"_id":{"$oid":"55cb8e6b1ba7b1da08bc72db"},"role":"team","password":"$2a$10$iOy2aNztbd9EkLR5dgVbOevt68aVqrCtd6peWHE7SH4wZq6MB/Qma","email":"beccy@ruehle.eu","name":{"last":"","first":"Beccy"},"__v":0,"isAdmin":true}
+{"_id":{"$oid":"57893e53519702497df73623"},"password":"$2a$10$DkVQG8sv91aHdk7aLn/4ouvSMAMgKsmxI5iJp.ibuQ8IujuwPnFvO","email":"sonja@actree.org","name":{"last":"","first":"Sonja"},"__v":0}
+{"_id":{"$oid":"57893e6b519702497df73624"},"password":"$2a$10$FFRFaOT58BycgyLm9u9eDu03EikvyXelHWmQKwNQKyEDobRH7jm8.","email":"juliane@actree.org","name":{"last":"","first":"Juliane"},"__v":0}
