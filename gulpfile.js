@@ -9,7 +9,7 @@ const imageop = require('gulp-image-optimization');
 const paths = {
   src: ['./models/**/*.js', './routes/**/*.js', 'keystone.js', 'package.json'],
   style: {
-    all: './public/styles/**/*.scss',
+    all: './src/styles/**/*.scss',
     output: './public/styles/',
   },
 };
@@ -38,7 +38,7 @@ gulp.task('sass', () => {
 });
 
 gulp.task('images', (done) => {
-  gulp.src(['srcimages/**/*.png', 'srcimages/**/*.jpg', 'srcimages/**/*.gif', 'srcimages/**/*.jpeg'])
+  gulp.src(['src/images/**/*.png', 'src/images/**/*.jpg', 'src/images/**/*.gif', 'src/images/**/*.jpeg'])
     .pipe(imageop({
       optimizationLevel: 5,
       progressive: true,
