@@ -46,7 +46,8 @@
 
   .entry-meta {
     h4 {
-      @extend %title-minor;
+      @include title-minor;
+
       margin-top: $padding-vertical;
     }
 

@@ -1,53 +1,46 @@
-/* Form to create comment */
-.comment-form {
-  margin-bottom: 2rem;
-  #comment-form {
-
-  }
-
-  margin-bottom: 3rem;
-}
-
 /* Single comment */
 .comment {
-    padding-bottom: 2rem;
-    margin-bottom: 2rem;
-    border-bottom: 1px dotted $color-lightestgrey;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px dotted $color-lightestgrey;
 
   .comment-header {
-        display: flex;
-        justify-content: space-between;
-    }
+    display: flex;
+    justify-content: space-between;
+  }
 
-    .comment-content {
-        font-family: $font-family-serif;
-    }
+  .comment-content {
+    font-family: $font-family-serif;
+  }
 }
 
 /* Comments section */
 .comments {
-    min-height: 30vh;
+  min-height: 30vh;
+
   .comments-header {
-    background-color: $color-background-alt;
     margin-top: 4rem;
     margin-bottom: 2rem;
+    background-color: $color-background-alt;
 
     > div {
-        max-width: $content-width;
-        margin: 0 auto;
-        padding-top: $padding-vertical;
-        padding-bottom: $padding-vertical;
-        display: flex;
-        justify-content: space-between;
+      display: flex;
+      max-width: $content-width;
+      margin: 0 auto;
+      padding-top: $padding-vertical;
+      padding-bottom: $padding-vertical;
+      justify-content: space-between;
     }
+  }
 
-  }
   .banner-inline {
-      margin-bottom: 2rem;
+    margin-bottom: 2rem;
   }
+
   .comments-title {
-    @extend %title-major;
-    line-height: 2rem;
+    @include title-minor;
+
     display: inline-block;
+    line-height: 2rem;
   }
 }

@@ -74,10 +74,12 @@
         letter-spacing: .1em;
     }
     .title {
-        font-size: 1.4rem;
-        a {
-            border: 0;
-        }
+      font-size: $font-size-md;
+      line-height: $line-height-md;
+
+      a {
+        border: 0;
+      }
     }
 }
 

@@ -17,8 +17,8 @@ textarea {
 body {
   color: $color-text;
   font-family: $font-family-sans;
-  font-size: 100%;
-  line-height: 1.3em;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
 }
 
 h1,
@@ -42,18 +42,18 @@ a {
   line-height: $line-height-xl;
 }
 
-%title-major {
+@mixin title-major {
   font-family: $font-family-sans;
   font-size: $font-size-md;
   font-weight: 700;
   line-height: $line-height-md;
 }
 
-%title-minor {
+@mixin title-minor {
   font-family: $font-family-sans;
-  font-size: 1em;
+  font-size: $font-size-base;
   font-weight: 700;
-  line-height: 1.5em;
+  line-height: $line-height-base;
 }
 
 .title-page {
@@ -61,11 +61,11 @@ a {
 }
 
 .title-major {
-  @extend %title-major;
+  @include title-major;
 }
 
 .title-minor {
-  @extend %title-minor;
+  @include title-minor;
 }
 
 .title-list {
