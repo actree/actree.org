@@ -1,142 +1,155 @@
 .header {
+  @include clearfix;
 
-    @include clearfix;
-    background: $color-background-alt;
+  background: $color-background-alt;
 }
 
 $logo-fs: 2rem;
-$logo-height: $logo-fs * 1.0;
+$logo-height: $logo-fs;
 $logo-padding-top: $logo-fs / 2;
 $logo-padding-bottom: $logo-padding-top * 1.5;
 
 .navigation {
-    max-width: $container-width;
-    @extend %outer-gutter;
-    margin: 0 auto;
-    overflow: auto;
+  @extend %outer-gutter;
 
-    .logotype {
-        display: block;
+  max-width: $container-width;
+  margin: 0 auto;
+  overflow: auto;
 
-        label, a {
-            margin: $logo-padding-top 0rem $logo-padding-bottom 0rem;
-            font-size: $logo-fs;
-            line-height: $logo-height;
-            // height: $logo-height;
-            font-family: $font-family-serif;
-            font-weight: 700;
-            text-decoration: none;
-        }
+  .logotype {
+    display: block;
 
-        .a {
-            display: inline-block;
-            border-bottom: 4px solid $color-brand;
-        }
-    }
-
-    .main-menu {
-        @include clearfix;
-
-        list-style: none;
-        display: none;
-        margin-bottom: $logo-padding-top;
-
-
-        li {
-            display: block;
-            border-bottom: 1px solid $color-lightergrey;
-            a {
-                padding: 0.4rem 0.4rem;
-                display: block;
-            }
-            &.active {
-                background: $color-lightergrey;
-            }
-        }
-    }
-    .open:hover + .main-menu {
-        display: block;
-    }
+    label,
     a {
-        color: black;
-        text-decoration: none;
-        font-weight: 600;
+      margin: $logo-padding-top 0 $logo-padding-bottom 0;
+      font-family: $font-family-serif;
+      font-size: $logo-fs;
+      font-weight: 700;
+      line-height: $logo-height;
+      text-decoration: none;
     }
 
-    input[type="checkbox"] {
-        display: none;
-    };
-
-    label {
-        cursor: pointer;
+    .a {
+      display: inline-block;
+      border-bottom: 4px solid $color-brand;
     }
+  }
 
-    .open {
+  .main-menu {
+    @include clearfix;
+
+    display: none;
+    margin-bottom: $logo-padding-top;
+    list-style: none;
+
+    li {
+      display: block;
+      border-bottom: 1px solid $color-lightergrey;
+
+      a {
         display: block;
-        float: right;
-        @include respond-to($md) {
-            display: none;
-        }
+        padding: .4rem .4rem;
+      }
+
+      &.active {
+        background: $color-lightergrey;
+      }
+    }
+  }
+
+  .open:hover + .main-menu {
+    display: block;
+  }
+
+  a {
+    color: black;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  input[type="checkbox"] {
+    display: none;
+  }
+
+  label {
+    cursor: pointer;
+  }
+
+  .open {
+    float: right;
+    display: block;
+
+    @include respond-to($md) {
+      display: none;
+    }
+  }
+
+  .close {
+    float: right;
+    display: none;
+  }
+
+  #menu-open:checked + .logotype {
+    .open {
+      display: none;
     }
 
     .close {
-        display: none;
-        float: right;
+      display: block;
+    }
+  }
+
+  #menu-open:checked ~ .main-menu {
+    display: block;
+  }
+
+  @include respond-to($md) {
+    .menu-toggle {
+      display: none;
+    }
+
+    .main-menu {
+      float: left;
+      display: block;
+      margin-bottom: 0;
+
+      li {
+        float: left;
+        border: 0;
+
+        a {
+          display: inline-block;
+          padding: ($logo-padding-top + $logo-padding-bottom) / 2 1rem;
+          line-height: $logo-height;
+        }
+
+        &.narrow a {
+          padding: ($logo-padding-top + $logo-padding-bottom) / 2 .5rem;
+        }
+
+        &.active {
+          background: transparent;
+        }
+
+        &.active span {
+          border-bottom: 3px solid $color-brand;
+        }
+      }
+    }
+
+    .logotype {
+      float: left;
+
+      a {
+        margin: $logo-padding-top 1rem $logo-padding-bottom 0;
+      }
     }
 
     #menu-open:checked + .logotype {
-        .open {
-            display: none;
-        }
-        .close {
-            display: block;
-        }
+      .close,
+      .open {
+        display: none;
+      }
     }
-
-    #menu-open:checked ~ .main-menu {
-        display: block;
-    }
-
-    @include respond-to($md) {
-        .menu-toggle {
-            display: none;
-        }
-        .main-menu {
-            display: block;
-            margin-bottom: 0;
-            float: left;
-            li {
-                float: left;
-                border: 0;
-
-                a {
-                    display: inline-block;
-                    line-height: $logo-height;
-                    padding: ($logo-padding-top + $logo-padding-bottom) / 2 1rem;
-                }
-
-                &.narrow a {
-                    padding: ($logo-padding-top + $logo-padding-bottom) / 2 0.5rem;
-                }
-
-                &.active {
-                    background: transparent;
-                }
-
-                &.active span {
-                    border-bottom: 3px solid $color-brand;
-                }
-            }
-        }
-        .logotype {
-            float: left;
-
-            a { margin: $logo-padding-top 1rem $logo-padding-bottom 0rem; }
-        }
-        #menu-open:checked + .logotype {
-            .close, .open {
-                display: none;
-            }
-        }
-    }
+  }
 }

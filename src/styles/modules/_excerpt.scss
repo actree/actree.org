@@ -25,7 +25,8 @@
 
     &__header {
       &-title {
-        font-size: 1.4rem;
+        font-size: $font-size-md;
+        line-height: $line-height-md;
         margin-bottom: 0.2rem;
 
         a {

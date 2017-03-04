@@ -1,14 +1,9 @@
 @mixin clearfix {
-  &:after {
-    display: table;
+  &::after {
     content: "";
     clear: both;
+    display: table;
   }
-}
-
-@mixin em($val) {
-  margin-top: ($val)em;
-  margin-top: ($val)rem;
 }
 
 @mixin respond-to($query) {

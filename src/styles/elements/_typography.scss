@@ -44,9 +44,9 @@ a {
 
 %title-major {
   font-family: $font-family-sans;
-  font-size: 1.5em;
+  font-size: $font-size-md;
   font-weight: 700;
-  line-height: 1.15em;
+  line-height: $line-height-md;
 }
 
 %title-minor {
@@ -73,8 +73,8 @@ a {
   padding-bottom: 1rem;
   border-bottom: 1px solid $color-lightergrey;
   font-family: $font-family-serif;
-  font-size: 1.2rem;
-  line-height: 1.5em;
+  font-size: $font-size-md;
+  line-height: $line-height-md;
   text-align: center;
 }
 

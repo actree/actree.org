@@ -168,9 +168,9 @@ a {
 
 .title-major, .comments .comments-title {
   font-family: "Source Sans Pro", Helvetica, Arial, Verdana, sans-serif;
-  font-size: 1.5em;
+  font-size: 1.5rem;
   font-weight: 700;
-  line-height: 1.15em; }
+  line-height: 1.725rem; }
 
 .title-minor, .entry .entry-meta h4 {
   font-family: "Source Sans Pro", Helvetica, Arial, Verdana, sans-serif;
@@ -189,8 +189,8 @@ a {
   padding-bottom: 1rem;
   border-bottom: 1px solid #ddd;
   font-family: "Bitter", "adelle", Georgia, "Times New Roman", serif;
-  font-size: 1.2rem;
-  line-height: 1.5em;
+  font-size: 1.5rem;
+  line-height: 1.725rem;
   text-align: center; }
 
 hr {
@@ -435,10 +435,10 @@ fieldset + .button {
 
 .header {
   background: #efefef; }
-  .header:after {
-    display: table;
+  .header::after {
     content: "";
-    clear: both; }
+    clear: both;
+    display: table; }
 
 .navigation {
   max-width: 1080px;
@@ -446,51 +446,52 @@ fieldset + .button {
   overflow: auto; }
   .navigation .logotype {
     display: block; }
-    .navigation .logotype label, .navigation .logotype a {
-      margin: 1rem 0rem 1.5rem 0rem;
-      font-size: 2rem;
-      line-height: 2rem;
+    .navigation .logotype label,
+    .navigation .logotype a {
+      margin: 1rem 0 1.5rem 0;
       font-family: "Bitter", "adelle", Georgia, "Times New Roman", serif;
+      font-size: 2rem;
       font-weight: 700;
+      line-height: 2rem;
       text-decoration: none; }
     .navigation .logotype .a {
       display: inline-block;
       border-bottom: 4px solid #8dbf41; }
   .navigation .main-menu {
-    list-style: none;
     display: none;
-    margin-bottom: 1rem; }
-    .navigation .main-menu:after {
-      display: table;
+    margin-bottom: 1rem;
+    list-style: none; }
+    .navigation .main-menu::after {
       content: "";
-      clear: both; }
+      clear: both;
+      display: table; }
     .navigation .main-menu li {
       display: block;
       border-bottom: 1px solid #ddd; }
       .navigation .main-menu li a {
-        padding: 0.4rem 0.4rem;
-        display: block; }
+        display: block;
+        padding: .4rem .4rem; }
       .navigation .main-menu li.active {
         background: #ddd; }
   .navigation .open:hover + .main-menu {
     display: block; }
   .navigation a {
     color: black;
-    text-decoration: none;
-    font-weight: 600; }
+    font-weight: 600;
+    text-decoration: none; }
   .navigation input[type="checkbox"] {
     display: none; }
   .navigation label {
     cursor: pointer; }
   .navigation .open {
-    display: block;
-    float: right; }
+    float: right;
+    display: block; }
     @media screen and (min-width: 48em) {
       .navigation .open {
         display: none; } }
   .navigation .close {
-    display: none;
-    float: right; }
+    float: right;
+    display: none; }
   .navigation #menu-open:checked + .logotype .open {
     display: none; }
   .navigation #menu-open:checked + .logotype .close {
@@ -501,16 +502,16 @@ fieldset + .button {
     .navigation .menu-toggle {
       display: none; }
     .navigation .main-menu {
+      float: left;
       display: block;
-      margin-bottom: 0;
-      float: left; }
+      margin-bottom: 0; }
       .navigation .main-menu li {
         float: left;
         border: 0; }
         .navigation .main-menu li a {
           display: inline-block;
-          line-height: 2rem;
-          padding: 1.25rem 1rem; }
+          padding: 1.25rem 1rem;
+          line-height: 2rem; }
         .navigation .main-menu li.narrow a {
           padding: 1.25rem 0.5rem; }
         .navigation .main-menu li.active {
@@ -520,8 +521,9 @@ fieldset + .button {
     .navigation .logotype {
       float: left; }
       .navigation .logotype a {
-        margin: 1rem 1rem 1.5rem 0rem; }
-    .navigation #menu-open:checked + .logotype .close, .navigation #menu-open:checked + .logotype .open {
+        margin: 1rem 1rem 1.5rem 0; }
+    .navigation #menu-open:checked + .logotype .close,
+    .navigation #menu-open:checked + .logotype .open {
       display: none; } }
 
 .footer {
@@ -621,7 +623,8 @@ fieldset + .button {
     .excerpt__image-link {
       display: block; }
   .excerpt__header-title {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
+    line-height: 1.725rem;
     margin-bottom: 0.2rem; }
     .excerpt__header-title a {
       border: 0; }
@@ -765,7 +768,8 @@ fieldset + .button {
     margin-bottom: 3rem; }
     .post .post-meta p {
       font-family: "Bitter", "adelle", Georgia, "Times New Roman", serif;
-      font-size: 1.1rem; }
+      font-size: 1rem;
+      line-height: 1.3rem; }
   .post .post-image {
     position: relative; }
     .post .post-image .credit {
