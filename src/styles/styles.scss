@@ -4,6 +4,7 @@
 @import "base/mixins";
 @import "base/breakpoints";
 @import "base/typography";
+@import "base/content";
 @import "layout/layout";
 @import "layout/wireframe";
 
@@ -11,6 +12,7 @@
 @import "elements/label";
 @import "elements/form";
 @import "elements/button";
+@import "elements/icon";
 
 // Modules
 @import "modules/vertical-nav";

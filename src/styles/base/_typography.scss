@@ -5,7 +5,7 @@ html {
   font-size: 16px;
 
   @include respond-to($md) {
-      font-size: 18px;
+    font-size: 18px;
   }
 }
 
@@ -24,10 +24,10 @@ textarea {
 }
 
 body {
+  color: $color-text;
   font-family: $ff-sans;
   font-size: 100%;
   line-height: 1.3em;
-  color: $color-text;
 }
 
 h1, h2, h3, h4 {
@@ -40,7 +40,7 @@ $fs-title-page: 2.4rem;
 $fs-title-sub: 2.0rem;
 $fs-title-major: 1.5rem;
 $fs-title-minor: 1.0rem;
-$fs-small: 0.8rem;
+$fs-small: .8rem;
 
 a {
   display: inline-block;
@@ -113,84 +113,4 @@ hr {
     margin: 4rem;
     border-bottom: 1px solid $color-lightergrey;
     height: 1px;
-}
-
-.is-copy {
-  h1, h2, h3, h4 {
-    font-family: $ff-sans;
-  }
-
-  p, ul, ol {
-    font-family: $ff-sans;
-    font-weight: 400;
-    color: #444;
-  }
-
-  // Tracking
-  h1, h2, h3, h4 {
-    line-height: 1.1em;
-  }
-  p, li {
-    line-height: 1.6em;
-  }
-
-
-  // Spacing
-  h1, h2, h3, h4 {
-    margin-top: 2rem;
-  }
-
-  p:empty {
-    display: none;
-  }
-
-  p + p,
-  p + ul,
-  p + ol,
-  ul + p,
-  ol + p {
-    margin-top: 1rem;
-  }
-
-  h1, h2, h3, h4 {
-      + p,
-      + ul,
-      + ol {
-          margin-top: 0.5rem;
-      }
-  }
-
-  // Lists
-  li {
-    display: list-item;
-  }
-  ul, ol {
-    padding-left: 1.5em;
-  }
-  ul {
-    list-style-type: disc;
-  }
-
-  abbr {
-    font-variant: small-caps;
-    font-weight: 500;
-  }
-
-  a {
-      display: inline;
-      border-bottom: 2px solid $color-brand;
-      &:hover {
-          border-color: $color-text;
-      }
-  }
-}
-
-.icon {
-  display: inline-block;
-  width: 1em;
-  height: 1em;
-  stroke-width: 0;
-  stroke: currentColor;
-  fill: currentColor;
-  margin-bottom: -0.1em;
 }
