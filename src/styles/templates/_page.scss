@@ -8,7 +8,7 @@
     }
 
     .page-title {
-        @extend %title-page;
+        @include title-page;
         margin-bottom: 2rem;
         line-height: 1.1em;
     }

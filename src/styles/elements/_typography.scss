@@ -1,0 +1,88 @@
+html {
+  font-size: 16px;
+
+  @include respond-to($md) {
+    font-size: 18px;
+  }
+}
+
+html,
+button,
+input,
+select,
+textarea {
+  font-family: $font-family-sans;
+}
+
+body {
+  color: $color-text;
+  font-family: $font-family-sans;
+  font-size: 100%;
+  line-height: 1.3em;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: $font-family-sans;
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  display: inline-block;
+  color: $color-text;
+  text-decoration: none;
+}
+
+@mixin title-page {
+  font-family: $font-family-sans;
+  font-size: $font-size-xl;
+  font-weight: 700;
+  line-height: $line-height-xl;
+}
+
+%title-major {
+  font-family: $font-family-sans;
+  font-size: 1.5em;
+  font-weight: 700;
+  line-height: 1.15em;
+}
+
+%title-minor {
+  font-family: $font-family-sans;
+  font-size: 1em;
+  font-weight: 700;
+  line-height: 1.5em;
+}
+
+.title-page {
+  @include title-page;
+}
+
+.title-major {
+  @extend %title-major;
+}
+
+.title-minor {
+  @extend %title-minor;
+}
+
+.title-list {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid $color-lightergrey;
+  font-family: $font-family-serif;
+  font-size: 1.2rem;
+  line-height: 1.5em;
+  text-align: center;
+}
+
+hr {
+  height: 1px;
+  margin: 4rem;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  border: none;
+  border-bottom: 1px solid $color-lightergrey;
+}

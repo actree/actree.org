@@ -3,36 +3,38 @@
 require('dotenv').config();
 
 // Require keystone
-var keystone = require('keystone');
-var handlebars = require('express-handlebars');
+const keystone = require('keystone');
+const handlebars = require('express-handlebars');
+const _ = require('lodash');
+const helpers = require('./templates/views/helpers');
 
 // Initialise Keystone with your project's configuration.
 // See http://keystonejs.com/guide/config for available options
 // and documentation.
 
 keystone.init({
-	'name': 'actree',
-	'brand': 'actree',
+  'name': 'actree',
+  'brand': 'actree',
 
-	// 'sass': 'public',
-	'static': 'public',
-	'favicon': 'public/favicon.ico',
-	'views': 'templates/views',
-	'view engine': 'hbs',
+  // 'sass': 'public',
+  'static': 'public',
+  'favicon': 'public/favicon.ico',
+  'views': 'templates/views',
+  'view engine': 'hbs',
 
-	'custom engine': handlebars.create({
-		layoutsDir: 'templates/views/layouts',
-		partialsDir: 'templates/views/partials',
-		defaultLayout: 'default',
-		helpers: new require('./templates/views/helpers')(),
-		extname: '.hbs',
-	}).engine,
+  'custom engine': handlebars.create({
+    layoutsDir: 'templates/views/layouts',
+    partialsDir: 'templates/views/partials',
+    defaultLayout: 'default',
+    helpers: new helpers(),
+    extname: '.hbs',
+  }).engine,
 
-	'auto update': true,
+  'auto update': true,
   'cookie secret': 'asdsadadfsdfsadfdslkfdslkflkjsdfhdskjfs',
-	'session': true,
-	'auth': true,
-	'user model': 'User',
+  'session': true,
+  'auth': true,
+  'user model': 'User',
 });
 
 // Load your project's Models
@@ -42,11 +44,11 @@ keystone.import('models');
 // bundled templates and layouts. Any runtime locals (that should be set uniquely
 // for each request) should be added to ./routes/middleware.js
 keystone.set('locals', {
-	_: require('lodash'),
-	env: keystone.get('env'),
-	utils: keystone.utils,
-	editable: keystone.content.editable,
-    baseUrl: '//localhost:3000'
+  _,
+  env: keystone.get('env'),
+  utils: keystone.utils,
+  editable: keystone.content.editable,
+  baseUrl: '//localhost:3000',
 });
 
 // Load your project's Routes
@@ -59,10 +61,10 @@ keystone.set('routes', require('./routes'));
 
 // Configure the navigation bar in Keystone's Admin UI
 keystone.set('nav', {
-	posts: ['posts', 'post-categories'],
-	galleries: 'galleries',
-	enquiries: 'enquiries',
-	users: 'users',
+  posts: ['posts', 'post-categories'],
+  galleries: 'galleries',
+  enquiries: 'enquiries',
+  users: 'users',
 });
 
 keystone.set('cloudinary secure', true);

@@ -3,7 +3,7 @@
     margin-bottom: $margin-from-menu;
 
     .entry-title {
-        @extend %title-page;
+        @include title-page;
         text-align: center;
         margin-bottom: .4em;
 

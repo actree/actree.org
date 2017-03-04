@@ -1,25 +1,37 @@
 .is-copy {
-  h1, h2, h3, h4 {
-    font-family: $ff-sans;
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: $font-family-sans;
   }
 
-  p, ul, ol {
-    font-family: $ff-sans;
-    font-weight: 400;
+  p,
+  ul,
+  ol {
     color: #444;
+    font-family: $font-family-sans;
+    font-weight: 400;
   }
 
   // Tracking
-  h1, h2, h3, h4 {
+  h1,
+  h2,
+  h3,
+  h4 {
     line-height: 1.1em;
   }
-  p, li {
+
+  p,
+  li {
     line-height: 1.6em;
   }
 
-
   // Spacing
-  h1, h2, h3, h4 {
+  h1,
+  h2,
+  h3,
+  h4 {
     margin-top: 2rem;
   }
 
@@ -35,21 +47,27 @@
     margin-top: 1rem;
   }
 
-  h1, h2, h3, h4 {
-      + p,
-      + ul,
-      + ol {
-          margin-top: .5rem;
-      }
+  h1,
+  h2,
+  h3,
+  h4 {
+    + p,
+    + ul,
+    + ol {
+      margin-top: .5rem;
+    }
   }
 
   // Lists
   li {
     display: list-item;
   }
-  ul, ol {
+
+  ul,
+  ol {
     padding-left: 1.5em;
   }
+
   ul {
     list-style-type: disc;
   }
@@ -60,10 +78,11 @@
   }
 
   a {
-      display: inline;
-      border-bottom: 2px solid $color-brand;
-      &:hover {
-          border-color: $color-text;
-      }
+    display: inline;
+    border-bottom: 2px solid $color-brand;
+
+    &:hover {
+      border-color: $color-text;
+    }
   }
 }
