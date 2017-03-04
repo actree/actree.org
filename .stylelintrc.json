@@ -1,13 +1,15 @@
 {
   "extends": "stylelint-config-standard",
   "plugins": [
-    "stylelint-order"
+    "stylelint-order",
+    "stylelint-declaration-use-variable"
   ],
   "rules": {
     "selector-no-id": true,
     "declaration-no-important": true,
     "number-leading-zero": "never",
     "shorthand-property-no-redundant-values": null,
+    "sh-waqar/declaration-use-variable": "color",
     "order/declaration-block-properties-specified-order": [
       "position",
       "top",

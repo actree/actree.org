@@ -1,48 +1,49 @@
 .entry {
-    margin-top: $margin-from-menu;
-    margin-bottom: $margin-from-menu;
+  margin-top: $margin-from-menu;
+  margin-bottom: $margin-from-menu;
 
-    .entry-title {
-        @include title-page;
-        text-align: center;
-        margin-bottom: .4em;
+  .entry-title {
+    @include title-page;
 
-        @include respond-to( $md ) {
-          text-align: left;
-        }
+    margin-bottom: .4em;
+    text-align: center;
+
+    @include respond-to( $md ) {
+      text-align: left;
     }
+  }
 
-    .entry-content {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+  .entry-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
-        @include respond-to($md) {
-            flex-direction: row;
+    @include respond-to($md) {
+      flex-direction: row;
 
-            .entry-aside {
-                flex-basis: 25%;
-            }
-            .entry-main {
-                flex-basis: 75%;
-                margin-left: 2rem;
-            }
-        }
+      .entry-aside {
+        flex-basis: 25%;
+      }
 
+      .entry-main {
+        flex-basis: 75%;
+        margin-left: 2rem;
+      }
     }
+  }
 
-    .entry-aside {
-        .button {
-            margin-bottom: $padding-vertical;
-        }
+  .entry-aside {
+    .button {
+      margin-bottom: $padding-vertical;
     }
+  }
 
-    .entry-image img {
-        border: 1px #ddd solid;
-        width: 100%;
-        max-width: 440px;
-        margin: 0 auto 1em auto;
-    }
+  .entry-image img {
+    width: 100%;
+    max-width: 440px;
+    margin: 0 auto 1em auto;
+    border: 1px $color-lightergrey solid;
+  }
 
   .entry-meta {
     h4 {
@@ -73,44 +74,45 @@
 }
 
 .entry-small {
-  background: $color-lightestgrey;
   padding: 1rem;
+  background: $color-lightestgrey;
 
   & + & {
     margin-top: 1rem;
   }
 }
 
-.entry-mini, .entry-small {
+.entry-mini,
+.entry-small {
+  display: flex;
+
+  & + & {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px dotted $color-lightergrey;
+  }
+
+  .entry-image {
+    flex-basis: 20%;
+  }
+
+  .entry-main {
+    margin-left: 1rem;
+    flex-basis: 80%;
+  }
+
+  .entry-title {
+    margin-bottom: .2em;
+  }
+
+  .entry-meta ul {
     display: flex;
+    flex-wrap: wrap;
+    list-style: none;
 
-    & + & {
-        margin-top: 1rem;
-        padding-top: 1rem;
-        border-top: 1px dotted $color-lightergrey;
+    li {
+      margin-right: .5rem;
+      margin-bottom: .5rem;
     }
-
-    .entry-image {
-        flex-basis: 20%;
-    }
-
-    .entry-main {
-        margin-left: 1rem;
-        flex-basis: 80%;
-    }
-
-    .entry-title {
-        margin-bottom: 0.2em;
-    }
-
-    .entry-meta ul {
-        display: flex;
-        flex-wrap: wrap;
-        list-style: none;
-
-        li {
-          margin-right: .5rem;
-          margin-bottom: .5rem;
-        }
-    }
+  }
 }

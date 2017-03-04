@@ -21,13 +21,13 @@
   &:hover {
     border-color: darken($color-cta, 10%) solid;
     background-color: lighten($color-cta, 10%);
-    color: white;
+    color: $color-white;
     text-decoration: none;
   }
 
   &--disabled {
-    border-color: #bbb;
-    background-color: #ddd;
+    border-color: $color-lightgrey;
+    background-color: $color-lightergrey;
   }
 
   &.wide {
@@ -49,5 +49,5 @@
 
   border: 1px solid white;
   background: transparent;
-  color: white;
+  color: $color-white;
 }
