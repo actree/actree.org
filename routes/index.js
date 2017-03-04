@@ -18,38 +18,39 @@
  * http://expressjs.com/api.html#app.VERB
  */
 
-var keystone = require('keystone');
-var middleware = require('./middleware');
-var importRoutes = keystone.importer(__dirname);
+const keystone = require('keystone');
+const middleware = require('./middleware');
+
+const importRoutes = keystone.importer(__dirname);
 
 // Common Middleware
 keystone.pre('routes', middleware.initLocals);
 keystone.pre('render', middleware.flashMessages);
 
 // Import Route Controllers
-var routes = {
-	views: importRoutes('./views'),
+const routes = {
+  views: importRoutes('./views'),
 };
 
 // Setup Route Bindings
-exports = module.exports = function (app) {
-	// Views
-	app.get('/', routes.views.index);
+module.exports = (app) => {
+  // Views
+  app.get('/', routes.views.index);
 
-    app.get('/blog/', routes.views.blog);
-    app.get('/blog/category/:category', routes.views.blog);
-	app.get('/blog/:post', routes.views.post);
+  app.get('/blog/', routes.views.blog);
+  app.get('/blog/category/:category', routes.views.blog);
+  app.get('/blog/:post', routes.views.post);
 
-    app.get('/entries/', routes.views.entries);
-    app.get('/entries/tag/:tag', routes.views.entries);
-    app.get('/entries/:entry', routes.views.entry);
+  app.get('/entries/', routes.views.entries);
+  app.get('/entries/tag/:tag', routes.views.entries);
+  app.get('/entries/:entry', routes.views.entry);
 
-    app.get('/actree/:page', routes.views.page);
+  app.get('/actree/:page', routes.views.page);
+  app.get('/maps/', routes.views.maps);
 
-    // app.get('/gallery', routes.views.gallery);
-	// app.all('/contact', routes.views.contact);
+  // app.get('/gallery', routes.views.gallery);
+  // app.all('/contact', routes.views.contact);
 
-	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
-	// app.get('/protected', middleware.requireUser, routes.views.protected);
-
+  // NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
+  // app.get('/protected', middleware.requireUser, routes.views.protected);
 };

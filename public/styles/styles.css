@@ -156,7 +156,7 @@ hr {
 
 .is-copy a {
   display: inline;
-  border-bottom: 2px solid #8dbf41; }
+  border-bottom: 2px solid #96e6a1; }
   .is-copy a:hover {
     border-color: #222; }
 
@@ -310,8 +310,8 @@ body {
 .home-a-spot {
   padding: 3rem;
   margin: 0 auto 4rem auto;
-  color: white;
-  background: #8dbf41;
+  background: #96e6a1;
+  background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);
   text-align: center;
   width: 100%; }
   @media screen and (min-width: 1181px) {
@@ -320,14 +320,19 @@ body {
       max-width: 1080px; } }
   .home-a-spot a {
     display: inline-block;
-    box-shadow: 0 0 0 3px  white inset;
+    box-shadow: 0 0 0 3px  black inset;
     margin-top: 1rem;
-    color: white;
     padding: 0.5em 1em;
     border-radius: 0.25em; }
     .home-a-spot a:hover {
-      background-color: white;
-      color: #8dbf41; }
+      background-color: black;
+      color: #96e6a1; }
+
+.maps .maps__iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 500px;
+  border: none; }
 
 .header {
   background: #efefef; }
@@ -351,7 +356,7 @@ body {
       text-decoration: none; }
     .navigation .logotype .a {
       display: inline-block;
-      border-bottom: 4px solid #8dbf41; }
+      border-bottom: 4px solid #96e6a1; }
   .navigation .main-menu {
     list-style: none;
     display: none;
@@ -412,7 +417,7 @@ body {
         .navigation .main-menu li.active {
           background: transparent; }
         .navigation .main-menu li.active span {
-          border-bottom: 3px solid #8dbf41; }
+          border-bottom: 3px solid #96e6a1; }
     .navigation .logotype {
       float: left; }
       .navigation .logotype a {
@@ -545,7 +550,7 @@ fieldset + fieldset, fieldset + .button {
   padding-bottom: 2rem;
   background: #efefef;
   color: #444;
-  border-top: 10px #8dbf41 solid;
+  border-top: 10px #96e6a1 solid;
   text-align: center; }
   .footer p {
     margin-bottom: 1rem; }
@@ -698,7 +703,7 @@ fieldset + fieldset, fieldset + .button {
   border-radius: .5em;
   margin-bottom: 1em; }
   .colour.brand {
-    background: #8dbf41;
+    background: #96e6a1;
     color: black; }
   .colour.brand-light {
     background: #a4cc67;
@@ -732,15 +737,15 @@ fieldset + fieldset, fieldset + .button {
   font-weight: 400; }
 
 .button, button {
-  border: #719934 solid;
+  border: #6ddc7c solid;
   border-width: 0 0 .1em 0;
-  background-color: #8dbf41;
+  background-color: #96e6a1;
   color: white; }
   .button:hover, button:hover {
     text-decoration: none;
     color: white;
-    border-color: #719934 solid;
-    background-color: #a4cc67; }
+    border-color: #6ddc7c solid;
+    background-color: #bff0c6; }
   .is-disabled.button, button.is-disabled {
     background-color: #ddd;
     border-color: #bbb; }

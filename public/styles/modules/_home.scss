@@ -43,8 +43,9 @@
 .home-a-spot {
     padding: 3rem;
     margin: 0 auto 4rem auto;
-    color: white;
+    // color: white;
     background: $color-brand;
+    background-image: $gradient;
     text-align: center;
     width: 100%;
 
@@ -55,14 +56,14 @@
 
     a {
         display: inline-block;
-        box-shadow: 0 0 0 3px  white inset;
+        box-shadow: 0 0 0 3px  black inset;
         margin-top: 1rem;
-        color: white;
+        // color: white;
         padding: 0.5em 1em;
         border-radius: 0.25em;
 
         &:hover {
-            background-color: white;
+            background-color: black;
             color: $color-cta;
         }
     }
