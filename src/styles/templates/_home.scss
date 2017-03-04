@@ -1,0 +1,41 @@
+.home-latest-entries {
+  margin-top: 4rem;
+}
+
+@include respond-to($lg) {
+  .home-latest-blogs {
+    padding-right: $gutter;
+  }
+
+  .home-latest-entries {
+    margin-top: 0;
+    padding-left: $gutter;
+  }
+}
+
+.home {
+  &-latest {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    > * {
+      flex-grow: 1;
+      flex-shrink: 1;
+      flex-basis: 50%;
+    }
+
+    @include respond-to($lg) {
+      flex-direction: row;
+
+      .home-latest-blogs {
+        padding-right: $gutter;
+      }
+
+      .home-latest-entries {
+        margin-top: 0;
+        padding-left: $gutter;
+      }
+    }
+  }
+}

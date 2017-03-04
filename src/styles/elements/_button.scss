@@ -1,40 +1,33 @@
 %button-layout {
   display: inline-block;
-
   padding: $input-padding;
   border-radius: $input-border-radius;
-
-  text-align: center;
-  text-decoration: none;
-  cursor: pointer;
-
   outline: 0;
   font-family: $ff-sans;
   font-weight: 400;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 %button {
   @extend %button-layout;
+
   border: darken($color-cta, 10%) solid;
   border-width: 0 0 .1em 0;
   background-color: $color-cta;
-
-
-
   color: $color-text-inverted;
 
-
-  // @include transition(box-shadow .2s linear, background-color .2s linear);
   &:hover {
-    text-decoration: none;
-    color: white;
     border-color: darken($color-cta, 10%) solid;
     background-color: lighten($color-cta, 10%);
+    color: white;
+    text-decoration: none;
   }
 
-  &.is-disabled {
-    background-color: #ddd;
+  &--disabled {
     border-color: #bbb;
+    background-color: #ddd;
   }
 
   &.wide {
@@ -45,16 +38,16 @@
   &.small {
     font-size: .8rem;
   }
-
 }
 
-.button, button {
+.button {
   @extend %button;
 }
 
 .button-outline {
   @extend %button-layout;
+
   border: 1px solid white;
-  color: white;
   background: transparent;
+  color: white;
 }

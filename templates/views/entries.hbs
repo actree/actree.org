@@ -4,14 +4,14 @@
 <section class="browse container page-container">
     <div class="browse-nav">
         <h2 class="title-minor">Tags</h2>
-        <select class="sidemenu-select">
+        <select class="vertical-nav-select">
             <option value="/entries" {{#unless data.activeTag}}selected{{/unless}}>Neueste Einträge</option>
             {{#each data.tags}}
             <option value="{{tagUrl slug}}" {{#ifeq slug ../data.activeTag}}selected{{/ifeq}}>
                 {{name}}
             </option>{{/each}}
         </select>
-        <ul class="sidemenu-list">
+        <ul class="vertical-nav-list">
             <li class="{{#unless data.activeTag}}active{{/unless}}"><a href="/entries">Neueste Einträge</a></li>
             {{#each data.tags}}
             <li class="{{#ifeq slug ../data.activeTag}}active{{/ifeq}}">

@@ -1,0 +1,42 @@
+.vertical-nav {
+  &-list {
+    display: none;
+    padding-right: 1rem;
+
+    @include respond-to($md) {
+      display: block;
+    }
+
+    li {
+      a {
+        display: block;
+        padding: .25rem;
+        font-weight: 400;
+        cursor: pointer;
+
+        &:hover {
+          background: $color-lightestgrey;
+        }
+      }
+
+      &.active a {
+        background-color: $color-lightestgrey;
+        font-weight: 700;
+      }
+    }
+
+    li:first-of-type {
+      margin-bottom: 2rem;
+    }
+  }
+
+  &-select {
+    display: block;
+    width: 100%;
+    margin-bottom: 2rem;
+
+    @include respond-to($md) {
+      display: none;
+    }
+  }
+}

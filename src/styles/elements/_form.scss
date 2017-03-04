@@ -3,38 +3,39 @@ $input-border-radius: 3px;
 $full: 100%;
 
 %input {
-    background: $color-lightestgrey;
-    border-radius: $input-border-radius;
-    border: none;
-    border-bottom: 1px solid $color-lightgrey;
-    padding: $input-padding;
-    color: $color-text;
-    width: $full;
+  width: $full;
+  padding: $input-padding;
+  border: none;
+  border-bottom: 1px solid $color-lightgrey;
+  border-radius: $input-border-radius;
+  background: $color-lightestgrey;
+  color: $color-text;
 }
 
 input[type="text"],
 input[type="password"],
 input[type="email"],
 textarea {
-    @extend %input;
+  @extend %input;
 }
 
 label {
-    font-weight: 700;
+  font-weight: 700;
 }
 
 .input input[type="text"] {
-  background: transparent;
   display: inline-block;
-  border: 0;
   padding: 0 0 0 .2em;
-  padding-left: .2em;
+  border: 0;
+  background: transparent;
 }
+
 .input input::-moz-placeholder {
   color: white;
   opacity: none;
 }
 
-fieldset + fieldset, fieldset + .button {
-    margin-top: 1rem;
+fieldset + fieldset,
+fieldset + .button {
+  margin-top: 1rem;
 }

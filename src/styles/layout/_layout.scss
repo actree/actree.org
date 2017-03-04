@@ -7,32 +7,29 @@ $padding-footer: 2rem;
 $margin-from-menu: 3rem;
 
 %outer-gutter {
-    padding: 0 $gutter;
+  padding: 0 $gutter;
 }
 
 .page-container {
-    @extend %outer-gutter;
-    margin-top: $margin-from-menu;
-    margin-bottom: $margin-from-menu;
+  @extend %outer-gutter;
+
+  margin-top: $margin-from-menu;
+  margin-bottom: $margin-from-menu;
 }
 
 .container {
-    margin-left: auto;
-    margin-right: auto;
-    max-width: $container-width;
-    padding-left: $gutter;
-    padding-right: $gutter;
+  max-width: $container-width;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: $gutter;
+  padding-left: $gutter;
 }
 
 body {
-    background: $color-background-alt;
+  background: $color-background-alt;
 }
 
 #body {
-    background: $color-background;
-    overflow: auto;
-}
-
-.float-right {
-    float: right;
+  background: $color-background;
+  overflow: auto;
 }

@@ -1,29 +1,31 @@
+// Base
 @import "base/reset";
 @import "base/colors";
 @import "base/mixins";
 @import "base/breakpoints";
 @import "base/typography";
 @import "layout/layout";
-@import "modules/editor";
-@import "modules/browse";
-@import "modules/sidemenu";
-@import "modules/home";
-@import "modules/maps";
-
-@import "nav";
-
-@import "elements/label";
-
-@import "elements/form";
-// @import "ghostdown";
-@import "blog";
-@import "page";
-@import "footer";
-@import "modules/entry";
-@import "comment";
-@import "styleguide";
 @import "layout/wireframe";
 
+// Elements
+@import "elements/label";
+@import "elements/form";
 @import "elements/button";
-@import "excerpt";
-@import "banner";
+
+// Modules
+@import "modules/vertical-nav";
+@import "modules/entry";
+@import "modules/aspot";
+@import "modules/nav";
+@import "modules/footer";
+@import "modules/comment";
+@import "modules/banner";
+@import "modules/excerpt";
+
+// Templates
+@import "templates/browse";
+@import "templates/home";
+@import "templates/maps";
+@import "templates/blog";
+@import "templates/page";
+@import "templates/styleguide";

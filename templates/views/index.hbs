@@ -1,44 +1,45 @@
-<div class="home-a-spot">
-    <p class="title-major container"><strong>actree</strong> ist eine Community, die sich für einen nachhaltigen Lebensstil einsetzt. <a href="/actree/verein">Lern mehr über uns!</a></p>
+<div class="aspot">
+  <p class="title-major container">
+    <strong>actree</strong> ist eine Community, die sich für einen nachhaltigen Lebensstil einsetzt. <a class="aspot__button" href="/actree/verein">Lern mehr über uns!</a>
+  </p>
 </div>
 <section class="home page-container container">
-
-    <div class="home-latest">
-        <div class="home-latest-blogs">
-            <h4 class="title-list">Vom Blog</h4> {{# each data.posts}}
-            <section class="mini">
+  <div class="home-latest">
+    <div class="home-latest-blogs">
+      <h4 class="title-list">Vom Blog</h4> {{# each data.posts}}
+      <section class="mini">
+        {{#if image.url}}
+        <a href="{{postUrl slug}}" class="image-link"><img class="image" src="{{{cloudinaryUrl image width=1600 height=400 crop='fit' }}}" alt="{{ title }}"></a>{{/if}}
+        <header>
+          <div class="category">{{category.name}}</div>
+          <h2 class="title"><a href="{{postUrl slug}}">{{ title }}</a></h2>
+        </header>
+      </section>
+      {{/each}}
+    </div>
+    <div class="home-latest-entries">
+        <h4 class="title-list">Neueste Einträge</h4> {{#each data.entries}}
+        <div class="entry-mini ">
+            <a href="{{entryUrl slug }}" class="entry-image">
                 {{#if image.url}}
-                <a href="{{postUrl slug}}" class="image-link"><img class="image" src="{{{cloudinaryUrl image width=1600 height=400 crop='fit' }}}" alt="{{ title }}"></a>{{/if}}
-                <header>
-                    <div class="category">{{category.name}}</div>
-                    <h2 class="title"><a href="{{postUrl slug}}">{{ title }}</a></h2>
-                </header>
-            </section>
-            {{/each}}
-        </div>
-        <div class="home-latest-entries">
-            <h4 class="title-list">Neueste Einträge</h4> {{#each data.entries}}
-            <div class="entry-mini ">
-                <a href="{{entryUrl slug }}" class="entry-image">
-                    {{#if image.url}}
-                        <img class="entry-img" src="{{{cloudinaryUrl image  width=180 height=180 crop='fill'}}}">
-                    {{else}}
-                        <img class="entry-img" src="{{ oldImage }}">
-                    {{/if}}
+                    <img class="entry-img" src="{{{cloudinaryUrl image  width=180 height=180 crop='fill'}}}">
+                {{else}}
+                    <img class="entry-img" src="{{ oldImage }}">
+                {{/if}}
+            </a>
+            <div class="entry-main">
+                <a href="{{entryUrl slug }}" class="entry-title">
+                    <h4 class="title-major">{{ title }}</h4>
                 </a>
-                <div class="entry-main">
-                    <a href="{{entryUrl slug }}" class="entry-title">
-                        <h4 class="title-major">{{ title }}</h4>
-                    </a>
-                    <div class="entry-meta ">
-                        <ul>{{#each tags}}
-                            <li>{{> tag}}</li>
-                            {{/each}}
-                        </ul>
-                    </div>
+                <div class="entry-meta ">
+                    <ul>{{#each tags}}
+                        <li>{{> tag}}</li>
+                        {{/each}}
+                    </ul>
                 </div>
             </div>
-            {{/each}}
         </div>
-    </div>
+        {{/each}}
+      </div>
+  </div>
 </section>
