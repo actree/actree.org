@@ -9,7 +9,14 @@
     "declaration-no-important": true,
     "number-leading-zero": "never",
     "shorthand-property-no-redundant-values": null,
-    "sh-waqar/declaration-use-variable": "color",
+    "sh-waqar/declaration-use-variable": [
+      "color",
+      "font-size",
+      "line-height",
+      "padding",
+      "margin",
+      "border-radius"
+    ],
     "order/declaration-block-properties-specified-order": [
       "position",
       "top",

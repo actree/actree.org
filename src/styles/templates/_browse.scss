@@ -1,15 +1,16 @@
 .browse {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
-    @include respond-to($md) {
-        flex-direction: row;
+  @include respond-to($md) {
+    flex-direction: row;
 
-        .browse-nav {
-            flex-basis: 25%;
-        }
-        .browse-entries {
-            flex-basis: 75%;
-        }
+    .browse-nav {
+      flex-basis: 25%;
     }
+
+    .browse-entries {
+      flex-basis: 75%;
+    }
+  }
 }

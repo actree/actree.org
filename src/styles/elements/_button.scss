@@ -47,7 +47,7 @@
 .button-outline {
   @extend %button-layout;
 
-  border: 1px solid white;
+  border: 1px solid $color-white;
   background: transparent;
   color: $color-white;
 }

@@ -1,15 +1,16 @@
 .page {
-    margin-top: 4rem;
-    margin-bottom: 4rem;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
 
-    .page-content,
-    .page-title {
-        max-width: $content-width;
-    }
+  .page-content,
+  .page-title {
+    max-width: $content-width;
+  }
 
-    .page-title {
-        @include title-page;
-        margin-bottom: 2rem;
-        line-height: 1.1em;
-    }
+  .page-title {
+    @include title-page;
+
+    margin-bottom: 2rem;
+    line-height: 1.1em;
+  }
 }

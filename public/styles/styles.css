@@ -1,8 +1,27 @@
-*, *:before, *:after {
+*,
+*::before,
+*::after {
   box-sizing: border-box; }
 
-html, body, h1, h2, h3, h4, h5, h6, p, li, ol, ul, section, header, footer,
-fieldset, label, input, form {
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+li,
+ol,
+ul,
+section,
+header,
+footer,
+fieldset,
+label,
+input,
+form {
   display: block;
   margin: 0;
   padding: 0;
@@ -18,7 +37,8 @@ td {
 th {
   padding: .2em .5em .5em .5em; }
 
-td:first-of-type, th:first-of-type {
+td:first-of-type,
+th:first-of-type {
   padding-left: 0; }
 
 th {
@@ -125,15 +145,15 @@ body {
   background: #efefef; }
 
 #body {
-  background: white;
+  background: #fff;
   overflow: auto; }
 
 .wireframe {
+  margin-bottom: 20px;
   padding: 20px;
-  text-align: center;
-  background: #ddd;
   border: 0.2em solid #aaa;
-  margin-bottom: 20px; }
+  background: #ddd;
+  text-align: center; }
 
 html {
   font-size: 16px; }
@@ -234,7 +254,7 @@ label {
   background: transparent; }
 
 .input input::-moz-placeholder {
-  color: white;
+  color: #fff;
   opacity: none; }
 
 fieldset + fieldset,
@@ -256,7 +276,7 @@ fieldset + .button {
   border: #719934 solid;
   border-width: 0 0 .1em 0;
   background-color: #8dbf41;
-  color: white; }
+  color: #fff; }
   .button:hover {
     border-color: #719934 solid;
     background-color: #a4cc67;
@@ -269,7 +289,7 @@ fieldset + .button {
     font-size: .8rem; }
 
 .button-outline {
-  border: 1px solid white;
+  border: 1px solid #fff;
   background: transparent;
   color: #fff; }
 
@@ -428,7 +448,7 @@ fieldset + .button {
   margin: 0 auto 4rem auto;
   padding: 3rem;
   background: #8dbf41;
-  color: white;
+  color: #fff;
   text-align: center; }
   @media screen and (min-width: 1181px) {
     .aspot {
@@ -439,10 +459,10 @@ fieldset + .button {
     margin-top: 1rem;
     padding: .5em 1em;
     border-radius: .25em;
-    color: white;
-    box-shadow: 0 0 0 3px white inset; }
+    color: #fff;
+    box-shadow: 0 0 0 3px #fff inset; }
     .aspot__button:hover {
-      background-color: white;
+      background-color: #fff;
       color: #8dbf41; }
   .aspot--vibrant {
     background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%); }
@@ -490,7 +510,7 @@ fieldset + .button {
   .navigation .open:hover + .main-menu {
     display: block; }
   .navigation a {
-    color: black;
+    color: #222;
     font-weight: 600;
     text-decoration: none; }
   .navigation input[type="checkbox"] {
@@ -543,9 +563,9 @@ fieldset + .button {
 .footer {
   padding-top: 2rem;
   padding-bottom: 2rem;
+  border-top: 10px #8dbf41 solid;
   background: #efefef;
   color: #444;
-  border-top: 10px #8dbf41 solid;
   text-align: center; }
   .footer p {
     margin-bottom: 1rem; }
@@ -596,22 +616,25 @@ fieldset + .button {
     display: inline-block;
     line-height: 2rem; }
 
-.banner, .banner-inline {
-  background: #ddd;
+.banner,
+.banner-inline {
   padding: .4em 0;
+  background: #ddd;
   text-align: center; }
-  .banner .container, .banner-inline .container {
+  .banner .container,
+  .banner-inline .container {
     position: relative;
     padding-top: 1rem;
     padding-bottom: 1rem; }
-  .banner .close, .banner-inline .close {
+  .banner .close,
+  .banner-inline .close {
     display: inline-block;
-    border: 0;
-    margin-left: 1rem; }
+    margin-left: 1rem;
+    border: 0; }
 
 .banner-inline {
-  text-align: left;
-  background: #eee; }
+  background: #eee;
+  text-align: left; }
 
 .excerpt {
   display: -webkit-flex;
@@ -795,7 +818,7 @@ fieldset + .button {
       border-radius: .5em 0 0;
       background: rgba(255, 255, 255, 0.5);
       color: #222;
-      font-size: .6em;
+      font-size: 0.6rem;
       font-weight: 400;
       line-height: 1em; }
     .post .post-image img {
@@ -816,9 +839,6 @@ fieldset + .button {
     align-items: flex-start; }
     .post .post-footer img {
       margin-right: 1rem; }
-  .post aside {
-    margin-top: .5em;
-    line-height: 1.6em; }
 
 @media screen and (min-width: 48em) {
   .blog-post .title {

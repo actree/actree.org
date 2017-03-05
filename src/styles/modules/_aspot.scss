@@ -3,7 +3,7 @@
   margin: 0 auto 4rem auto;
   padding: 3rem;
   background: $color-brand;
-  color: white;
+  color: $color-white;
   text-align: center;
 
   @include respond-to("screen and (min-width: 1181px)") {
@@ -16,11 +16,11 @@
     margin-top: 1rem;
     padding: .5em 1em;
     border-radius: .25em;
-    color: white;
-    box-shadow: 0 0 0 3px white inset;
+    color: $color-white;
+    box-shadow: 0 0 0 3px $color-white inset;
 
     &:hover {
-      background-color: white;
+      background-color: $color-white;
       color: $color-cta;
     }
   }

@@ -1,26 +1,27 @@
 %banner {
-    background: $color-lightergrey;
-    padding: .4em 0;
-    text-align: center;
+  padding: .4em 0;
+  background: $color-lightergrey;
+  text-align: center;
 
-    .container {
-        position: relative;
-        padding-top: $padding-vertical;
-        padding-bottom: $padding-vertical;
-    }
-    .close {
-        display: inline-block;
-        border: 0;
+  .container {
+    position: relative;
+    padding-top: $padding-vertical;
+    padding-bottom: $padding-vertical;
+  }
 
-        margin-left: $gutter;
-    }
+  .close {
+    display: inline-block;
+    margin-left: $gutter;
+    border: 0;
+  }
 }
 
-.banner, .banner-inline {
-    @extend %banner;
+.banner,
+.banner-inline {
+  @extend %banner;
 }
 
 .banner-inline {
-    text-align: left;
-    background: $color-lightestgrey;
+  background: $color-lightestgrey;
+  text-align: left;
 }

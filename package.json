@@ -53,7 +53,9 @@
     "walk": "^2.3.9"
   },
   "scripts": {
-    "lint": "eslint . && stylelint 'src/styles/**/*.scss' --syntax scss",
+    "eslint": "eslint .",
+    "stylelint": "stylelint 'src/styles/**/*.scss' --syntax scss",
+    "lint": "npm run eslint && npm run stylelint",
     "start": "node keystone.js",
     "migrate": "node migrate.js",
     "build": "gulp build"
