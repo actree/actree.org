@@ -26,10 +26,14 @@ $margin-from-menu: 3rem;
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   background: $color-background-alt;
 }
 
 #body {
+  flex-grow: 1;
   background: $color-background;
   overflow: auto;
 }
