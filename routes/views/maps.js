@@ -6,7 +6,7 @@ module.exports = (req, res) => {
   const locals = res.locals;
 
   // Set locals
-  locals.section = 'page';
+  locals.section = 'maps';
   // locals.filters = {
   //   page: req.params.page,
   // };
