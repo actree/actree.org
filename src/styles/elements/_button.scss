@@ -1,10 +1,12 @@
 %button-layout {
   display: inline-block;
   padding: $input-padding;
-  border-radius: $input-border-radius;
+  border-radius: $border-radius-sm;
   outline: 0;
   font-family: $font-family-sans;
+  font-size: $font-size-base;
   font-weight: 400;
+  line-height: $line-height-base;
   text-align: center;
   text-decoration: none;
   cursor: pointer;

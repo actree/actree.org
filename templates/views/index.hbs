@@ -9,15 +9,31 @@
       <h4 class="title-list">Vom Blog</h4> {{# each data.posts}}
       <section class="mini">
         {{#if image.url}}
-        <a href="{{postUrl slug}}" class="image-link"><img class="image" src="{{{cloudinaryUrl image width=1600 height=400 crop='fit' }}}" alt="{{ title }}"></a>{{/if}}
+          <a href="{{postUrl slug}}" class="image-link"><img class="image" src="{{{cloudinaryUrl image width=1600 height=400 crop='fit' }}}" alt="{{ title }}"></a>
+        {{/if}}
         <header>
           <div class="category">{{category.name}}</div>
           <h2 class="title"><a href="{{postUrl slug}}">{{ title }}</a></h2>
         </header>
       </section>
       {{/each}}
+      <a href="/blog" class="button">Weitere Artikel</a>
     </div>
     <div class="home-latest-entries">
+        <h4 class="title-list">Newsletter</h4>
+        <div>
+          <p><strong>Melde dich zu unserem Newsletter an!</strong></p>
+          <p>Erhalte neue Blogartikel und Einträge sowie generelle Nachrichten aus dem Bereich Nachhaltigkeit. Höchstens einmal im Monat.</p>
+          <form
+            action="https://tinyletter.com/actree"
+            method="post"
+            target="_blank"
+            class="newsletter-form"
+          >
+            <input type="text" name="email" id="tlemail" aria-label="Email-Adresse" placeholder="Email-Adresse" />
+            <input type="hidden" value="1" name="embed"/><input type="submit" value="Anmelden" class="button" />
+          </form>
+        </div>
         <h4 class="title-list">Neueste Einträge</h4> {{#each data.entries}}
         <div class="entry-mini ">
             <a href="{{entryUrl slug }}" class="entry-image">

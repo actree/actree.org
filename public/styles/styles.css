@@ -245,38 +245,54 @@ input[type="text"],
 input[type="password"],
 input[type="email"],
 textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   width: 100%;
-  padding: 0.3em 0.5em;
+  padding: 0.3em 0.6em;
   border: none;
-  border-bottom: 1px solid #aaa;
-  border-radius: 3px;
+  border: 2px solid #aaa;
+  border-radius: 0.2rem;
   background: #eee;
-  color: #222; }
+  color: #222;
+  font-size: 1rem;
+  line-height: 1.3rem; }
 
 label {
   font-weight: 700; }
-
-.input input[type="text"] {
-  display: inline-block;
-  padding: 0 0 0 .2em;
-  border: 0;
-  background: transparent; }
-
-.input input::-moz-placeholder {
-  color: #fff;
-  opacity: none; }
 
 fieldset + fieldset,
 fieldset + .button {
   margin-top: 1rem; }
 
+.newsletter-form {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 2rem 0 4rem 0; }
+  .newsletter-form input[type="text"] {
+    display: block;
+    -webkit-flex-grow: 7;
+    -ms-flex-positive: 7;
+    flex-grow: 7;
+    width: auto;
+    margin-right: 1rem; }
+  .newsletter-form input[type="submit"] {
+    display: block;
+    -webkit-flex-grow: 3;
+    -ms-flex-positive: 3;
+    flex-grow: 3;
+    width: auto; }
+
 .button, .button-outline {
   display: inline-block;
-  padding: 0.3em 0.5em;
-  border-radius: 3px;
+  padding: 0.3em 0.6em;
+  border-radius: 0.2rem;
   outline: 0;
   font-family: "Source Sans Pro", Helvetica, Arial, Verdana, sans-serif;
+  font-size: 1rem;
   font-weight: 400;
+  line-height: 1.3rem;
   text-align: center;
   text-decoration: none;
   cursor: pointer; }
@@ -462,7 +478,9 @@ fieldset + .button {
   @media screen and (min-width: 1181px) {
     .aspot {
       max-width: 1080px;
-      margin-top: 4rem; } }
+      margin-top: 4rem; }
+      .aspot + .aspot {
+        margin-top: 0; } }
   .aspot__button {
     display: inline-block;
     margin-top: 1rem;
@@ -475,6 +493,9 @@ fieldset + .button {
       color: #8dbf41; }
   .aspot--vibrant {
     background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%); }
+  .aspot--secondary {
+    background-color: #efefef;
+    color: #222; }
 
 .header {
   background: #efefef; }
@@ -689,7 +710,8 @@ fieldset + .button {
   display: block; }
 
 .mini .image-link {
-  display: none; }
+  display: none;
+  margin-bottom: .5rem; }
 
 .mini .image {
   width: 100%; }
@@ -706,10 +728,7 @@ fieldset + .button {
   .mini .title a {
     border: 0; }
 
-.mini + .mini {
-  margin-top: 1rem; }
-
-.mini:first-of-type + .mini {
+.mini + * {
   margin-top: 2rem; }
 
 .browse {

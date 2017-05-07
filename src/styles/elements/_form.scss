@@ -1,15 +1,24 @@
-$input-padding: .3em .5em;
-$input-border-radius: 3px;
+$input-padding: .3em .6em;
+$input-border-radius: 5px;
 $full: 100%;
 
 %input {
+  appearance: none;
   width: $full;
   padding: $input-padding;
   border: none;
-  border-bottom: 1px solid $color-lightgrey;
-  border-radius: $input-border-radius;
+  border: 2px solid $color-lightgrey;
+  border-radius: $border-radius-sm;
   background: $color-lightestgrey;
   color: $color-text;
+
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+
+  // &::-moz-placeholder {
+  //   color: $color-white;
+  //   opacity: none;
+  // }
 }
 
 input[type="text"],
@@ -23,19 +32,25 @@ label {
   font-weight: 700;
 }
 
-.input input[type="text"] {
-  display: inline-block;
-  padding: 0 0 0 .2em;
-  border: 0;
-  background: transparent;
-}
-
-.input input::-moz-placeholder {
-  color: $color-white;
-  opacity: none;
-}
-
 fieldset + fieldset,
 fieldset + .button {
   margin-top: 1rem;
+}
+
+.newsletter-form {
+  display: flex;
+  margin: 2rem 0 4rem 0;
+
+  input[type="text"] {
+    display: block;
+    flex-grow: 7;
+    width: auto;
+    margin-right: 1rem;
+  }
+
+  input[type="submit"] {
+    display: block;
+    flex-grow: 3;
+    width: auto;
+  }
 }

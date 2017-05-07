@@ -60,6 +60,7 @@
 
   .image-link {
     display: none;
+    margin-bottom: .5rem;
   }
 
   .image {
@@ -83,10 +84,6 @@
   }
 }
 
-.mini + .mini {
-  margin-top: 1rem;
-}
-
-.mini:first-of-type + .mini {
+.mini + * {
   margin-top: 2rem;
 }

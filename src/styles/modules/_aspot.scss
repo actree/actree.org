@@ -9,6 +9,10 @@
   @include respond-to("screen and (min-width: 1181px)") {
     max-width: $container-width;
     margin-top: 4rem;
+
+    & + .aspot {
+      margin-top: 0;
+    }
   }
 
   &__button {
@@ -27,5 +31,10 @@
 
   &--vibrant {
     background-image: $gradient;
+  }
+
+  &--secondary {
+    background-color: $color-background-alt;
+    color: $color-text;
   }
 }
