@@ -6,6 +6,20 @@
 <section class="home page-container container">
   <div class="home-latest">
     <div class="home-latest-blogs">
+      <h4 class="title-list">Newsletter</h4>
+      <div>
+        <p><strong>Melde dich zu unserem Newsletter an!</strong></p>
+        <p>Erhalte neue Blogartikel und Einträge sowie generelle Nachrichten aus dem Bereich Nachhaltigkeit. Höchstens einmal im Monat.</p>
+        <form
+          action="https://tinyletter.com/actree"
+          method="post"
+          target="_blank"
+          class="newsletter-form"
+        >
+          <input type="text" name="email" id="tlemail" aria-label="Email-Adresse" placeholder="Email-Adresse" />
+          <input type="hidden" value="1" name="embed"/><input type="submit" value="Anmelden" class="button" />
+        </form>
+      </div>
       <h4 class="title-list">Vom Blog</h4> {{# each data.posts}}
       <section class="mini">
         {{#if image.url}}
@@ -20,20 +34,6 @@
       <a href="/blog" class="button">Weitere Artikel</a>
     </div>
     <div class="home-latest-entries">
-        <h4 class="title-list">Newsletter</h4>
-        <div>
-          <p><strong>Melde dich zu unserem Newsletter an!</strong></p>
-          <p>Erhalte neue Blogartikel und Einträge sowie generelle Nachrichten aus dem Bereich Nachhaltigkeit. Höchstens einmal im Monat.</p>
-          <form
-            action="https://tinyletter.com/actree"
-            method="post"
-            target="_blank"
-            class="newsletter-form"
-          >
-            <input type="text" name="email" id="tlemail" aria-label="Email-Adresse" placeholder="Email-Adresse" />
-            <input type="hidden" value="1" name="embed"/><input type="submit" value="Anmelden" class="button" />
-          </form>
-        </div>
         <h4 class="title-list">Neueste Einträge</h4> {{#each data.entries}}
         <div class="entry-mini ">
             <a href="{{entryUrl slug }}" class="entry-image">

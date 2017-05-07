@@ -128,7 +128,7 @@ img {
     border-color: #222; }
 
 .page-container, .navigation {
-  padding: 0 1rem; }
+  padding: 0 1.5rem; }
 
 .page-container {
   margin-top: 3rem;
@@ -138,8 +138,8 @@ img {
   max-width: 1080px;
   margin-right: auto;
   margin-left: auto;
-  padding-right: 1rem;
-  padding-left: 1rem; }
+  padding-right: 1.5rem;
+  padding-left: 1.5rem; }
 
 body {
   display: -webkit-flex;
@@ -659,7 +659,7 @@ fieldset + .button {
   .banner .close,
   .banner-inline .close {
     display: inline-block;
-    margin-left: 1rem;
+    margin-left: 1.5rem;
     border: 0; }
 
 .banner-inline {
@@ -757,10 +757,10 @@ fieldset + .button {
 
 @media screen and (min-width: 64em) {
   .home-latest-blogs {
-    padding-right: 1rem; }
+    padding-right: 1.5rem; }
   .home-latest-entries {
     margin-top: 0;
-    padding-left: 1rem; } }
+    padding-left: 1.5rem; } }
 
 .home-latest {
   display: -webkit-flex;
@@ -788,10 +788,10 @@ fieldset + .button {
       -ms-flex-direction: row;
       flex-direction: row; }
       .home-latest .home-latest-blogs {
-        padding-right: 1rem; }
+        padding-right: 1.5rem; }
       .home-latest .home-latest-entries {
         margin-top: 0;
-        padding-left: 1rem; } }
+        padding-left: 1.5rem; } }
 
 .maps {
   height: 100%; }
