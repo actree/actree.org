@@ -1,9 +1,9 @@
 const keystone = require('keystone');
-const Comment = keystone.list('Comment');
-
 const helpers = require('../../templates/views/helpers')();
 
-exports = module.exports = function (req, res) {
+const Comment = keystone.list('Comment');
+
+exports = module.exports = (req, res) => {
   const view = new keystone.View(req, res);
   const locals = res.locals;
 
