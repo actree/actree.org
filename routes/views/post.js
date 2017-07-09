@@ -19,7 +19,7 @@ exports = module.exports = function (req, res) {
   // Load the current post
   view.on('init', (next) => {
     const q = keystone.list('Post').model.findOne({
-      state: 'published',
+      // state: 'published',
       slug: locals.filters.post,
     }).populate('author category');
 
