@@ -25,6 +25,11 @@
 
 .CommentForm {
   margin-bottom: $spacing-lg;
+
+  &__note {
+    color: $color-darkergrey;
+    font-size: $font-size-sm;
+  }
 }
 
 /* Comments section */
