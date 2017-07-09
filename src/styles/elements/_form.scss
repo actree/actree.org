@@ -7,11 +7,10 @@ $full: 100%;
   width: $full;
   padding: $input-padding;
   border: none;
-  border: 2px solid $color-lightgrey;
+  border: 1px solid $color-lightgrey;
   border-radius: $border-radius-sm;
   background: $color-lightestgrey;
   color: $color-text;
-
   font-size: $font-size-base;
   line-height: $line-height-base;
 
@@ -19,13 +18,10 @@ $full: 100%;
   //   color: $color-white;
   //   opacity: none;
   // }
-}
 
-input[type="text"],
-input[type="password"],
-input[type="email"],
-textarea {
-  @extend %input;
+  &:focus {
+    border-color: $color-darkergrey;
+  }
 }
 
 label {
@@ -34,7 +30,16 @@ label {
 
 fieldset + fieldset,
 fieldset + .button {
-  margin-top: 1rem;
+  margin-top: $spacing-base;
+}
+
+.Textarea,
+.Input {
+  @extend %input;
+
+  &--invalid {
+    border-color: $red5;
+  }
 }
 
 .newsletter-form {

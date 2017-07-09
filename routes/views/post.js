@@ -1,53 +1,93 @@
-var keystone = require('keystone');
-var helpers = require('../../templates/views/helpers')()
+const keystone = require('keystone');
+const Comment = keystone.list('Comment');
+
+const helpers = require('../../templates/views/helpers')();
 
 exports = module.exports = function (req, res) {
+  const view = new keystone.View(req, res);
+  const locals = res.locals;
 
-	var view = new keystone.View(req, res);
-	var locals = res.locals;
+  // Set locals
+  locals.section = 'blog';
+  locals.filters = {
+    post: req.params.post,
+  };
+  locals.data = {
+    posts: [],
+  };
 
-	// Set locals
-	locals.section = 'blog';
-	locals.filters = {
-		post: req.params.post,
-	};
-	locals.data = {
-		posts: [],
-	};
+  // Load the current post
+  view.on('init', (next) => {
+    const q = keystone.list('Post').model.findOne({
+      state: 'published',
+      slug: locals.filters.post,
+    }).populate('author category');
 
-	// Load the current post
-	view.on('init', function (next) {
-
-		var q = keystone.list('Post').model.findOne({
-			state: 'published',
-			slug: locals.filters.post,
-		}).populate('author category');
-
-		q.exec(function (err, result) {
-			locals.data.post = result;
+    q.exec((err, result) => {
+      locals.data.post = result;
       locals.meta = {
         title: result.title,
         description: result.content.brief,
         url: helpers.fullPostUrl(locals.filters.post),
-        image: ""
+        image: '',
       };
-			next(err);
-		});
+      next(err);
+    });
+  });
 
-	});
+  // // Load other posts
+  // view.on('init', (next) => {
+  //   const q = keystone.list('Post').model
+  //     .find().where('state', 'published')
+  //     .sort('-publishedDate')
+  //     .populate('author')
+  //     .limit('4');
+  //
+  //   q.exec((err, results) => {
+  //     locals.data.posts = results;
+  //     next(err);
+  //   });
+  // });
 
-	// Load other posts
-	view.on('init', function (next) {
+  // Load post comments
+  view.on('init', (next) => {
+    const q = keystone.list('Comment').model
+      .find({ post: locals.data.post.id })
+      .where('state', 'published')
+      .sort('-publishedDatetime')
+      .populate('author');
+      // .limit('4');
 
-		var q = keystone.list('Post').model.find().where('state', 'published').sort('-publishedDate').populate('author').limit('4');
+    q.exec((err, results) => {
+      locals.data.comments = results;
+      next(err);
+    });
+  });
 
-		q.exec(function (err, results) {
-			locals.data.posts = results;
-			next(err);
-		});
+  // On POST requests, add the Comment to the database
+  view.on('post', { action: 'comment' }, (next) => {
+    const newComment = new Comment.model({
+      post: locals.data.post.id,
+    });
+    const updater = newComment.getUpdateHandler(req);
 
-	});
+    console.log(req.body);
+    // next();
+    updater.process(req.body, {
+      flashErrors: true,
+      fields: 'content, anonymousAuthor.name, anonymousAuthor.email',
+      errorMessage: 'There was a problem submitting your enquiry:',
+    }, (err) => {
+      if (err) {
+        console.log(JSON.stringify(err));
+        locals.validationErrors = err.errors;
+      } else {
+        locals.commentSubmitted = true;
+      }
+      next();
+    });
+  });
 
-	// Render the view
-	view.render('post');
+  // Render the view
+  view.render('post');
 };

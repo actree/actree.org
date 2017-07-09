@@ -1,0 +1,24 @@
+.Toast {
+  margin-bottom: $spacing-lg;
+  padding: $spacing-base;
+  border-width: 0;
+  border-style: solid;
+  border-radius: $border-radius-sm;
+  border-color: $blue5;
+  background-color: $blue0;
+
+  &--error {
+    border-color: $orange5;
+    background-color: $orange0;
+  }
+
+  &--warning {
+    border-color: $yellow5;
+    background-color: $yellow0;
+  }
+}
+
+// For use at the top of the page
+.ToastContainer {
+  margin-top: $spacing-lg;
+}

@@ -1,0 +1,19 @@
+<form method='post' class="CommentForm" action="#new-comment">
+  <input type="hidden" name="action" value="comment" />
+  <fieldset>
+    <label for="comment-name">Name</label>
+    <input type="text" name="anonymousAuthor.name" id="comment-name" class="Input" />
+  </fieldset>
+
+  <fieldset>
+    <label for="comment-email">E-mail</label>
+    <input type="text" name="anonymousAuthor.email" id="comment-email" class="Input" />
+  </fieldset>
+
+  <fieldset>
+    <label for="comment-text">Kommentar</label>
+    <textarea name="content.md" rows="3" class="Textarea"></textarea>
+  </fieldset>
+
+  <button type="submit" class="button">Kommentieren</button>
+</form>

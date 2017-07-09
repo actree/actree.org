@@ -59,24 +59,24 @@
       validation errors, success messages, etc
       -->
       {{#if messages}}
-        <div id="flash-messages" class="container">
+        <div id="flash-messages" class="container ToastContainer">
           {{#if messages.info}}
-            <div class="alert alert-info">
+            <div class="Toast">
               {{{flashMessages messages.info}}}
             </div>
           {{/if}}
           {{#if messages.success}}
-            <div class="alert alert-success">
+            <div class="Toast Toast--success">
               {{{flashMessages messages.success}}}
             </div>
           {{/if}}
           {{#if messages.warning}}
-            <div class="alert alert-warning">
+            <div class="Toast Toast--warning">
               {{{flashMessages messages.warning}}}
           </div>
           {{/if}}
           {{#if messages.error}}
-            <div class="alert alert-danger">
+            <div class="Toast Toast--error">
               {{{flashMessages messages.error}}}
             </div>
           {{/if}}

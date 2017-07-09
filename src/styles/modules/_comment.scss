@@ -1,17 +1,30 @@
 /* Single comment */
-.comment {
-  margin-bottom: 2rem;
-  padding-bottom: 2rem;
+.Comment {
+  margin-bottom: $spacing-md;
+  padding-bottom: $spacing-md;
   border-bottom: 1px dotted $color-lightestgrey;
 
-  .comment-header {
-    display: flex;
-    justify-content: space-between;
+  &-header {
+    // display: flex;
+    // justify-content: space-between;
+
+    font-weight: normal;
+    // font-size: $font-size-md;
+    // line-height: $line-height-md;
+    margin-bottom: $spacing-base;
   }
 
-  .comment-content {
-    font-family: $font-family-serif;
+  &-meta {
+    color: $color-darkgrey;
   }
+
+  &-content {
+    // font-family: $font-family-serif;
+  }
+}
+
+.CommentForm {
+  margin-bottom: $spacing-lg;
 }
 
 /* Comments section */

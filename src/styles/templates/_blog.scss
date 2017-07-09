@@ -5,35 +5,36 @@
   line-height: 1.1em;
 }
 
-.post {
+.BlogPost {
   margin-top: 4rem;
   margin-bottom: 4rem;
 
-  .post-content,
-  .post-category,
-  .post-title,
-  .post-meta,
-  .post-image,
-  .post-footer {
+  &__content,
+  &__category,
+  &__title,
+  &__meta,
+  &__image,
+  &__author,
+  &__comments {
     max-width: $content-width;
     // margin: 0 auto;
   }
 
-  .post-title {
+  &__title {
     @include title-page;
 
     margin-bottom: 2rem;
     line-height: 1.1em;
   }
 
-  .post-category {
+  &__category {
     color: $color-text-light;
     font-size: $font-size-sm;
     letter-spacing: .1em;
     text-transform: uppercase;
   }
 
-  .post-meta {
+  &__meta {
     margin-bottom: 3rem;
 
     p {
@@ -43,10 +44,10 @@
     }
   }
 
-  .post-image {
+  &__image {
     position: relative;
 
-    .credit {
+    &-credit {
       position: absolute;
       right: 0;
       bottom: 0;
@@ -66,9 +67,10 @@
     }
   }
 
-  .post-footer {
+  &__author {
     display: flex;
     margin-top: 4rem;
+    margin-bottom: 4rem;
     padding: 1rem;
     background: $color-background-alt;
     justify-content: flex-start;
@@ -79,9 +81,9 @@
     }
   }
 }
-
-@include respond-to($md) {
-  .blog-post .title {
-    @include title-page;
-  }
-}
+//
+// @include respond-to($md) {
+//   .blog-post .title {
+//     @include title-page;
+//   }
+// }

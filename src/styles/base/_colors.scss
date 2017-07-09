@@ -1,3 +1,7 @@
+@import "palette";
+
+// https://palx.jxnblk.com/90c040
+
 $green: #8dbf41;
 // $green: #d4fc79;
 // $green: #96e6a1;
@@ -14,6 +18,16 @@ $color-lightergrey: #ddd;
 $color-lightestgrey: #eee;
 $color-black: #222;
 $color-white: #fff;
+
+$color-grey-50: $color-lightestgrey;
+$color-grey-100: $color-lightergrey;
+$color-grey-300: $color-lightgrey;
+$color-grey-500: $color-grey;
+$color-grey-600: $color-darkgrey;
+$color-grey-700: $color-darkergrey;
+$color-grey-900: $color-darkestgrey;
+
+$color-green-500: $green;
 
 $color-accent-light: #b6d96a;
 

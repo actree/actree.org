@@ -39,7 +39,7 @@ module.exports = (app) => {
 
   app.get('/blog/', routes.views.blog);
   app.get('/blog/category/:category', routes.views.blog);
-  app.get('/blog/:post', routes.views.post);
+  app.all('/blog/:post', routes.views.post);
 
   app.get('/entries/', routes.views.entries);
   app.get('/entries/tag/:tag', routes.views.entries);

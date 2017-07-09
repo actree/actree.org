@@ -1,23 +1,23 @@
 <section class="container">
-  <article class="post">
-      <header class="post-header">
-          <div class="post-category">{{data.post.category.name}} &bull; am {{date data.post.publishedDate format="DD.MM.YYYY"}} von {{data.post.author.name.first}}</div>
-          <h1 class="post-title">{{data.post.title}}</h1>
-          <summary class="post-meta">
+  <article class="BlogPost">
+      <header class="BlogPost__header">
+          <div class="BlogPost__category">{{data.post.category.name}} &bull; am {{date data.post.publishedDate format="DD.MM.YYYY"}} von {{data.post.author.name.first}}</div>
+          <h1 class="BlogPost__title">{{data.post.title}}</h1>
+          <summary class="BlogPost__meta">
               <p>{{data.post.content.brief}}</p>
           </summary>
           {{#if data.post.image.url}}
-            <div class="post-image">
+            <div class="BlogPost__image">
                 <img src="{{{cloudinaryUrl data.post.image width=760 height=300 crop='fill' }}}">
-                {{#if data.post.imageCredit}}<div class="credit">{{{data.post.imageCredit.html}}}</div>{{/if}}
+                {{#if data.post.imageCredit}}<div class="BlogPost__image-credit">{{{data.post.imageCredit.html}}}</div>{{/if}}
             {{/if}}
       </header>
 
-      <section class="post-content is-copy">
+      <section class="BlogPost__content is-copy">
           {{{data.post.content.extended.html}}}
       </section>
 
-      <footer class="post-footer">
+      <footer class="BlogPost__author">
           <img src="{{#if data.post.author.avatar.url }}{{{cloudinaryUrl data.post.author.avatar width=128 height=128 crop='fill' }}}{{else}}{{{ gravatarUrl data.post.author }}}{{/if}}" alt="" />
           <div class="">
               <h4>{{ data.post.author.name.first }}</h4>
@@ -27,13 +27,17 @@
       </footer>
 
       {{#if data.post.showComments}}
-      <section class="comments">
-        <header class="comments-header">
-            <div>
-                <h3 class="comments-title">{{commentCount}} Kommentare</h3>
-                {{#unless showCreateComment}}<button class="js-toggle-comment">Kommentieren</button>{{/unless}}
+        <section class="BlogPost__comments comments">
+          <h2 class="title-list">Diskussion</h2>
+
+          <div class="">{{> commentForm }}</div>
+
+          {{#if commentSubmitted}}
+            <div id="new-comment" class="Toast">
+              Wir haben deinen Kommentar erhalten und werden ihn so bald
+              wie m&ouml;glich freischalten!
             </div>
-        </header>
+          {{/if}}
 
           <div class="">
             {{#if showCreateComment }}
@@ -43,12 +47,12 @@
                 <div class="">{{> unpublishedComment }}</div>
             {{/if}}
             <ul class="">
-              {{#each comments}}
-                <li>{{> comment}}</li>
+              {{#each data.comments}}
+                <li>{{> comment }}</li>
               {{/each}}
             </ul>
-        </div>
-      </section>
+          </div>
+        </section>
       {{/if}}
 
   </article>
