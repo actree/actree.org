@@ -59,7 +59,7 @@ exports = module.exports = function (req, res) {
   view.on('init', (next) => {
     const q = keystone.list('Post').paginate({
       page: req.query.page || 1,
-      perPage: 10,
+      perPage: 50,
       maxPages: 10,
       filters: {
         state: 'published',
