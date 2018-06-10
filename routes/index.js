@@ -20,6 +20,7 @@
 
 const keystone = require('keystone');
 const middleware = require('./middleware');
+const rss = require('keystone-rss');
 
 const importRoutes = keystone.importer(__dirname);
 
@@ -47,6 +48,32 @@ module.exports = (app) => {
 
   app.get('/actree/:page', routes.views.page);
   app.get('/maps/', routes.views.maps);
+
+  /* RSS Feeds */
+    app.get('/feed.xml', function (req, res) {
+        rss.create(keystone, req, res, {
+            /* The model that is the subject of the feed */
+            model: 'Post',
+
+            /* RSS Feed meta data */
+            meta: {
+                title: 'actree Blog',
+                description: 'Blog mit Tipps, Tricks und Rezensionen zum Thema Nachhaltigkeit',
+                feed_url: 'https://actree.org/feed.xml',
+                site_url: 'https://actree.org',
+                // image_url: 'https://feed.image.url',
+                managingEditor: 'actree e.V. <info@actree.org>',
+                webMaster: 'Tim von Oldenburg <actree@tvooo.de>',
+                copyright: '2018 actree e.V.',
+                language: 'de',
+                // categories: ['Category 1', 'Category 2', 'Category 3'],
+                // pubDate: 'Jan 1, 2017 12:00:00 GMT',
+            },
+
+            /* The url prefix for posts within the feed (the post slug is appended to this) */
+            url: 'https://actree.org/blog/',
+        });
+    });
 
   // app.get('/gallery', routes.views.gallery);
   // app.all('/contact', routes.views.contact);

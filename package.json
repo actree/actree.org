@@ -21,6 +21,7 @@
     "express-handlebars": "^3.0.0",
     "handlebars": "^4.0.5",
     "keystone": "^4.0.0-beta.5",
+    "keystone-rss": "^1.0.6",
     "lodash": "^4.13.1",
     "marked": "^0.3.5",
     "moment": "^2.17.1"
